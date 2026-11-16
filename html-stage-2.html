@@ -1,0 +1,1402 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HTML / STAGE 02 — THE DIGITAL LAB</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="html.css">
+
+    <style>
+        .html-stage-hero {
+            padding: 110px 8% 75px;
+        }
+
+        .html-stage-hero .stage-number {
+            color: #a7d5b3;
+            letter-spacing: 4px;
+            font-size: 12px;
+        }
+
+        .html-stage-hero h1 {
+            font-size: clamp(48px, 8vw, 100px);
+            line-height: 1.02;
+            margin: 25px 0;
+        }
+
+        .html-stage-hero h1 span {
+            color: #a7d5b3;
+        }
+
+        .html-stage-hero p {
+            max-width: 650px;
+            line-height: 1.8;
+            opacity: .7;
+        }
+
+        .stage-lesson-nav {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 14px;
+            padding: 0 8% 75px;
+        }
+
+        .stage-lesson-nav a {
+            display: block;
+            padding: 22px;
+            border: 1px solid rgba(255,255,255,.12);
+            border-radius: 18px;
+            color: inherit;
+            text-decoration: none;
+            background: rgba(255,255,255,.035);
+            transition: .3s ease;
+        }
+
+        .stage-lesson-nav a:hover {
+            transform: translateY(-5px);
+            border-color: #a7d5b3;
+            background: rgba(167,213,179,.08);
+        }
+
+        .stage-lesson-nav span {
+            display: block;
+            font-size: 12px;
+            opacity: .5;
+            margin-bottom: 15px;
+        }
+
+        .stage-lesson-nav strong {
+            display: block;
+            font-size: 16px;
+        }
+
+        .stage-back-link {
+            display: inline-block;
+            margin-top: 30px;
+            color: #a7d5b3;
+            text-decoration: none;
+        }
+
+        .stage-footer {
+            padding: 80px 8%;
+            border-top: 1px solid rgba(255,255,255,.1);
+        }
+
+        .stage-footer h2 {
+            font-size: clamp(35px, 6vw, 70px);
+            margin: 20px 0;
+        }
+
+        .stage-footer a {
+            color: #a7d5b3;
+            text-decoration: none;
+        }
+
+        .stage-lesson {
+            scroll-margin-top: 35px;
+        }
+
+        .stage-preview-content {
+            padding: 24px;
+            background: white;
+            color: #171717;
+            min-height: 160px;
+            font-family: Arial, sans-serif;
+        }
+
+        .stage-preview-content img {
+            max-width: 100%;
+        }
+
+        .stage-playground textarea {
+            width: 100%;
+            min-height: 190px;
+            resize: vertical;
+            padding: 18px;
+            border: 1px solid rgba(255,255,255,.12);
+            border-radius: 12px;
+            background: #111;
+            color: #e7e7e7;
+            font-family: monospace;
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        .stage-playground iframe {
+            width: 100%;
+            min-height: 230px;
+            border: 0;
+            border-radius: 12px;
+            background: white;
+        }
+
+        .stage-playground {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+            margin-top: 25px;
+        }
+
+        .stage-panel-label {
+            display: block;
+            margin-bottom: 12px;
+            font-size: 11px;
+            letter-spacing: 2px;
+            opacity: .6;
+        }
+
+        .stage-example {
+            margin: 25px 0;
+            padding: 24px;
+            background: rgba(255,255,255,.035);
+            border: 1px solid rgba(255,255,255,.1);
+            border-radius: 16px;
+            overflow-x: auto;
+        }
+
+        .stage-example pre {
+            white-space: pre-wrap;
+            line-height: 1.8;
+        }
+
+        .stage-note {
+            padding: 22px;
+            margin: 30px 0;
+            border-left: 3px solid #a7d5b3;
+            background: rgba(167,213,179,.06);
+            line-height: 1.8;
+        }
+
+        .stage-task {
+            margin-top: 28px;
+            padding: 25px;
+            border: 1px solid rgba(167,213,179,.25);
+            border-radius: 16px;
+            line-height: 1.9;
+        }
+
+        .stage-task h3 {
+            margin-top: 0;
+        }
+
+        .stage-lesson > .html-content-block,
+        .stage-lesson > .html-experiment-heading {
+            max-width: 900px;
+        }
+
+        @media (max-width: 800px) {
+            .stage-lesson-nav {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .stage-playground {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .stage-lesson-nav {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body class="html-chapter">
+
+    <div class="html-atmosphere"></div>
+
+    <nav class="html-nav">
+        <a href="html.html" class="html-back">← HTML COURSE</a>
+        <span class="html-nav-label">CHAPTER 001 / STAGE 02</span>
+    </nav>
+
+    <main>
+
+        <!-- HERO -->
+
+        <header class="html-stage-hero">
+
+            <div class="stage-number">CHAPTER 001 / STAGE 02</div>
+
+            <h1>
+                Building<br>
+                <span>Webpages.</span>
+            </h1>
+
+            <p>
+                You've learned how HTML works. Now it's time to give
+                your webpages more life. Connect pages, display images,
+                organise information and build structured content.
+            </p>
+
+            <a href="html.html" class="stage-back-link">
+                ← Back to all 12 HTML lessons
+            </a>
+
+        </header>
+
+
+        <!-- LESSON NAVIGATION -->
+
+        <section class="stage-lesson-nav">
+
+            <a href="#lesson-five">
+                <span>LESSON 05</span>
+                <strong>Links and Navigation</strong>
+            </a>
+
+            <a href="#lesson-six">
+                <span>LESSON 06</span>
+                <strong>Images and Media</strong>
+            </a>
+
+            <a href="#lesson-seven">
+                <span>LESSON 07</span>
+                <strong>Lists</strong>
+            </a>
+
+            <a href="#lesson-eight">
+                <span>LESSON 08</span>
+                <strong>Tables</strong>
+            </a>
+
+        </section>
+
+
+
+        <!-- =====================================
+             LESSON 05
+        ====================================== -->
+
+        <section class="html-lesson stage-lesson" id="lesson-five">
+
+            <div class="html-lesson-top">
+                <span>LESSON 05 / STAGE 02</span>
+                <span>CONNECTING THE WEB</span>
+            </div>
+
+            <h2>Links and Navigation</h2>
+
+            <p class="html-lesson-intro">
+                Websites aren't isolated documents. Links connect
+                webpages, resources and entire parts of the internet.
+            </p>
+
+            <div class="html-content-block">
+
+                <h3>What is a hyperlink?</h3>
+
+                <p>
+                    A hyperlink is a clickable connection that takes
+                    a user to another location. It might open another
+                    webpage, a different section of the same page,
+                    or an external website.
+                </p>
+
+                <p>
+                    In HTML, we create links using the
+                    <code>&lt;a&gt;</code> element, also known as
+                    the anchor element.
+                </p>
+
+                <p>
+                    The most important attribute of an anchor is
+                    <code>href</code>. It tells the browser where
+                    the link should take the user.
+                </p>
+
+            </div>
+
+            <div class="stage-example">
+                <span class="stage-panel-label">A BASIC LINK</span>
+
+                <pre><code>&lt;a href="https://www.wikipedia.org"&gt;
+    Visit Wikipedia
+&lt;/a&gt;</code></pre>
+            </div>
+
+            <div class="html-content-block">
+
+                <h3>Understanding the href attribute</h3>
+
+                <p>
+                    The <code>href</code> attribute contains the
+                    destination of the link.
+                </p>
+
+                <p>
+                    There are different kinds of destinations.
+                    Let's look at three common examples.
+                </p>
+
+                <ul class="html-learning-list">
+                    <li>
+                        <strong>External link:</strong> takes you to
+                        another website.
+                    </li>
+
+                    <li>
+                        <strong>Internal link:</strong> takes you to
+                        another page in your own website.
+                    </li>
+
+                    <li>
+                        <strong>Page section link:</strong> jumps to
+                        a specific section on the current page.
+                    </li>
+                </ul>
+
+            </div>
+
+            <div class="stage-example">
+                <span class="stage-panel-label">THREE TYPES OF LINKS</span>
+
+                <pre><code>&lt;!-- External link --&gt;
+&lt;a href="https://example.com"&gt;
+    Visit Example
+&lt;/a&gt;
+
+&lt;!-- Another page in your website --&gt;
+&lt;a href="about.html"&gt;
+    About Us
+&lt;/a&gt;
+
+&lt;!-- A section on this page --&gt;
+&lt;a href="#contact"&gt;
+    Contact Section
+&lt;/a&gt;
+
+&lt;section id="contact"&gt;
+    &lt;h2&gt;Contact Us&lt;/h2&gt;
+&lt;/section&gt;</code></pre>
+            </div>
+
+            <div class="html-content-block">
+
+                <h3>Opening links in a new tab</h3>
+
+                <p>
+                    Sometimes you want a link to open in a new browser
+                    tab instead of replacing the current page.
+                </p>
+
+                <p>
+                    You can use <code>target="_blank"</code> to do this.
+                    For external links, it's also good practice to use
+                    <code>rel="noopener noreferrer"</code>.
+                </p>
+
+            </div>
+
+            <div class="stage-example">
+                <span class="stage-panel-label">NEW TAB EXAMPLE</span>
+
+                <pre><code>&lt;a
+    href="https://example.com"
+    target="_blank"
+    rel="noopener noreferrer"
+&gt;
+    Open Example
+&lt;/a&gt;</code></pre>
+            </div>
+
+            <div class="html-content-block">
+
+                <h3>How website navigation works</h3>
+
+                <p>
+                    A navigation bar is simply a group of links that
+                    helps visitors move around a website.
+                </p>
+
+                <p>
+                    You might see links such as Home, About, Projects
+                    and Contact at the top of a website. These are
+                    usually placed inside a <code>&lt;nav&gt;</code>
+                    element.
+                </p>
+
+            </div>
+
+            <div class="stage-example">
+                <span class="stage-panel-label">A SIMPLE NAVIGATION BAR</span>
+
+                <pre><code>&lt;nav&gt;
+    &lt;a href="index.html"&gt;Home&lt;/a&gt;
+    &lt;a href="about.html"&gt;About&lt;/a&gt;
+    &lt;a href="projects.html"&gt;Projects&lt;/a&gt;
+    &lt;a href="contact.html"&gt;Contact&lt;/a&gt;
+&lt;/nav&gt;</code></pre>
+            </div>
+
+            <div class="stage-note">
+                <strong>Remember:</strong> A link uses
+                <code>&lt;a&gt;</code>, while its destination is
+                specified using the <code>href</code> attribute.
+            </div>
+
+            <div class="html-experiment-heading">
+                <span>EXPERIMENT 05</span>
+                <h3>Create your own navigation.</h3>
+                <p>
+                    Change the link names and destinations. Try adding
+                    another link and see how the browser displays it.
+                </p>
+            </div>
+
+            <div class="stage-playground">
+
+                <div>
+                    <span class="stage-panel-label">HTML EDITOR</span>
+
+                    <textarea id="stage2-editor-5" spellcheck="false"><h1>My Website</h1>
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+</nav>
+
+<h2 id="home">Welcome!</h2>
+<p>This is my homepage.</p>
+
+<h2 id="about">About Me</h2>
+<p>I am learning HTML.</p>
+
+<h2 id="projects">My Projects</h2>
+<p>Here are my projects.</p></textarea>
+                </div>
+
+                <div>
+                    <span class="stage-panel-label">BROWSER PREVIEW</span>
+
+                    <iframe
+                        id="stage2-preview-5"
+                        title="Lesson 5 live preview"
+                        sandbox="allow-scripts"
+                    ></iframe>
+                </div>
+
+            </div>
+
+            <div class="stage-task">
+                <h3>CHALLENGE 05 / Build a navigation menu</h3>
+
+                <p>Create a small website navigation menu with:</p>
+
+                <ul>
+                    <li>A Home link.</li>
+                    <li>An About link.</li>
+                    <li>A Projects link.</li>
+                    <li>A Contact link.</li>
+                    <li>At least one link that jumps to a section.</li>
+                </ul>
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             LESSON 06
+        ====================================== -->
+
+        <section class="html-lesson stage-lesson" id="lesson-six">
+
+            <div class="html-lesson-top">
+                <span>LESSON 06 / STAGE 02</span>
+                <span>VISUAL CONTENT</span>
+            </div>
+
+            <h2>Images and Media</h2>
+
+            <p class="html-lesson-intro">
+                A webpage doesn't have to be made of text alone.
+                Images and media make content more visual and expressive.
+            </p>
+
+            <div class="html-content-block">
+
+                <h3>Adding images to HTML</h3>
+
+                <p>
+                    The <code>&lt;img&gt;</code> element is used to
+                    display an image on a webpage.
+                </p>
+
+                <p>
+                    Unlike a paragraph or heading, an image element
+                    does not wrap around content. It is a void element,
+                    so it does not need a closing tag.
+                </p>
+
+                <p>
+                    The two most important image attributes are:
+                </p>
+
+                <ul class="html-learning-list">
+                    <li>
+                        <code>src</code> — tells the browser where
+                        the image file is located.
+                    </li>
+
+                    <li>
+                        <code>alt</code> — provides alternative text
+                        describing the image.
+                    </li>
+                </ul>
+
+            </div>
+
+            <div class="stage-example">
+                <span class="stage-panel-label">IMAGE ELEMENT</span>
+
+                <pre><code>&lt;img
+    src="football.jpg"
+    alt="A football on a field"
+&gt;</code></pre>
+            </div>
+
+            <div class="html-content-block">
+
+                <h3>Understanding image paths</h3>
+
+                <p>
+                    The <code>src</code> attribute can point to an image
+                    stored in your project folder or to an image hosted
+                    online.
+                </p>
+
+                <p>
+                    If your image is in the same folder as your HTML file,
+                    you can simply use its filename.
+                </p>
+
+                <p>
+                    If it is inside another folder, include that folder
+                    in the path.
+                </p>
+
+            </div>
+
+            <div class="stage-example">
+                <span class="stage-panel-label">IMAGE PATH EXAMPLES</span>
+
+                <pre><code>&lt;!-- Image in the same folder --&gt;
+&lt;img src="photo.jpg" alt="A photograph"&gt;
+
+&lt;!-- Image inside an images folder --&gt;
+&lt;img src="images/photo.jpg" alt="A photograph"&gt;
+
+&lt;!-- Image from an online source --&gt;
+&lt;img src="https://example.com/photo.jpg"
+     alt="An example photograph"&gt;</code></pre>
+            </div>
+
+            <div class="html-content-block">
+
+                <h3>Why is alt text important?</h3>
+
+                <p>
+                    The <code>alt</code> attribute describes an image
+                    when it cannot be displayed. Screen readers can
+                    also use it to describe images to people who
+                    cannot see them.
+                </p>
+
+                <p>
+                    Good alt text describes the useful information
+                    conveyed by the image. Avoid writing vague
+                    descriptions such as "image123".
+                </p>
+
+            </div>
+
+            <div class="html-content-block">
+
+                <h3>Adding audio and video</h3>
+
+                <p>
+                    HTML also includes elements for audio and video.
+                    These allow you to include media without relying
+                    entirely on external players.
+                </p>
+
+                <p>
+                    The <code>&lt;audio&gt;</code> element can display
+                    audio controls, while the <code>&lt;video&gt;</code>
+                    element can display a video player.
+                </p>
+
+            </div>
+
+            <div class="stage-example">
+                <span class="stage-panel-label">AUDIO AND VIDEO</span>
+
+                <pre><code>&lt;audio controls&gt;
+    &lt;source src="music.mp3" type="audio/mpeg"&gt;
+    Your browser does not support audio.
+&lt;/audio&gt;
+
+&lt;video controls width="400"&gt;
+    &lt;source src="video.mp4" type="video/mp4"&gt;
+    Your browser does not support video.
+&lt;/video&gt;</code></pre>
+            </div>
+
+            <div class="stage-note">
+                <strong>Important:</strong> The media examples need
+                actual media files at the paths you specify. The
+                <code>controls</code> attribute displays the browser's
+                built-in playback controls.
+            </div>
+
+            <div class="html-experiment-heading">
+                <span>EXPERIMENT 06</span>
+                <h3>Build an image gallery.</h3>
+                <p>
+                    Add image URLs, change the alternative text and
+                    experiment with multiple images.
+                </p>
+            </div>
+
+            <div class="stage-playground">
+
+                <div>
+                    <span class="stage-panel-label">HTML EDITOR</span>
+
+                    <textarea id="stage2-editor-6" spellcheck="false"><h1>My Image Gallery</h1>
+
+<p>Welcome to my gallery.</p>
+
+<img
+    src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=700"
+    alt="A beautiful landscape"
+    width="300"
+>
+
+<img
+    src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?w=700"
+    alt="A night sky"
+    width="300"
+></textarea>
+                </div>
+
+                <div>
+                    <span class="stage-panel-label">BROWSER PREVIEW</span>
+
+                    <iframe
+                        id="stage2-preview-6"
+                        title="Lesson 6 live preview"
+                        sandbox="allow-scripts"
+                    ></iframe>
+                </div>
+
+            </div>
+
+            <div class="stage-task">
+                <h3>CHALLENGE 06 / Create an image gallery</h3>
+
+                <ul>
+                    <li>Create a heading for your gallery.</li>
+                    <li>Add at least three images.</li>
+                    <li>Give every image meaningful alt text.</li>
+                    <li>Experiment with image widths.</li>
+                    <li>Add a short paragraph describing your gallery.</li>
+                </ul>
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             LESSON 07
+        ====================================== -->
+
+        <section class="html-lesson stage-lesson" id="lesson-seven">
+
+            <div class="html-lesson-top">
+                <span>LESSON 07 / STAGE 02</span>
+                <span>ORGANISING INFORMATION</span>
+            </div>
+
+            <h2>Lists</h2>
+
+            <p class="html-lesson-intro">
+                Sometimes information is easier to understand when
+                it is organised into a list instead of a paragraph.
+            </p>
+
+            <div class="html-content-block">
+
+                <h3>What are HTML lists?</h3>
+
+                <p>
+                    HTML lists allow us to group related items together.
+                    They are useful for instructions, menus, features,
+                    rankings and many other types of information.
+                </p>
+
+                <p>
+                    HTML provides three main types of lists:
+                </p>
+
+                <ul class="html-learning-list">
+                    <li>Unordered lists.</li>
+                    <li>Ordered lists.</li>
+                    <li>Description lists.</li>
+                </ul>
+
+            </div>
+
+            <div class="html-content-block">
+
+                <h3>01 / Unordered lists</h3>
+
+                <p>
+                    An unordered list displays items without a specific
+                    numerical order. Browsers usually show bullet points.
+                </p>
+
+                <p>
+                    We create one using <code>&lt;ul&gt;</code>.
+                    Each item is placed inside an
+                    <code>&lt;li&gt;</code> element.
+                </p>
+
+            </div>
+
+            <div class="stage-example">
+                <span class="stage-panel-label">UNORDERED LIST</span>
+
+                <pre><code>&lt;h2&gt;My Favourite Sports&lt;/h2&gt;
+
+&lt;ul&gt;
+    &lt;li&gt;Football&lt;/li&gt;
+    &lt;li&gt;Cricket&lt;/li&gt;
+    &lt;li&gt;Basketball&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+            </div>
+
+            <div class="html-content-block">
+
+                <h3>02 / Ordered lists</h3>
+
+                <p>
+                    An ordered list is used when the sequence of items
+                    matters. Browsers usually display numbers by default.
+                </p>
+
+                <p>
+                    We create one using <code>&lt;ol&gt;</code>,
+                    with each item again placed inside
+                    <code>&lt;li&gt;</code>.
+                </p>
+
+            </div>
+
+            <div class="stage-example">
+                <span class="stage-panel-label">ORDERED LIST</span>
+
+                <pre><code>&lt;h2&gt;How to Make Tea&lt;/h2&gt;
+
+&lt;ol&gt;
+    &lt;li&gt;Boil water.&lt;/li&gt;
+    &lt;li&gt;Add tea leaves.&lt;/li&gt;
+    &lt;li&gt;Add milk and sugar.&lt;/li&gt;
+    &lt;li&gt;Serve the tea.&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+            </div>
+
+            <div class="html-content-block">
+
+                <h3>03 / Description lists</h3>
+
+                <p>
+                    Description lists are useful when you want to show
+                    terms alongside their descriptions.
+                </p>
+
+                <p>
+                    They use three elements:
+                </p>
+
+                <ul class="html-learning-list">
+                    <li>
+                        <code>&lt;dl&gt;</code> — the description list.
+                    </li>
+
+                    <li>
+                        <code>&lt;dt&gt;</code> — the term being described.
+                    </li>
+
+                    <li>
+                        <code>&lt;dd&gt;</code> — the description itself.
+                    </li>
+                </ul>
+
+            </div>
+
+            <div class="stage-example">
+                <span class="stage-panel-label">DESCRIPTION LIST</span>
+
+                <pre><code>&lt;dl&gt;
+
+    &lt;dt&gt;HTML&lt;/dt&gt;
+    &lt;dd&gt;Structures webpages.&lt;/dd&gt;
+
+    &lt;dt&gt;CSS&lt;/dt&gt;
+    &lt;dd&gt;Styles webpages.&lt;/dd&gt;
+
+    &lt;dt&gt;JavaScript&lt;/dt&gt;
+    &lt;dd&gt;Adds interactivity.&lt;/dd&gt;
+
+&lt;/dl&gt;</code></pre>
+            </div>
+
+            <div class="html-content-block">
+
+                <h3>Can lists be nested?</h3>
+
+                <p>
+                    Absolutely! You can place one list inside another
+                    list item. This creates a nested list.
+                </p>
+
+                <p>
+                    Nested lists are useful when information has
+                    categories and subcategories.
+                </p>
+
+            </div>
+
+            <div class="stage-example">
+                <span class="stage-panel-label">NESTED LIST</span>
+
+                <pre><code>&lt;ul&gt;
+    &lt;li&gt;Sports
+        &lt;ul&gt;
+            &lt;li&gt;Football&lt;/li&gt;
+            &lt;li&gt;Cricket&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+
+    &lt;li&gt;Music
+        &lt;ul&gt;
+            &lt;li&gt;Rock&lt;/li&gt;
+            &lt;li&gt;Pop&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+            </div>
+
+            <div class="stage-note">
+                <strong>Remember:</strong> Use unordered lists when
+                sequence does not matter, ordered lists when sequence
+                matters, and description lists for terms and explanations.
+            </div>
+
+            <div class="html-experiment-heading">
+                <span>EXPERIMENT 07</span>
+                <h3>Organise your interests.</h3>
+                <p>
+                    Create different kinds of lists and watch how
+                    the browser organises them.
+                </p>
+            </div>
+
+            <div class="stage-playground">
+
+                <div>
+                    <span class="stage-panel-label">HTML EDITOR</span>
+
+                    <textarea id="stage2-editor-7" spellcheck="false"><h1>My Interests</h1>
+
+<h2>Favourite Sports</h2>
+
+<ul>
+    <li>Football</li>
+    <li>Cricket</li>
+    <li>Basketball</li>
+</ul>
+
+<h2>My Daily Routine</h2>
+
+<ol>
+    <li>Wake up</li>
+    <li>Go to school</li>
+    <li>Study</li>
+    <li>Play football</li>
+</ol></textarea>
+                </div>
+
+                <div>
+                    <span class="stage-panel-label">BROWSER PREVIEW</span>
+
+                    <iframe
+                        id="stage2-preview-7"
+                        title="Lesson 7 live preview"
+                        sandbox="allow-scripts"
+                    ></iframe>
+                </div>
+
+            </div>
+
+            <div class="stage-task">
+                <h3>CHALLENGE 07 / Build a personal list</h3>
+
+                <ul>
+                    <li>Create an unordered list of five favourite things.</li>
+                    <li>Create an ordered list of five daily activities.</li>
+                    <li>Create a description list of three subjects.</li>
+                    <li>Try placing a nested list inside another list.</li>
+                </ul>
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             LESSON 08
+        ====================================== -->
+
+        <section class="html-lesson stage-lesson" id="lesson-eight">
+
+            <div class="html-lesson-top">
+                <span>LESSON 08 / STAGE 02</span>
+                <span>STRUCTURED DATA</span>
+            </div>
+
+            <h2>Tables</h2>
+
+            <p class="html-lesson-intro">
+                When information needs to be compared or arranged
+                into rows and columns, HTML tables come into play.
+            </p>
+
+            <div class="html-content-block">
+
+                <h3>What is an HTML table?</h3>
+
+                <p>
+                    An HTML table organises information into rows and
+                    columns. It is useful for schedules, comparisons,
+                    results and other structured information.
+                </p>
+
+                <p>
+                    Tables are built using several elements that work
+                    together. Let's understand them one by one.
+                </p>
+
+            </div>
+
+            <div class="html-content-block">
+
+                <h3>The main table elements</h3>
+
+                <ul class="html-learning-list">
+                    <li>
+                        <code>&lt;table&gt;</code> — creates the table.
+                    </li>
+
+                    <li>
+                        <code>&lt;tr&gt;</code> — creates a table row.
+                    </li>
+
+                    <li>
+                        <code>&lt;th&gt;</code> — creates a header cell.
+                    </li>
+
+                    <li>
+                        <code>&lt;td&gt;</code> — creates a regular data cell.
+                    </li>
+
+                    <li>
+                        <code>&lt;caption&gt;</code> — gives the table a title.
+                    </li>
+                </ul>
+
+            </div>
+
+            <div class="stage-example">
+                <span class="stage-panel-label">YOUR FIRST TABLE</span>
+
+                <pre><code>&lt;table&gt;
+
+    &lt;tr&gt;
+        &lt;th&gt;Name&lt;/th&gt;
+        &lt;th&gt;Age&lt;/th&gt;
+    &lt;/tr&gt;
+
+    &lt;tr&gt;
+        &lt;td&gt;Alex&lt;/td&gt;
+        &lt;td&gt;14&lt;/td&gt;
+    &lt;/tr&gt;
+
+    &lt;tr&gt;
+        &lt;td&gt;Jordan&lt;/td&gt;
+        &lt;td&gt;15&lt;/td&gt;
+    &lt;/tr&gt;
+
+&lt;/table&gt;</code></pre>
+            </div>
+
+            <div class="html-content-block">
+
+                <h3>Understanding table structure</h3>
+
+                <p>
+                    The outer <code>&lt;table&gt;</code> element
+                    contains the entire table.
+                </p>
+
+                <p>
+                    Each <code>&lt;tr&gt;</code> creates a new row.
+                    Inside that row, you can add header cells using
+                    <code>&lt;th&gt;</code> or regular cells using
+                    <code>&lt;td&gt;</code>.
+                </p>
+
+                <p>
+                    This is how the browser understands which pieces
+                    of information belong together.
+                </p>
+
+            </div>
+
+            <div class="html-content-block">
+
+                <h3>Organising bigger tables</h3>
+
+                <p>
+                    HTML also provides elements that help divide a table
+                    into meaningful sections.
+                </p>
+
+                <ul class="html-learning-list">
+                    <li>
+                        <code>&lt;thead&gt;</code> — groups header rows.
+                    </li>
+
+                    <li>
+                        <code>&lt;tbody&gt;</code> — groups the main data.
+                    </li>
+
+                    <li>
+                        <code>&lt;tfoot&gt;</code> — groups footer rows.
+                    </li>
+                </ul>
+
+                <p>
+                    These elements make larger tables easier to
+                    understand and maintain.
+                </p>
+
+            </div>
+
+            <div class="stage-example">
+                <span class="stage-panel-label">A STRUCTURED TABLE</span>
+
+                <pre><code>&lt;table&gt;
+
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Subject&lt;/th&gt;
+            &lt;th&gt;Marks&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Maths&lt;/td&gt;
+            &lt;td&gt;85&lt;/td&gt;
+        &lt;/tr&gt;
+
+        &lt;tr&gt;
+            &lt;td&gt;Science&lt;/td&gt;
+            &lt;td&gt;92&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+
+&lt;/table&gt;</code></pre>
+            </div>
+
+            <div class="html-content-block">
+
+                <h3>Making tables accessible</h3>
+
+                <p>
+                    A table should communicate what its rows and columns
+                    represent. Use meaningful header cells and consider
+                    adding a caption.
+                </p>
+
+                <p>
+                    For more complex tables, attributes such as
+                    <code>scope</code> can help browsers and assistive
+                    technologies understand the relationship between
+                    headers and data.
+                </p>
+
+            </div>
+
+            <div class="stage-example">
+                <span class="stage-panel-label">TABLE WITH CAPTION AND SCOPE</span>
+
+                <pre><code>&lt;table&gt;
+
+    &lt;caption&gt;Weekly Schedule&lt;/caption&gt;
+
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th scope="col"&gt;Day&lt;/th&gt;
+            &lt;th scope="col"&gt;Activity&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;th scope="row"&gt;Monday&lt;/th&gt;
+            &lt;td&gt;Football practice&lt;/td&gt;
+        &lt;/tr&gt;
+
+        &lt;tr&gt;
+            &lt;th scope="row"&gt;Tuesday&lt;/th&gt;
+            &lt;td&gt;Study session&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+
+&lt;/table&gt;</code></pre>
+            </div>
+
+            <div class="stage-note">
+                <strong>Remember:</strong> Tables are for tabular data,
+                not for building the overall layout of a webpage.
+                CSS is the right tool for page layouts.
+            </div>
+
+            <div class="html-experiment-heading">
+                <span>EXPERIMENT 08</span>
+                <h3>Create your own table.</h3>
+                <p>
+                    Add rows, columns and headers. Try making a
+                    timetable or a small results table.
+                </p>
+            </div>
+
+            <div class="stage-playground">
+
+                <div>
+                    <span class="stage-panel-label">HTML EDITOR</span>
+
+                    <textarea id="stage2-editor-8" spellcheck="false"><h1>My Weekly Schedule</h1>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>Day</th>
+            <th>Activity</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td>Monday</td>
+            <td>Football</td>
+        </tr>
+
+        <tr>
+            <td>Tuesday</td>
+            <td>Study</td>
+        </tr>
+
+        <tr>
+            <td>Wednesday</td>
+            <td>Music</td>
+        </tr>
+    </tbody>
+</table></textarea>
+                </div>
+
+                <div>
+                    <span class="stage-panel-label">BROWSER PREVIEW</span>
+
+                    <iframe
+                        id="stage2-preview-8"
+                        title="Lesson 8 live preview"
+                        sandbox="allow-scripts"
+                    ></iframe>
+                </div>
+
+            </div>
+
+            <div class="stage-task">
+                <h3>CHALLENGE 08 / Build a timetable</h3>
+
+                <ul>
+                    <li>Create a table with at least three columns.</li>
+                    <li>Add a header row.</li>
+                    <li>Add at least four data rows.</li>
+                    <li>Use a caption to describe the table.</li>
+                    <li>Use <code>thead</code> and <code>tbody</code>.</li>
+                </ul>
+            </div>
+
+        </section>
+
+
+
+        <!-- STAGE COMPLETION -->
+
+        <section class="html-challenge">
+
+            <div class="html-challenge-top">
+                <span>STAGE 02 / COMPLETED</span>
+                <span>LESSONS 05–08</span>
+            </div>
+
+            <h2>
+                Your webpages<br>
+                are taking shape.
+            </h2>
+
+            <p>
+                You've learned to connect pages, display media,
+                organise information and structure data.
+                You're moving beyond basic HTML elements.
+            </p>
+
+            <div class="html-lesson-note">
+                <span>STAGE CHECK</span>
+                <p>
+                    Can you build a webpage containing navigation,
+                    images, lists and a table without copying an example?
+                    That's your next test.
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- FOOTER -->
+
+        <footer class="stage-footer">
+
+            <span class="stage-number">THE DIGITAL LAB / HTML</span>
+
+            <h2>
+                Structure.<br>
+                Then meaning.
+            </h2>
+
+            <p>
+                Eight lessons down. Four more to go.
+            </p>
+
+            <a href="html.html">← ALL HTML LESSONS</a>
+
+            <br>
+
+            <a href="html-stage-3.html">
+                CONTINUE TO STAGE 03 →
+            </a>
+
+        </footer>
+
+    </main>
+
+
+    <!-- STAGE 02 PLAYGROUND SCRIPT -->
+
+    <script>
+        const stage2Playgrounds = [
+            {
+                editor: "stage2-editor-5",
+                preview: "stage2-preview-5"
+            },
+            {
+                editor: "stage2-editor-6",
+                preview: "stage2-preview-6"
+            },
+            {
+                editor: "stage2-editor-7",
+                preview: "stage2-preview-7"
+            },
+            {
+                editor: "stage2-editor-8",
+                preview: "stage2-preview-8"
+            }
+        ];
+
+        stage2Playgrounds.forEach((playground) => {
+
+            const editor = document.getElementById(playground.editor);
+            const preview = document.getElementById(playground.preview);
+
+            if (!editor || !preview) return;
+
+            function updatePreview() {
+                preview.srcdoc = `
+                    <!DOCTYPE html>
+                    <html>
+                    <head>
+                        <meta charset="UTF-8">
+                        <style>
+                            body {
+                                font-family: Arial, sans-serif;
+                                padding: 20px;
+                                color: #222;
+                                line-height: 1.6;
+                            }
+
+                            img {
+                                max-width: 100%;
+                                height: auto;
+                                margin: 8px;
+                            }
+
+                            table {
+                                border-collapse: collapse;
+                                width: 100%;
+                                margin-top: 15px;
+                            }
+
+                            th, td {
+                                padding: 10px;
+                                border: 1px solid #aaa;
+                                text-align: left;
+                            }
+
+                            th {
+                                background: #eeeeee;
+                            }
+
+                            a {
+                                margin-right: 12px;
+                            }
+                        </style>
+                    </head>
+                    <body>
+                        ${editor.value}
+                    </body>
+                    </html>
+                `;
+            }
+
+            editor.addEventListener("input", updatePreview);
+
+            updatePreview();
+
+        });
+    </script>
+
+</body>
+</html>

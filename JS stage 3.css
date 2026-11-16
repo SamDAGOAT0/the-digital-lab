@@ -1,0 +1,250 @@
+
+/* =========================================================
+   THE DIGITAL LAB — JAVASCRIPT
+   STAGE 03 / DOM & VISUAL MASTERY
+========================================================= */
+
+
+/* 01 — DOM TREE VISUALIZATION */
+
+.js-dom-tree {
+    margin: 35px 0;
+    padding: 30px 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--js-line);
+    border-radius: 8px;
+}
+
+.js-dom-tree-node {
+    min-width: 110px;
+    padding: 13px 20px;
+
+    display: flex;
+    justify-content: center;
+
+    background: #171a20;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 5px;
+
+    color: var(--js-text);
+
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.js-dom-tree-node span {
+    color: inherit;
+}
+
+.js-dom-root {
+    background: rgba(247, 223, 30, 0.1);
+    border-color: rgba(247, 223, 30, 0.5);
+    color: var(--js-yellow);
+}
+
+.js-dom-highlight {
+    background: rgba(247, 223, 30, 0.08);
+    border-color: var(--js-yellow);
+    color: var(--js-yellow);
+}
+
+.js-dom-tree-branch {
+    width: 100%;
+    margin-top: 16px;
+    padding-top: 16px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+
+    border-top: 1px solid rgba(247, 223, 30, 0.35);
+}
+
+.js-dom-tree-children {
+    width: 85%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+
+    border-top-color: rgba(255, 255, 255, 0.15);
+}
+
+
+/* 02 — PROJECT PREVIEW */
+
+.js-project-preview {
+    margin: 35px 0;
+    padding: 28px;
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(247, 223, 30, 0.1),
+            transparent 55%
+        ),
+        #101216;
+
+    border: 1px solid rgba(247, 223, 30, 0.28);
+    border-radius: 10px;
+
+    color: var(--js-text);
+}
+
+.js-project-preview-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--js-line);
+}
+
+.js-project-preview-top span {
+    color: var(--js-muted);
+
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.js-project-preview-title {
+    margin-top: 35px;
+    text-align: center;
+}
+
+.js-project-preview-title > span {
+    color: var(--js-yellow);
+
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.js-project-preview-title h3 {
+    margin: 10px 0 0;
+
+    color: var(--js-text);
+    font-size: clamp(34px, 6vw, 54px);
+    font-weight: 700;
+    letter-spacing: -2px;
+}
+
+.js-project-preview-score {
+    margin: 35px 0;
+
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 15px;
+}
+
+.js-project-preview-score > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.js-project-preview-score > div > span {
+    color: var(--js-muted);
+
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.js-project-preview-score strong {
+    color: var(--js-yellow);
+    font-size: clamp(55px, 9vw, 80px);
+    line-height: 1;
+}
+
+.js-project-preview-score small {
+    color: var(--js-muted);
+    font-size: 9px;
+    letter-spacing: 1.4px;
+}
+
+.js-project-preview-divider {
+    color: var(--js-muted);
+    font-size: 35px;
+}
+
+.js-project-preview-status {
+    width: fit-content;
+    margin: auto;
+    padding: 10px 16px;
+
+    background: rgba(247, 223, 30, 0.08);
+    border: 1px solid rgba(247, 223, 30, 0.2);
+    border-radius: 30px;
+
+    color: var(--js-yellow);
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+}
+
+.js-project-preview-status span {
+    margin-right: 5px;
+}
+
+
+/* 03 — STAGE THREE CONTENT DETAILS */
+
+.js-learning-stage .js-lesson-section {
+    scroll-margin-top: 35px;
+}
+
+.js-learning-stage .js-lesson-content > .js-dom-tree,
+.js-learning-stage .js-lesson-content > .js-project-preview {
+    max-width: 100%;
+}
+
+
+/* 04 — RESPONSIVE */
+
+@media (max-width: 650px) {
+
+    .js-dom-tree {
+        padding: 22px 10px;
+    }
+
+    .js-dom-tree-node {
+        min-width: 90px;
+        padding: 11px 14px;
+        font-size: 10px;
+    }
+
+    .js-dom-tree-children {
+        width: 100%;
+        gap: 8px;
+    }
+
+    .js-project-preview {
+        padding: 20px 15px;
+    }
+
+    .js-project-preview-score {
+        gap: 8px;
+    }
+
+    .js-project-preview-score strong {
+        font-size: 55px;
+    }
+
+    .js-project-preview-title h3 {
+        font-size: 38px;
+    }
+
+}

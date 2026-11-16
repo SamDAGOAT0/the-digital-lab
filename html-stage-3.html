@@ -1,0 +1,1248 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HTML / STAGE 03 — THE DIGITAL LAB</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="html.css">
+    <link rel="stylesheet" href="html-stage-3.css">
+</head>
+
+<body class="html-chapter html-stage-3">
+
+    <div class="html-atmosphere"></div>
+
+    <!-- NAVIGATION -->
+
+    <nav class="html-nav">
+        <a href="html.html" class="html-back">← HTML COURSE</a>
+        <span class="html-nav-label">CHAPTER 001 / STAGE 03</span>
+    </nav>
+
+
+    <main>
+
+        <!-- HERO -->
+
+        <header class="html-stage-hero">
+
+            <div class="stage-number">CHAPTER 001 / STAGE 03</div>
+
+            <h1>
+                Professional<br>
+                <span>Structure.</span>
+            </h1>
+
+            <p>
+                You're now moving beyond individual HTML elements.
+                Learn how to add information, collect user input,
+                structure complete webpages and bring everything
+                together in a final project.
+            </p>
+
+            <a href="html.html" class="stage-back-link">
+                ← Back to all 12 HTML lessons
+            </a>
+
+        </header>
+
+
+        <!-- LESSON NAVIGATION -->
+
+        <section class="stage-lesson-nav">
+
+            <a href="#lesson-nine">
+                <span>LESSON 09</span>
+                <strong>Attributes</strong>
+            </a>
+
+            <a href="#lesson-ten">
+                <span>LESSON 10</span>
+                <strong>Forms and Inputs</strong>
+            </a>
+
+            <a href="#lesson-eleven">
+                <span>LESSON 11</span>
+                <strong>Semantic HTML</strong>
+            </a>
+
+            <a href="#lesson-twelve">
+                <span>LESSON 12</span>
+                <strong>Complete HTML Project</strong>
+            </a>
+
+        </section>
+
+
+        <!-- LESSON 09 -->
+
+        <section class="html-lesson stage-lesson" id="lesson-nine">
+
+            <div class="html-lesson-top">
+                <span>LESSON 09 / STAGE 03</span>
+                <span>ELEMENT DETAILS</span>
+            </div>
+
+            <h2>Attributes</h2>
+
+            <p class="html-lesson-intro">
+                HTML elements describe the content of a webpage.
+                Attributes give those elements additional information
+                and help control how they work.
+            </p>
+
+            <div class="html-content-block">
+
+                <h3>What are attributes?</h3>
+
+                <p>
+                    An attribute provides extra information about
+                    an HTML element. It is written inside the
+                    opening tag of that element.
+                </p>
+
+                <p>
+                    Most attributes use a name and a value.
+                    The name tells the browser what information
+                    is being provided, while the value specifies it.
+                </p>
+
+            </div>
+
+            <div class="stage-example">
+
+                <span class="stage-panel-label">ANATOMY OF AN ATTRIBUTE</span>
+
+                <pre><code>&lt;a href="https://example.com"&gt;
+    Visit Example
+&lt;/a&gt;</code></pre>
+
+                <p>
+                    <strong>href</strong> is the attribute name.
+                    <strong>"https://example.com"</strong> is its value.
+                </p>
+
+            </div>
+
+            <div class="html-content-block">
+
+                <h3>Common HTML attributes</h3>
+
+                <p>
+                    Different elements use different attributes.
+                    Here are some you'll encounter frequently.
+                </p>
+
+                <ul class="html-learning-list">
+                    <li><code>href</code> — specifies the destination of a link.</li>
+                    <li><code>src</code> — specifies the location of an image or media file.</li>
+                    <li><code>alt</code> — provides alternative text for an image.</li>
+                    <li><code>id</code> — gives an element a unique identifier within a page.</li>
+                    <li><code>class</code> — groups elements under a shared name.</li>
+                    <li><code>title</code> — provides additional advisory information.</li>
+                    <li><code>style</code> — applies inline CSS.</li>
+                </ul>
+
+            </div>
+
+            <div class="stage-example">
+
+                <span class="stage-panel-label">ATTRIBUTES IN ACTION</span>
+
+                <pre><code>&lt;h1 id="main-title"&gt;
+    My Website
+&lt;/h1&gt;
+
+&lt;p class="description"&gt;
+    Welcome to my website.
+&lt;/p&gt;
+
+&lt;img
+    src="photo.jpg"
+    alt="A landscape"
+    width="300"
+&gt;
+
+&lt;a href="about.html" title="Learn about me"&gt;
+    About Me
+&lt;/a&gt;</code></pre>
+
+            </div>
+
+            <div class="html-content-block">
+
+                <h3>Understanding id and class</h3>
+
+                <p>
+                    Both <code>id</code> and <code>class</code>
+                    help identify elements, but they serve different
+                    purposes.
+                </p>
+
+                <p>
+                    An <code>id</code> should uniquely identify one
+                    element on a page. A <code>class</code> can be
+                    shared by multiple elements.
+                </p>
+
+            </div>
+
+            <div class="stage-example">
+
+                <span class="stage-panel-label">ID VS CLASS</span>
+
+                <pre><code>&lt;h1 id="page-title"&gt;My Website&lt;/h1&gt;
+
+&lt;p class="highlight"&gt;First message&lt;/p&gt;
+
+&lt;p class="highlight"&gt;Second message&lt;/p&gt;</code></pre>
+
+            </div>
+
+            <div class="html-content-block">
+
+                <h3>Boolean attributes</h3>
+
+                <p>
+                    Some attributes do not need a separate value.
+                    Their presence alone means the feature is enabled.
+                    These are called boolean attributes.
+                </p>
+
+                <p>
+                    For example, the <code>disabled</code> attribute
+                    prevents a form control from being used.
+                </p>
+
+            </div>
+
+            <div class="stage-example">
+
+                <span class="stage-panel-label">BOOLEAN ATTRIBUTE</span>
+
+                <pre><code>&lt;button disabled&gt;
+    Unavailable
+&lt;/button&gt;
+
+&lt;input type="text" required&gt;
+
+&lt;video controls&gt;&lt;/video&gt;</code></pre>
+
+            </div>
+
+            <div class="stage-note">
+                <strong>Remember:</strong> Attributes belong inside
+                an element's opening tag. They provide extra information
+                or change how that element behaves.
+            </div>
+
+            <div class="html-experiment-heading">
+                <span>EXPERIMENT 09</span>
+                <h3>Give elements extra information.</h3>
+                <p>
+                    Change the attributes, add an ID, create classes
+                    and experiment with different values.
+                </p>
+            </div>
+
+            <div class="stage-playground">
+
+                <div>
+                    <span class="stage-panel-label">HTML EDITOR</span>
+
+                    <textarea id="stage3-editor-9" spellcheck="false"><h1 id="main-title">
+    My Website
+</h1>
+
+<p class="description">
+    Welcome to my website.
+</p>
+
+<a href="https://example.com"
+   target="_blank"
+   rel="noopener noreferrer">
+    Visit Example
+</a>
+
+<br><br>
+
+<button disabled>
+    Unavailable
+</button></textarea>
+                </div>
+
+                <div>
+                    <span class="stage-panel-label">BROWSER PREVIEW</span>
+
+                    <iframe
+                        id="stage3-preview-9"
+                        title="Lesson 9 live preview"
+                        sandbox="allow-scripts"
+                    ></iframe>
+                </div>
+
+            </div>
+
+            <div class="stage-task">
+                <h3>CHALLENGE 09 / Attribute exploration</h3>
+
+                <ul>
+                    <li>Create a heading with a unique ID.</li>
+                    <li>Add two paragraphs sharing the same class.</li>
+                    <li>Create an image with src and alt attributes.</li>
+                    <li>Add a link with an href destination.</li>
+                    <li>Create a disabled button.</li>
+                </ul>
+            </div>
+
+        </section>
+
+
+        <!-- LESSON 10 -->
+
+        <section class="html-lesson stage-lesson" id="lesson-ten">
+
+            <div class="html-lesson-top">
+                <span>LESSON 10 / STAGE 03</span>
+                <span>USER INTERACTION</span>
+            </div>
+
+            <h2>Forms and Inputs</h2>
+
+            <p class="html-lesson-intro">
+                Websites don't just display information.
+                They can also collect information from their visitors.
+                This is where HTML forms come in.
+            </p>
+
+            <div class="html-content-block">
+
+                <h3>What is an HTML form?</h3>
+
+                <p>
+                    An HTML form is a section of a webpage that
+                    allows users to enter information and submit it.
+                </p>
+
+                <p>
+                    Forms are used for contact pages, registration,
+                    feedback, searches and many other features.
+                </p>
+
+                <p>
+                    The main container is the
+                    <code>&lt;form&gt;</code> element.
+                </p>
+
+            </div>
+
+            <div class="stage-example">
+
+                <span class="stage-panel-label">A BASIC FORM</span>
+
+                <pre><code>&lt;form&gt;
+
+    &lt;label for="username"&gt;
+        Your Name
+    &lt;/label&gt;
+
+    &lt;input
+        type="text"
+        id="username"
+        name="username"
+    &gt;
+
+    &lt;button type="submit"&gt;
+        Submit
+    &lt;/button&gt;
+
+&lt;/form&gt;</code></pre>
+
+            </div>
+
+            <div class="html-content-block">
+
+                <h3>Understanding form elements</h3>
+
+                <ul class="html-learning-list">
+                    <li><code>&lt;form&gt;</code> — contains the form.</li>
+                    <li><code>&lt;label&gt;</code> — describes an input.</li>
+                    <li><code>&lt;input&gt;</code> — creates an input control.</li>
+                    <li><code>&lt;textarea&gt;</code> — allows longer text.</li>
+                    <li><code>&lt;select&gt;</code> — creates a dropdown.</li>
+                    <li><code>&lt;option&gt;</code> — defines a dropdown choice.</li>
+                    <li><code>&lt;button&gt;</code> — creates a button.</li>
+                </ul>
+
+            </div>
+
+            <div class="html-content-block">
+
+                <h3>Different input types</h3>
+
+                <p>
+                    The <code>type</code> attribute changes the kind
+                    of input control displayed by the browser.
+                </p>
+
+                <ul class="html-learning-list">
+                    <li><code>text</code> — ordinary text.</li>
+                    <li><code>email</code> — an email address.</li>
+                    <li><code>password</code> — password input.</li>
+                    <li><code>number</code> — numerical input.</li>
+                    <li><code>date</code> — date selection.</li>
+                    <li><code>checkbox</code> — a selectable checkbox.</li>
+                    <li><code>radio</code> — one choice from a group.</li>
+                </ul>
+
+            </div>
+
+            <div class="stage-example">
+
+                <span class="stage-panel-label">INPUT TYPE EXAMPLES</span>
+
+                <pre><code>&lt;input type="text"&gt;
+
+&lt;input type="email"&gt;
+
+&lt;input type="password"&gt;
+
+&lt;input type="number"&gt;
+
+&lt;input type="date"&gt;
+
+&lt;input type="checkbox"&gt;
+
+&lt;input type="radio"&gt;</code></pre>
+
+            </div>
+
+            <div class="html-content-block">
+
+                <h3>Labels and names</h3>
+
+                <p>
+                    Labels help users understand what information
+                    an input expects.
+                </p>
+
+                <p>
+                    The label's <code>for</code> attribute should
+                    match the input's <code>id</code>. This connects
+                    the label to the input.
+                </p>
+
+                <p>
+                    The input's <code>name</code> attribute identifies
+                    the information when a form is submitted.
+                </p>
+
+            </div>
+
+            <div class="stage-example">
+
+                <span class="stage-panel-label">CONNECTED LABEL AND INPUT</span>
+
+                <pre><code>&lt;label for="email"&gt;
+    Email Address
+&lt;/label&gt;
+
+&lt;input
+    type="email"
+    id="email"
+    name="email"
+    required
+&gt;</code></pre>
+
+            </div>
+
+            <div class="html-content-block">
+
+                <h3>Making forms more useful</h3>
+
+                <p>
+                    HTML provides attributes that help users complete
+                    forms correctly.
+                </p>
+
+                <ul class="html-learning-list">
+                    <li><code>required</code> — makes an input mandatory.</li>
+                    <li><code>placeholder</code> — shows a hint inside an input.</li>
+                    <li><code>min</code> and <code>max</code> — set limits where supported.</li>
+                    <li><code>maxlength</code> — limits the number of characters.</li>
+                </ul>
+
+                <p>
+                    Browser validation can catch some common mistakes,
+                    but real applications still need server-side validation.
+                </p>
+
+            </div>
+
+            <div class="stage-note">
+                <strong>Remember:</strong> HTML forms create the
+                interface for collecting information. Sending and
+                storing that information usually requires additional
+                programming or a server.
+            </div>
+
+            <div class="html-experiment-heading">
+                <span>EXPERIMENT 10</span>
+                <h3>Build a contact form.</h3>
+                <p>
+                    Try changing the labels, adding inputs and creating
+                    your own dropdown options.
+                </p>
+            </div>
+
+            <div class="stage-playground">
+
+                <div>
+                    <span class="stage-panel-label">HTML EDITOR</span>
+
+                    <textarea id="stage3-editor-10" spellcheck="false"><h1>Contact Me</h1>
+
+<form>
+    <label for="name">Your Name:</label>
+    <input
+        type="text"
+        id="name"
+        name="name"
+        placeholder="Enter your name"
+        required
+    >
+
+    <br><br>
+
+    <label for="email">Email:</label>
+    <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="Enter your email"
+        required
+    >
+
+    <br><br>
+
+    <label for="message">Message:</label>
+    <textarea
+        id="message"
+        name="message"
+        placeholder="Write something..."
+    ></textarea>
+
+    <br><br>
+
+    <button type="submit">Send Message</button>
+</form></textarea>
+                </div>
+
+                <div>
+                    <span class="stage-panel-label">BROWSER PREVIEW</span>
+
+                    <iframe
+                        id="stage3-preview-10"
+                        title="Lesson 10 live preview"
+                        sandbox="allow-scripts"
+                    ></iframe>
+                </div>
+
+            </div>
+
+            <div class="stage-task">
+                <h3>CHALLENGE 10 / Build a registration form</h3>
+
+                <ul>
+                    <li>Add a name input.</li>
+                    <li>Add an email input.</li>
+                    <li>Add a dropdown with three choices.</li>
+                    <li>Add a checkbox.</li>
+                    <li>Add a message textarea.</li>
+                    <li>Add a submit button.</li>
+                </ul>
+            </div>
+
+        </section>
+
+
+        <!-- LESSON 11 -->
+
+        <section class="html-lesson stage-lesson" id="lesson-eleven">
+
+            <div class="html-lesson-top">
+                <span>LESSON 11 / STAGE 03</span>
+                <span>MEANINGFUL STRUCTURE</span>
+            </div>
+
+            <h2>Semantic HTML</h2>
+
+            <p class="html-lesson-intro">
+                Good HTML isn't only about making a webpage work.
+                It's also about making its structure meaningful
+                and understandable.
+            </p>
+
+            <div class="html-content-block">
+
+                <h3>What does semantic mean?</h3>
+
+                <p>
+                    The word semantic relates to meaning.
+                    Semantic HTML uses elements that describe
+                    the purpose of the content they contain.
+                </p>
+
+                <p>
+                    For example, a navigation area should use
+                    <code>&lt;nav&gt;</code>, while the main content
+                    of a page should use <code>&lt;main&gt;</code>.
+                </p>
+
+                <p>
+                    This makes the structure easier for developers,
+                    browsers and assistive technologies to understand.
+                </p>
+
+            </div>
+
+            <div class="html-content-block">
+
+                <h3>Semantic vs non-semantic elements</h3>
+
+                <p>
+                    A <code>&lt;div&gt;</code> is a generic container.
+                    It does not tell us what its content represents.
+                </p>
+
+                <p>
+                    A <code>&lt;header&gt;</code>, on the other hand,
+                    tells us that the content is an introductory
+                    section for a page or another part of a page.
+                </p>
+
+                <p>
+                    Both have their uses. The goal is to choose
+                    elements that describe the content accurately.
+                </p>
+
+            </div>
+
+            <div class="stage-example">
+
+                <span class="stage-panel-label">NON-SEMANTIC STRUCTURE</span>
+
+                <pre><code>&lt;div&gt;
+    &lt;div&gt;My Website&lt;/div&gt;
+
+    &lt;div&gt;
+        Home | About | Contact
+    &lt;/div&gt;
+
+    &lt;div&gt;
+        Main content goes here.
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+            </div>
+
+            <div class="stage-example">
+
+                <span class="stage-panel-label">SEMANTIC STRUCTURE</span>
+
+                <pre><code>&lt;header&gt;
+    &lt;h1&gt;My Website&lt;/h1&gt;
+&lt;/header&gt;
+
+&lt;nav&gt;
+    Home | About | Contact
+&lt;/nav&gt;
+
+&lt;main&gt;
+    Main content goes here.
+&lt;/main&gt;</code></pre>
+
+            </div>
+
+            <div class="html-content-block">
+
+                <h3>Important semantic elements</h3>
+
+                <ul class="html-learning-list">
+                    <li><code>&lt;header&gt;</code> — introductory content.</li>
+                    <li><code>&lt;nav&gt;</code> — a navigation area.</li>
+                    <li><code>&lt;main&gt;</code> — the main content of the document.</li>
+                    <li><code>&lt;section&gt;</code> — a thematic section of content.</li>
+                    <li><code>&lt;article&gt;</code> — self-contained content that can stand on its own.</li>
+                    <li><code>&lt;aside&gt;</code> — related content separate from the main flow.</li>
+                    <li><code>&lt;footer&gt;</code> — footer information.</li>
+                </ul>
+
+            </div>
+
+            <div class="html-content-block">
+
+                <h3>Understanding the difference</h3>
+
+                <p>
+                    A <code>&lt;section&gt;</code> groups content
+                    around a theme, usually with a heading.
+                </p>
+
+                <p>
+                    An <code>&lt;article&gt;</code> represents
+                    self-contained content such as a news story,
+                    blog post or independent article.
+                </p>
+
+                <p>
+                    An <code>&lt;aside&gt;</code> contains related
+                    information, such as a sidebar or additional note.
+                </p>
+
+            </div>
+
+            <div class="stage-example">
+
+                <span class="stage-panel-label">A COMPLETE SEMANTIC LAYOUT</span>
+
+                <pre><code>&lt;header&gt;
+    &lt;h1&gt;My Blog&lt;/h1&gt;
+&lt;/header&gt;
+
+&lt;nav&gt;
+    &lt;a href="#home"&gt;Home&lt;/a&gt;
+    &lt;a href="#articles"&gt;Articles&lt;/a&gt;
+&lt;/nav&gt;
+
+&lt;main&gt;
+
+    &lt;section id="articles"&gt;
+
+        &lt;article&gt;
+            &lt;h2&gt;My First Article&lt;/h2&gt;
+            &lt;p&gt;This is my article.&lt;/p&gt;
+        &lt;/article&gt;
+
+    &lt;/section&gt;
+
+    &lt;aside&gt;
+        Related information.
+    &lt;/aside&gt;
+
+&lt;/main&gt;
+
+&lt;footer&gt;
+    &lt;p&gt;Copyright information&lt;/p&gt;
+&lt;/footer&gt;</code></pre>
+
+            </div>
+
+            <div class="stage-note">
+                <strong>Remember:</strong> Semantic HTML communicates
+                the purpose of content. Don't choose elements only
+                because of how they look.
+            </div>
+
+            <div class="html-experiment-heading">
+                <span>EXPERIMENT 11</span>
+                <h3>Structure a real webpage.</h3>
+                <p>
+                    Try changing the content inside each semantic
+                    element and experiment with the layout.
+                </p>
+            </div>
+
+            <div class="stage-playground">
+
+                <div>
+                    <span class="stage-panel-label">HTML EDITOR</span>
+
+                    <textarea id="stage3-editor-11" spellcheck="false"><header>
+    <h1>My Blog</h1>
+    <p>Thoughts, ideas and stories.</p>
+</header>
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#articles">Articles</a>
+</nav>
+
+<main>
+    <section id="articles">
+        <h2>Latest Articles</h2>
+
+        <article>
+            <h3>Learning HTML</h3>
+            <p>HTML helps us structure webpages.</p>
+        </article>
+    </section>
+
+    <aside>
+        <h3>About Me</h3>
+        <p>I enjoy learning web design.</p>
+    </aside>
+</main>
+
+<footer>
+    <p>My Blog</p>
+</footer></textarea>
+                </div>
+
+                <div>
+                    <span class="stage-panel-label">BROWSER PREVIEW</span>
+
+                    <iframe
+                        id="stage3-preview-11"
+                        title="Lesson 11 live preview"
+                        sandbox="allow-scripts"
+                    ></iframe>
+                </div>
+
+            </div>
+
+            <div class="stage-task">
+                <h3>CHALLENGE 11 / Build a semantic blog</h3>
+
+                <ul>
+                    <li>Create a header with a website title.</li>
+                    <li>Add a navigation area.</li>
+                    <li>Use main for your main content.</li>
+                    <li>Create a section containing an article.</li>
+                    <li>Add an aside with related information.</li>
+                    <li>Finish with a footer.</li>
+                </ul>
+            </div>
+
+        </section>
+
+
+        <!-- LESSON 12 -->
+
+        <section class="html-lesson stage-lesson" id="lesson-twelve">
+
+            <div class="html-lesson-top">
+                <span>LESSON 12 / STAGE 03</span>
+                <span>THE FINAL BUILD</span>
+            </div>
+
+            <h2>Complete HTML Project</h2>
+
+            <p class="html-lesson-intro">
+                Twelve lessons. Three stages. One final challenge.
+                It's time to combine everything you've learned
+                and build a complete webpage.
+            </p>
+
+            <div class="html-content-block">
+
+                <h3>Your final project</h3>
+
+                <p>
+                    You're going to build a personal portfolio page.
+                    It will introduce you, display your interests,
+                    provide navigation, and include a contact form.
+                </p>
+
+                <p>
+                    This project brings together the HTML concepts
+                    from all three stages.
+                </p>
+
+            </div>
+
+            <div class="html-content-block">
+
+                <h3>What your webpage will contain</h3>
+
+                <ul class="html-learning-list">
+                    <li>A proper HTML document structure.</li>
+                    <li>A website title and metadata.</li>
+                    <li>Semantic header, navigation, main and footer.</li>
+                    <li>Headings and paragraphs.</li>
+                    <li>Text formatting.</li>
+                    <li>Links and navigation.</li>
+                    <li>An image with alternative text.</li>
+                    <li>Lists describing your interests.</li>
+                    <li>A table showing your skills.</li>
+                    <li>A contact form.</li>
+                </ul>
+
+            </div>
+
+            <div class="stage-example">
+
+                <span class="stage-panel-label">PROJECT STRUCTURE</span>
+
+                <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport"
+          content="width=device-width, initial-scale=1.0"&gt;
+
+    &lt;title&gt;My Portfolio&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;header&gt;
+        Website introduction
+    &lt;/header&gt;
+
+    &lt;nav&gt;
+        Website navigation
+    &lt;/nav&gt;
+
+    &lt;main&gt;
+        Main portfolio content
+    &lt;/main&gt;
+
+    &lt;footer&gt;
+        Contact and footer information
+    &lt;/footer&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
+
+            </div>
+
+            <div class="html-content-block">
+
+                <h3>Before you begin</h3>
+
+                <p>
+                    Remember that HTML is responsible for the structure
+                    and meaning of your content. The visual design
+                    will be handled by CSS in the next chapter.
+                </p>
+
+                <p>
+                    Focus on making your HTML clear, organised
+                    and meaningful. You don't need to make it
+                    visually impressive just yet.
+                </p>
+
+            </div>
+
+            <div class="html-experiment-heading">
+                <span>FINAL EXPERIMENT / 012</span>
+                <h3>Build your portfolio.</h3>
+                <p>
+                    This is your final HTML playground.
+                    Replace the example with your own content
+                    and build a complete webpage.
+                </p>
+            </div>
+
+            <div class="stage-playground">
+
+                <div>
+                    <span class="stage-panel-label">HTML EDITOR</span>
+
+                    <textarea id="stage3-editor-12" spellcheck="false"><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Portfolio</title>
+</head>
+
+<body>
+
+<header>
+    <h1>My Portfolio</h1>
+    <p>Welcome to my personal webpage.</p>
+</header>
+
+<nav>
+    <a href="#about">About</a>
+    <a href="#interests">Interests</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<main>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>
+            Hello! I am learning HTML and web design.
+        </p>
+    </section>
+
+    <section id="interests">
+        <h2>My Interests</h2>
+
+        <ul>
+            <li>Football</li>
+            <li>Music</li>
+            <li>Technology</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>My Skills</h2>
+
+        <table border="1">
+            <tr>
+                <th>Skill</th>
+                <th>Level</th>
+            </tr>
+            <tr>
+                <td>HTML</td>
+                <td>Learning</td>
+            </tr>
+            <tr>
+                <td>Creativity</td>
+                <td>Growing</td>
+            </tr>
+        </table>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name">
+
+            <br><br>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message"></textarea>
+
+            <br><br>
+
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+</main>
+
+<footer>
+    <p>My Portfolio — Built with HTML.</p>
+</footer>
+
+</body>
+</html></textarea>
+                </div>
+
+                <div>
+                    <span class="stage-panel-label">BROWSER PREVIEW</span>
+
+                    <iframe
+                        id="stage3-preview-12"
+                        title="Final HTML project preview"
+                        sandbox="allow-scripts"
+                    ></iframe>
+                </div>
+
+            </div>
+
+            <div class="stage-task">
+
+                <h3>FINAL CHALLENGE / Your own portfolio</h3>
+
+                <p>
+                    The example is only a starting point.
+                    Your mission is to customise it.
+                </p>
+
+                <ul>
+                    <li>Give your portfolio an original title.</li>
+                    <li>Write your own introduction.</li>
+                    <li>Add meaningful navigation links.</li>
+                    <li>Include an image with alt text.</li>
+                    <li>Use at least three semantic elements.</li>
+                    <li>Create an interests list.</li>
+                    <li>Build a small skills table.</li>
+                    <li>Add a contact form.</li>
+                </ul>
+
+            </div>
+
+        </section>
+
+
+        <!-- COURSE COMPLETION -->
+
+        <section class="html-challenge">
+
+            <div class="html-challenge-top">
+                <span>CHAPTER 001 / COMPLETE</span>
+                <span>LESSONS 01–12</span>
+            </div>
+
+            <h2>
+                You've learned<br>
+                the language of the web.
+            </h2>
+
+            <p>
+                You've explored the foundations, built webpages,
+                worked with forms and learned how to structure
+                meaningful content.
+            </p>
+
+            <div class="html-lesson-note">
+                <span>CHAPTER COMPLETE</span>
+                <p>
+                    HTML is the foundation. But a great webpage
+                    needs more than structure. It's time to learn
+                    how to make it look and feel extraordinary.
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- FOOTER -->
+
+        <footer class="stage-footer">
+
+            <span class="stage-number">
+                THE DIGITAL LAB / CHAPTER 001
+            </span>
+
+            <h2>
+                HTML complete.<br>
+                CSS awaits.
+            </h2>
+
+            <p>
+                The next chapter begins with visual design.
+            </p>
+
+            <a href="html.html">
+                ← BACK TO HTML COURSE
+            </a>
+
+            <br>
+
+            <a href="foundations.html">
+                BACK TO FOUNDATIONS →
+            </a>
+
+            <br>
+
+            <a href="index.html">
+                RETURN TO THE DIGITAL LAB ↑
+            </a>
+
+        </footer>
+
+    </main>
+
+
+    <!-- STAGE 03 PLAYGROUND SCRIPT -->
+
+    <script>
+        const stage3Playgrounds = [
+            {
+                editor: "stage3-editor-9",
+                preview: "stage3-preview-9"
+            },
+            {
+                editor: "stage3-editor-10",
+                preview: "stage3-preview-10"
+            },
+            {
+                editor: "stage3-editor-11",
+                preview: "stage3-preview-11"
+            },
+            {
+                editor: "stage3-editor-12",
+                preview: "stage3-preview-12"
+            }
+        ];
+
+        stage3Playgrounds.forEach((playground) => {
+
+            const editor = document.getElementById(playground.editor);
+            const preview = document.getElementById(playground.preview);
+
+            if (!editor || !preview) return;
+
+            function updatePreview() {
+
+                preview.srcdoc = `
+                    <!DOCTYPE html>
+                    <html>
+                    <head>
+                        <meta charset="UTF-8">
+
+                        <style>
+                            body {
+                                font-family: Arial, sans-serif;
+                                padding: 20px;
+                                color: #222;
+                                line-height: 1.6;
+                            }
+
+                            input,
+                            textarea,
+                            select,
+                            button {
+                                margin: 5px 0;
+                                padding: 8px;
+                                max-width: 100%;
+                            }
+
+                            img {
+                                max-width: 100%;
+                            }
+
+                            table {
+                                border-collapse: collapse;
+                                width: 100%;
+                                margin-top: 15px;
+                            }
+
+                            th, td {
+                                padding: 10px;
+                                border: 1px solid #aaa;
+                                text-align: left;
+                            }
+
+                            th {
+                                background: #eeeeee;
+                            }
+
+                            nav a {
+                                margin-right: 12px;
+                            }
+
+                            section {
+                                margin: 18px 0;
+                            }
+
+                            header,
+                            footer {
+                                padding: 10px 0;
+                            }
+                        </style>
+                    </head>
+
+                    <body>
+                        ${editor.value}
+                    </body>
+                    </html>
+                `;
+
+            }
+
+            editor.addEventListener("input", updatePreview);
+
+            updatePreview();
+
+        });
+    </script>
+
+</body>
+</html>

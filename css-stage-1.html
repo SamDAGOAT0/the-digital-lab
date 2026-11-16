@@ -1,0 +1,592 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Stage 01 — The Foundations | THE CASCADE</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css.css">
+    <link rel="stylesheet" href="css-stage-1.css">
+</head>
+
+<body class="css-chapter css-stage-1">
+
+    <!-- ATMOSPHERE -->
+    <div class="css-atmosphere"></div>
+
+    <!-- NAVIGATION -->
+    <nav class="css-nav">
+        <a href="css.html" class="css-brand">
+            THE DIGITAL LAB <span>/ CSS</span>
+        </a>
+
+        <div class="css-nav-links">
+            <a href="css.html">Chapter Overview</a>
+            <a href="html.html">Previous Chapter</a>
+        </div>
+    </nav>
+
+
+    <!-- STAGE HERO -->
+    <header class="stage-hero">
+
+        <div class="stage-eyebrow">
+            CHAPTER 002 / STAGE 01
+        </div>
+
+        <h1>
+            THE <span>FOUNDATIONS.</span>
+        </h1>
+
+        <p class="stage-description">
+            Before creating beautiful interfaces, you need to understand
+            the language that makes them possible. Learn the rules,
+            understand the structure, and take control of the cascade.
+        </p>
+
+        <div class="stage-meta">
+            <span>04 LESSONS</span>
+            <span>01 STAGE</span>
+            <span>BEGINNER LEVEL</span>
+        </div>
+
+    </header>
+
+
+    <!-- LESSON NAVIGATION -->
+    <section class="stage-navigation">
+
+        <div class="section-heading">
+            <span>01 — YOUR LEARNING PATH</span>
+            <h2>Four steps. One foundation.</h2>
+            <p>Choose a lesson or work through the stage from beginning to end.</p>
+        </div>
+
+        <div class="lesson-grid">
+
+            <a href="#lesson-01" class="lesson-card">
+                <span class="lesson-number">01</span>
+                <div>
+                    <h3>Introduction to CSS</h3>
+                    <p>Understand what CSS is and how it connects to HTML.</p>
+                </div>
+                <span class="lesson-arrow">↗</span>
+            </a>
+
+            <a href="#lesson-02" class="lesson-card">
+                <span class="lesson-number">02</span>
+                <div>
+                    <h3>Selectors & Specificity</h3>
+                    <p>Learn how CSS identifies elements and decides which rules apply.</p>
+                </div>
+                <span class="lesson-arrow">↗</span>
+            </a>
+
+            <a href="#lesson-03" class="lesson-card">
+                <span class="lesson-number">03</span>
+                <div>
+                    <h3>Colors, Units & Typography</h3>
+                    <p>Control color, sizing, text, and visual identity.</p>
+                </div>
+                <span class="lesson-arrow">↗</span>
+            </a>
+
+            <a href="#lesson-04" class="lesson-card">
+                <span class="lesson-number">04</span>
+                <div>
+                    <h3>The Box Model</h3>
+                    <p>Understand the invisible structure behind every element.</p>
+                </div>
+                <span class="lesson-arrow">↗</span>
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- LESSON 01 -->
+    <section class="lesson-section" id="lesson-01">
+
+        <div class="lesson-heading">
+            <span>LESSON 01 / THE BEGINNING</span>
+            <h2>Introduction to CSS</h2>
+            <p>What is CSS, why does it exist, and how does it work with HTML?</p>
+        </div>
+
+        <div class="lesson-content">
+
+            <h3>01. What exactly is CSS?</h3>
+
+            <p>
+                CSS stands for <strong>Cascading Style Sheets</strong>.
+                It is the language used to control how HTML elements
+                look and how they are arranged on a webpage.
+            </p>
+
+            <p>
+                HTML creates the structure of a webpage. CSS transforms
+                that structure into a visual experience.
+            </p>
+
+            <div class="concept-panel">
+                <div class="concept-item">
+                    <span>HTML</span>
+                    <h4>The Structure</h4>
+                    <p>Headings, paragraphs, images, links and buttons.</p>
+                </div>
+
+                <div class="concept-item">
+                    <span>CSS</span>
+                    <h4>The Appearance</h4>
+                    <p>Colors, spacing, layouts, typography and animations.</p>
+                </div>
+            </div>
+
+
+            <h3>02. How does CSS work?</h3>
+
+            <p>
+                CSS works by selecting HTML elements and applying
+                visual rules to them.
+            </p>
+
+            <p>A basic CSS rule looks like this:</p>
+
+            <pre class="code-panel"><code>h1 {
+    color: lavender;
+    font-size: 36px;
+}</code></pre>
+
+            <p>Let's break it down:</p>
+
+            <ul class="lesson-list">
+                <li><strong>h1</strong> — The selector. It identifies the element.</li>
+                <li><strong>color</strong> — The property being changed.</li>
+                <li><strong>lavender</strong> — The value assigned to that property.</li>
+                <li><strong>font-size</strong> — Another property.</li>
+                <li><strong>36px</strong> — Its assigned value.</li>
+            </ul>
+
+
+            <h3>03. Three ways to add CSS</h3>
+
+            <p>There are three main ways to apply CSS to HTML.</p>
+
+            <div class="method-card">
+                <h4>01 — Inline CSS</h4>
+                <p>CSS is written directly inside an HTML element.</p>
+
+                <pre class="code-panel"><code>&lt;h1 style="color: lavender;"&gt;
+    Hello World
+&lt;/h1&gt;</code></pre>
+
+                <span class="method-note">Useful for quick experiments, but difficult to maintain across larger projects.</span>
+            </div>
+
+            <div class="method-card">
+                <h4>02 — Internal CSS</h4>
+                <p>CSS is written inside a style element in the HTML document.</p>
+
+                <pre class="code-panel"><code>&lt;style&gt;
+    h1 {
+        color: lavender;
+    }
+&lt;/style&gt;</code></pre>
+
+                <span class="method-note">Useful when styling a single standalone HTML document.</span>
+            </div>
+
+            <div class="method-card">
+                <h4>03 — External CSS</h4>
+                <p>CSS is stored in a separate .css file and connected to HTML.</p>
+
+                <pre class="code-panel"><code>&lt;link rel="stylesheet" href="style.css"&gt;</code></pre>
+
+                <span class="method-note">The recommended approach for most multi-page projects.</span>
+            </div>
+
+
+            <div class="lesson-takeaway">
+                <span>THE KEY IDEA</span>
+                <p>HTML builds the page. CSS gives it its visual identity.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- LESSON 02 -->
+    <section class="lesson-section" id="lesson-02">
+
+        <div class="lesson-heading">
+            <span>LESSON 02 / TARGETING ELEMENTS</span>
+            <h2>Selectors & Specificity</h2>
+            <p>Learn how to target elements and understand which CSS rule wins.</p>
+        </div>
+
+        <div class="lesson-content">
+
+            <h3>01. What are selectors?</h3>
+
+            <p>
+                A selector tells CSS which HTML element or elements
+                should receive a particular set of styles.
+            </p>
+
+            <h3>02. The essential selectors</h3>
+
+            <div class="selector-card">
+                <h4>Element Selector</h4>
+                <p>Targets every element of a particular HTML type.</p>
+                <pre class="code-panel"><code>p {
+    color: white;
+}</code></pre>
+                <span class="method-note">Targets all paragraph elements.</span>
+            </div>
+
+            <div class="selector-card">
+                <h4>Class Selector</h4>
+                <p>Targets elements that share a class name.</p>
+                <pre class="code-panel"><code>.card {
+    background: #191919;
+}</code></pre>
+                <span class="method-note">A class selector begins with a dot.</span>
+            </div>
+
+            <div class="selector-card">
+                <h4>ID Selector</h4>
+                <p>Targets an element using its unique ID.</p>
+                <pre class="code-panel"><code>#main-title {
+    font-size: 40px;
+}</code></pre>
+                <span class="method-note">An ID selector begins with a hash.</span>
+            </div>
+
+            <div class="selector-card">
+                <h4>Universal Selector</h4>
+                <p>Targets all elements on the page.</p>
+                <pre class="code-panel"><code>* {
+    box-sizing: border-box;
+}</code></pre>
+            </div>
+
+
+            <h3>03. Understanding specificity</h3>
+
+            <p>
+                Sometimes multiple CSS rules target the same element.
+                Specificity helps the browser decide which declaration
+                takes priority.
+            </p>
+
+            <pre class="code-panel"><code>p {
+    color: white;
+}
+
+.description {
+    color: lavender;
+}
+
+#intro {
+    color: cyan;
+}</code></pre>
+
+            <p>
+                If a paragraph has both the class "description"
+                and the ID "intro", the ID selector wins among
+                these three rules.
+            </p>
+
+            <div class="specificity-panel">
+                <div>
+                    <span>ELEMENT</span>
+                    <strong>Lowest</strong>
+                    <p>p</p>
+                </div>
+                <div>
+                    <span>CLASS</span>
+                    <strong>Higher</strong>
+                    <p>.description</p>
+                </div>
+                <div>
+                    <span>ID</span>
+                    <strong>Highest</strong>
+                    <p>#intro</p>
+                </div>
+            </div>
+
+            <p>
+                This is a simplified comparison. CSS specificity uses
+                a scoring system, and source order, inheritance,
+                importance and cascade layers can also affect the final result.
+            </p>
+
+
+            <div class="lesson-takeaway">
+                <span>THE KEY IDEA</span>
+                <p>Selectors choose the target. Specificity helps determine which rule takes priority.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- LESSON 03 -->
+    <section class="lesson-section" id="lesson-03">
+
+        <div class="lesson-heading">
+            <span>LESSON 03 / VISUAL LANGUAGE</span>
+            <h2>Colors, Units & Typography</h2>
+            <p>Build visual identity through color, measurements and text.</p>
+        </div>
+
+        <div class="lesson-content">
+
+            <h3>01. Working with colors</h3>
+
+            <p>
+                CSS provides several ways to define colors.
+                The most common formats include named colors,
+                hexadecimal values, RGB and HSL.
+            </p>
+
+            <pre class="code-panel"><code>h1 {
+    color: lavender;
+}
+
+.card {
+    background-color: #191919;
+}
+
+button {
+    color: rgb(255, 255, 255);
+}
+
+body {
+    background-color: hsl(260, 20%, 8%);
+}</code></pre>
+
+
+            <h3>02. Understanding CSS units</h3>
+
+            <p>
+                Units determine measurements such as width,
+                height, spacing and font size.
+            </p>
+
+            <div class="unit-card">
+                <h4>px — Pixels</h4>
+                <p>A fixed CSS length unit.</p>
+                <pre class="code-panel"><code>padding: 20px;</code></pre>
+            </div>
+
+            <div class="unit-card">
+                <h4>% — Percentage</h4>
+                <p>Usually calculated relative to a containing element.</p>
+                <pre class="code-panel"><code>width: 80%;</code></pre>
+            </div>
+
+            <div class="unit-card">
+                <h4>rem — Root em</h4>
+                <p>Relative to the root element's font size.</p>
+                <pre class="code-panel"><code>font-size: 2rem;</code></pre>
+            </div>
+
+            <div class="unit-card">
+                <h4>em — Relative unit</h4>
+                <p>Relative to the computed font size of the relevant context.</p>
+                <pre class="code-panel"><code>padding: 1.5em;</code></pre>
+            </div>
+
+            <div class="unit-card">
+                <h4>vh and vw</h4>
+                <p>Relative to the viewport's height and width.</p>
+                <pre class="code-panel"><code>min-height: 100vh;
+width: 100vw;</code></pre>
+            </div>
+
+
+            <h3>03. Typography</h3>
+
+            <p>
+                Typography controls how text appears.
+                It includes font families, sizes, weights,
+                spacing and alignment.
+            </p>
+
+            <pre class="code-panel"><code>h1 {
+    font-family: Arial, sans-serif;
+    font-size: 42px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    text-align: center;
+}
+
+p {
+    line-height: 1.7;
+}</code></pre>
+
+            <ul class="lesson-list">
+                <li><strong>font-family</strong> — Chooses the typeface.</li>
+                <li><strong>font-size</strong> — Controls text size.</li>
+                <li><strong>font-weight</strong> — Controls text thickness.</li>
+                <li><strong>letter-spacing</strong> — Adjusts space between letters.</li>
+                <li><strong>line-height</strong> — Controls the height of text lines.</li>
+                <li><strong>text-align</strong> — Controls horizontal text alignment.</li>
+            </ul>
+
+
+            <div class="lesson-takeaway">
+                <span>THE KEY IDEA</span>
+                <p>Color creates atmosphere. Units control scale. Typography communicates personality.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- LESSON 04 -->
+    <section class="lesson-section" id="lesson-04">
+
+        <div class="lesson-heading">
+            <span>LESSON 04 / ELEMENT STRUCTURE</span>
+            <h2>The Box Model</h2>
+            <p>Understand how every HTML element occupies space on a webpage.</p>
+        </div>
+
+        <div class="lesson-content">
+
+            <h3>01. Everything is a box</h3>
+
+            <p>
+                In CSS, every element is represented by a rectangular
+                box. The CSS box model describes how its dimensions
+                and surrounding space are calculated.
+            </p>
+
+            <h3>02. The four layers</h3>
+
+            <div class="box-model-visual">
+
+                <div class="box-margin">
+                    <span>MARGIN</span>
+
+                    <div class="box-border">
+                        <span>BORDER</span>
+
+                        <div class="box-padding">
+                            <span>PADDING</span>
+
+                            <div class="box-content">
+                                CONTENT
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="box-layer">
+                <h4>01 — Content</h4>
+                <p>The actual content, such as text or an image.</p>
+            </div>
+
+            <div class="box-layer">
+                <h4>02 — Padding</h4>
+                <p>Space between the content and its border.</p>
+            </div>
+
+            <div class="box-layer">
+                <h4>03 — Border</h4>
+                <p>The boundary surrounding the padding and content.</p>
+            </div>
+
+            <div class="box-layer">
+                <h4>04 — Margin</h4>
+                <p>Space outside the border, separating the element from others.</p>
+            </div>
+
+
+            <h3>03. Putting it into CSS</h3>
+
+            <pre class="code-panel"><code>.card {
+    width: 300px;
+    padding: 20px;
+    border: 2px solid lavender;
+    margin: 30px;
+}</code></pre>
+
+            <p>
+                By default, the declared width applies to the content
+                box. Padding and borders are added outside that width.
+            </p>
+
+            <h3>04. Enter box-sizing</h3>
+
+            <p>
+                The property <strong>box-sizing</strong> changes
+                how the browser calculates an element's dimensions.
+            </p>
+
+            <pre class="code-panel"><code>* {
+    box-sizing: border-box;
+}</code></pre>
+
+            <p>
+                With border-box, the declared width and height include
+                the content, padding and border. This makes layouts
+                easier to manage.
+            </p>
+
+
+            <div class="lesson-takeaway">
+                <span>THE KEY IDEA</span>
+                <p>Content, padding, border and margin work together to determine the space an element occupies.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- STAGE COMPLETION -->
+    <section class="stage-completion">
+
+        <span>STAGE 01 / COMPLETE THE FOUNDATION</span>
+
+        <h2>You've learned the rules.<br>Now learn to control them.</h2>
+
+        <p>
+            Four lessons down. Your understanding of CSS has begun.
+            Next, we'll explore how elements are positioned,
+            aligned and arranged into complete layouts.
+        </p>
+
+        <a href="css-stage-2.html" class="stage-next-button">
+            ENTER STAGE 02 ↗
+        </a>
+
+        <a href="css.html" class="stage-back-link">
+            ← BACK TO CHAPTER OVERVIEW
+        </a>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer class="css-footer">
+        <p>THE DIGITAL LAB — CHAPTER 002</p>
+        <span>LEARN. BUILD. EXPERIMENT.</span>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,608 @@
+
+/* =====================================================
+   THE DIGITAL LAB
+   CHAPTER 002 — THE CASCADE
+   COMPLETE VISUAL SYSTEM
+===================================================== */
+
+
+/* =====================================================
+   01 — DESIGN SYSTEM
+===================================================== */
+
+.css-chapter {
+    --css-bg: #0d0d13;
+    --css-panel: #15151f;
+    --css-panel-light: #1d1d2a;
+    --css-text: #f1effa;
+    --css-muted: #9997ad;
+    --css-accent: #b69aff;
+    --css-accent-light: #d2c2ff;
+    --css-blue: #83cfff;
+    --css-line: rgba(255,255,255,0.10);
+    --css-accent-soft: rgba(182,154,255,0.12);
+
+    background: var(--css-bg);
+    color: var(--css-text);
+    font-family: 'Space Grotesk', sans-serif;
+    min-height: 100vh;
+    position: relative;
+    isolation: isolate;
+}
+
+.css-chapter *,
+.css-chapter *::before,
+.css-chapter *::after {
+    box-sizing: border-box;
+}
+
+.css-chapter a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.css-chapter main {
+    width: 100%;
+    overflow: hidden;
+}
+
+.css-chapter p {
+    line-height: 1.85;
+}
+
+
+/* =====================================================
+   02 — ATMOSPHERE
+===================================================== */
+
+.css-chapter .css-atmosphere {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+        radial-gradient(ellipse at 12% 12%, rgba(182,154,255,.12), transparent 36%),
+        radial-gradient(ellipse at 88% 55%, rgba(83,157,218,.09), transparent 40%),
+        radial-gradient(ellipse at 45% 100%, rgba(132,100,190,.06), transparent 45%);
+}
+
+
+/* =====================================================
+   03 — NAVIGATION
+===================================================== */
+
+.css-chapter .css-nav {
+    min-height: 76px;
+    padding: 0 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--css-line);
+    background: rgba(13,13,19,.85);
+    backdrop-filter: blur(18px);
+    position: relative;
+    z-index: 5;
+}
+
+.css-chapter .css-back,
+.css-chapter .css-nav-label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--css-muted);
+    transition: .3s ease;
+}
+
+.css-chapter .css-back:hover {
+    color: var(--css-accent);
+}
+
+
+/* =====================================================
+   04 — HERO
+===================================================== */
+
+.css-chapter .css-hero {
+    min-height: 690px;
+    padding: 115px 12% 85px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+}
+
+.css-chapter .css-eyebrow {
+    color: var(--css-accent);
+    font-size: 10px;
+    letter-spacing: 4px;
+    margin-bottom: 28px;
+}
+
+.css-chapter .css-hero h1 {
+    font-size: clamp(75px, 12vw, 155px);
+    line-height: .82;
+    letter-spacing: -10px;
+    margin: 0;
+    font-weight: 700;
+}
+
+.css-chapter .css-hero h1 span {
+    background: linear-gradient(100deg, #c5aaff, #83cfff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.css-chapter .css-hero-description {
+    max-width: 510px;
+    margin: 38px 0 0;
+    color: var(--css-muted);
+    font-size: 15px;
+}
+
+.css-chapter .css-hero-button {
+    display: inline-block;
+    margin-top: 35px;
+    padding: 16px 24px;
+    border: 1px solid rgba(182,154,255,.5);
+    border-radius: 5px;
+    color: var(--css-accent-light);
+    font-size: 10px;
+    letter-spacing: 2px;
+    transition: .3s ease;
+}
+
+.css-chapter .css-hero-button:hover {
+    background: var(--css-accent);
+    color: #100d19;
+    transform: translateY(-3px);
+}
+
+.css-chapter .css-chapter-info {
+    width: min(750px,100%);
+    margin-top: 70px;
+    padding: 23px 0;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+    border-top: 1px solid var(--css-line);
+    border-bottom: 1px solid var(--css-line);
+}
+
+.css-chapter .css-chapter-info div {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.css-chapter .css-chapter-info .info-label {
+    color: var(--css-muted);
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.css-chapter .css-chapter-info strong {
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+
+/* =====================================================
+   05 — SECTION LABELS
+===================================================== */
+
+.css-chapter .css-section-kicker {
+    color: var(--css-accent);
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+
+/* =====================================================
+   06 — INTRODUCTION
+===================================================== */
+
+.css-chapter .css-intro {
+    padding: 110px 12%;
+    border-top: 1px solid var(--css-line);
+    position: relative;
+}
+
+.css-chapter .css-intro h2 {
+    margin: 25px 0;
+    font-size: clamp(38px,6vw,75px);
+    line-height: 1.08;
+    letter-spacing: -4px;
+}
+
+.css-chapter .css-intro h2 span {
+    color: var(--css-accent);
+}
+
+.css-chapter .css-intro p {
+    max-width: 680px;
+    color: var(--css-muted);
+    font-size: 14px;
+    margin: 15px 0;
+}
+
+
+/* =====================================================
+   07 — COURSE INDEX
+===================================================== */
+
+.css-chapter .css-course {
+    padding: 110px 12%;
+    border-top: 1px solid var(--css-line);
+    scroll-margin-top: 30px;
+}
+
+.css-chapter .css-section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 25px;
+    margin-bottom: 65px;
+}
+
+.css-chapter .css-section-heading h2 {
+    font-size: clamp(40px,6vw,76px);
+    letter-spacing: -4px;
+    margin: 15px 0 0;
+}
+
+.css-chapter .css-course-count {
+    color: var(--css-muted);
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.css-chapter .css-stage-heading {
+    margin: 65px 0 25px;
+    padding-left: 20px;
+    border-left: 2px solid var(--css-accent);
+}
+
+.css-chapter .css-stage-heading > span {
+    color: var(--css-accent);
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.css-chapter .css-stage-heading h3 {
+    font-size: 27px;
+    margin: 10px 0 5px;
+}
+
+.css-chapter .css-stage-heading p {
+    color: var(--css-muted);
+    font-size: 12px;
+    margin: 0;
+}
+
+.css-chapter .css-index-grid {
+    display: grid;
+    grid-template-columns: repeat(4,minmax(0,1fr));
+    gap: 14px;
+}
+
+.css-chapter .css-index-card {
+    min-height: 195px;
+    padding: 23px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 15px;
+    border: 1px solid var(--css-line);
+    border-radius: 11px;
+    background: linear-gradient(145deg,rgba(255,255,255,.045),rgba(255,255,255,.012));
+    position: relative;
+    overflow: hidden;
+    transition: .35s ease;
+}
+
+.css-chapter .css-index-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    background: linear-gradient(135deg,rgba(182,154,255,.12),rgba(131,207,255,.04));
+    transition: .35s ease;
+}
+
+.css-chapter .css-index-card:hover {
+    transform: translateY(-7px);
+    border-color: rgba(182,154,255,.55);
+    box-shadow: 0 15px 40px rgba(0,0,0,.22);
+}
+
+.css-chapter .css-index-card:hover::before {
+    opacity: 1;
+}
+
+.css-chapter .css-index-card > * {
+    position: relative;
+    z-index: 1;
+}
+
+.css-chapter .css-index-card > span {
+    font-size: 30px;
+    color: var(--css-accent);
+    font-weight: 600;
+}
+
+.css-chapter .css-index-card strong {
+    font-size: 13px;
+    line-height: 1.55;
+}
+
+.css-chapter .css-index-card small {
+    color: var(--css-muted);
+    font-size: 10px;
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   08 — LEARNING PHILOSOPHY
+===================================================== */
+
+.css-chapter .css-philosophy {
+    padding: 110px 12%;
+    border-top: 1px solid var(--css-line);
+}
+
+.css-chapter .css-philosophy h2 {
+    margin: 25px 0;
+    font-size: clamp(55px,9vw,105px);
+    line-height: .95;
+    letter-spacing: -7px;
+}
+
+.css-chapter .css-philosophy h2 span {
+    background: linear-gradient(100deg,#b69aff,#83cfff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.css-chapter .css-philosophy > p {
+    max-width: 600px;
+    color: var(--css-muted);
+    font-size: 14px;
+}
+
+.css-chapter .css-philosophy-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 15px;
+    margin-top: 65px;
+}
+
+.css-chapter .css-philosophy-grid > div {
+    padding: 28px;
+    min-height: 185px;
+    border: 1px solid var(--css-line);
+    border-radius: 10px;
+    background: var(--css-panel);
+    transition: .3s ease;
+}
+
+.css-chapter .css-philosophy-grid > div:hover {
+    transform: translateY(-5px);
+    border-color: rgba(182,154,255,.45);
+}
+
+.css-chapter .css-philosophy-grid span {
+    color: var(--css-accent);
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.css-chapter .css-philosophy-grid h3 {
+    font-size: 19px;
+    margin: 25px 0 10px;
+}
+
+.css-chapter .css-philosophy-grid p {
+    color: var(--css-muted);
+    font-size: 12px;
+}
+
+
+/* =====================================================
+   09 — FOOTER
+===================================================== */
+
+.css-chapter .css-footer {
+    padding: 70px 12% 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-top: 1px solid var(--css-line);
+    background: linear-gradient(180deg,transparent,rgba(182,154,255,.035));
+}
+
+.css-chapter .css-footer-top,
+.css-chapter .css-footer-bottom {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.css-chapter .css-footer-top span {
+    color: var(--css-muted);
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.css-chapter .css-footer h2 {
+    font-size: clamp(65px,10vw,120px);
+    line-height: .88;
+    letter-spacing: -8px;
+    margin: 65px 0 25px;
+    background: linear-gradient(110deg,#f1effa,#b69aff 65%,#83cfff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.css-chapter .css-footer > p {
+    max-width: 450px;
+    color: var(--css-muted);
+    font-size: 13px;
+}
+
+.css-chapter .css-start-button {
+    display: inline-block;
+    margin: 30px 0 70px;
+    padding: 17px 25px;
+    border: 1px solid rgba(182,154,255,.5);
+    border-radius: 5px;
+    color: var(--css-accent-light);
+    font-size: 10px;
+    letter-spacing: 2px;
+    transition: .3s ease;
+}
+
+.css-chapter .css-start-button:hover {
+    background: var(--css-accent);
+    color: #100d19;
+    transform: translateY(-3px);
+}
+
+.css-chapter .css-footer-bottom {
+    padding-top: 23px;
+    border-top: 1px solid var(--css-line);
+}
+
+.css-chapter .css-footer-bottom span {
+    color: var(--css-muted);
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+
+/* =====================================================
+   10 — RESPONSIVE DESIGN
+===================================================== */
+
+@media(max-width: 1050px) {
+
+    .css-chapter .css-hero,
+    .css-chapter .css-intro,
+    .css-chapter .css-course,
+    .css-chapter .css-philosophy,
+    .css-chapter .css-footer {
+        padding-left: 7%;
+        padding-right: 7%;
+    }
+
+    .css-chapter .css-index-grid {
+        grid-template-columns: repeat(2,minmax(0,1fr));
+    }
+
+}
+
+@media(max-width: 700px) {
+
+    .css-chapter .css-nav {
+        padding: 0 5%;
+        min-height: 65px;
+    }
+
+    .css-chapter .css-nav-label {
+        font-size: 8px;
+        letter-spacing: 1px;
+    }
+
+    .css-chapter .css-hero {
+        min-height: auto;
+        padding-top: 100px;
+        padding-bottom: 75px;
+    }
+
+    .css-chapter .css-hero h1 {
+        font-size: clamp(65px,15vw,100px);
+        letter-spacing: -5px;
+    }
+
+    .css-chapter .css-chapter-info {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .css-chapter .css-intro,
+    .css-chapter .css-course,
+    .css-chapter .css-philosophy {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+
+    .css-chapter .css-section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        margin-bottom: 40px;
+    }
+
+    .css-chapter .css-section-heading h2 {
+        letter-spacing: -2px;
+    }
+
+    .css-chapter .css-index-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .css-chapter .css-index-card {
+        min-height: 155px;
+    }
+
+    .css-chapter .css-philosophy h2 {
+        letter-spacing: -3px;
+    }
+
+    .css-chapter .css-philosophy-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .css-chapter .css-footer h2 {
+        letter-spacing: -4px;
+    }
+
+}
+
+@media(max-width: 400px) {
+
+    .css-chapter .css-hero h1 {
+        font-size: 58px;
+        letter-spacing: -3px;
+    }
+
+    .css-chapter .css-nav-label {
+        font-size: 7px;
+    }
+
+    .css-chapter .css-chapter-info strong {
+        font-size: 11px;
+    }
+
+}
+
+
+/* =====================================================
+   11 — ACCESSIBILITY
+===================================================== */
+
+@media(prefers-reduced-motion: reduce) {
+
+    .css-chapter *,
+    .css-chapter *::before,
+    .css-chapter *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+    }
+
+}

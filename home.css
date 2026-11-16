@@ -1,0 +1,1461 @@
+
+/* =========================================================
+   THE DIGITAL LAB — HOMEPAGE
+   VISUAL IDENTITY 2.1
+   MIDNIGHT / VIOLET / ELECTRIC BLUE
+========================================================= */
+
+/* 01 — DESIGN SYSTEM */
+
+:root {
+    --home-bg: #090817;
+    --home-bg-deep: #060611;
+    --home-panel: rgba(35, 29, 75, 0.38);
+    --home-panel-light: rgba(58, 48, 110, 0.25);
+
+    --home-violet: #9c70ff;
+    --home-purple: #7651ed;
+    --home-blue: #477bff;
+    --home-cyan: #62e5ff;
+    --home-pink: #e58bff;
+
+    --home-white: #f5f2ff;
+    --home-muted: #a5a0bd;
+    --home-dim: #716d8b;
+
+    --home-border: rgba(191, 174, 255, 0.15);
+    --home-border-bright: rgba(191, 174, 255, 0.28);
+
+    --home-glow-violet: rgba(139, 91, 255, 0.28);
+    --home-glow-blue: rgba(68, 116, 255, 0.22);
+    --home-glow-cyan: rgba(75, 218, 255, 0.15);
+
+    --home-radius: 24px;
+    --home-radius-small: 14px;
+    --home-width: 1240px;
+}
+
+/* 02 — GLOBAL FOUNDATION */
+
+body.tdl-home {
+    position: relative;
+    min-height: 100vh;
+    margin: 0;
+    overflow-x: hidden;
+    color: var(--home-white);
+
+    background:
+        radial-gradient(ellipse at 77% 13%, rgba(91, 53, 176, 0.19), transparent 36%),
+        radial-gradient(ellipse at 12% 45%, rgba(48, 76, 168, 0.13), transparent 34%),
+        radial-gradient(ellipse at 80% 75%, rgba(102, 47, 160, 0.10), transparent 35%),
+        var(--home-bg);
+
+    font-family: "Segoe UI", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+.tdl-home *,
+.tdl-home *::before,
+.tdl-home *::after {
+    box-sizing: border-box;
+}
+
+.tdl-home a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.tdl-home button,
+.tdl-home a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+.tdl-home main {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    isolation: isolate;
+}
+
+.tdl-home section {
+    position: relative;
+}
+
+.tdl-home ::selection {
+    color: #ffffff;
+    background: rgba(137, 101, 255, 0.55);
+}
+
+/* 03 — AMBIENT ATMOSPHERE */
+
+.tdl-home::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.17;
+
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px);
+
+    background-size: 72px 72px;
+
+    mask-image: linear-gradient(to bottom, black, transparent 85%);
+}
+
+.tdl-home .ambient-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 360px;
+    height: 360px;
+    border-radius: 50%;
+    pointer-events: none;
+
+    background: radial-gradient(
+        circle,
+        rgba(127, 87, 255, 0.12),
+        rgba(73, 115, 255, 0.045) 42%,
+        transparent 72%
+    );
+
+    filter: blur(24px);
+    transform: translate(-50%, -50%);
+    will-change: transform;
+}
+
+.tdl-home .scroll-atmosphere {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+
+    background: radial-gradient(
+        ellipse at 50% var(--atmosphere-y, 20%),
+        rgba(99, 66, 203, 0.10),
+        transparent 55%
+    );
+
+    transform: translateY(var(--parallax-y, 0px));
+    transition: opacity 0.4s ease;
+}
+
+/* 04 — NAVIGATION */
+
+.tdl-home .navigation {
+    position: relative;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: min(var(--home-width), calc(100% - 100px));
+    min-height: 76px;
+    margin: 28px auto 0;
+    padding: 0 26px;
+
+    border: 1px solid var(--home-border);
+    border-radius: 18px;
+    background: rgba(16, 14, 34, 0.68);
+
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+
+    box-shadow:
+        0 12px 50px rgba(0, 0, 0, 0.20),
+        inset 0 1px 0 rgba(255, 255, 255, 0.045);
+}
+
+.tdl-home .logo {
+    display: inline-flex;
+    align-items: center;
+    color: var(--home-white);
+    font-size: 25px;
+    font-weight: 850;
+    letter-spacing: -1.8px;
+}
+
+.tdl-home .logo span {
+    color: var(--home-violet);
+}
+
+.tdl-home .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 38px;
+}
+
+.tdl-home .nav-links a {
+    position: relative;
+    color: var(--home-muted);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.7px;
+    transition: color 0.25s ease, text-shadow 0.25s ease;
+}
+
+.tdl-home .nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 0;
+    height: 1px;
+    background: var(--home-cyan);
+    box-shadow: 0 0 12px var(--home-cyan);
+    transition: width 0.3s ease;
+}
+
+.tdl-home .nav-links a:hover {
+    color: var(--home-white);
+    text-shadow: 0 0 18px rgba(161, 126, 255, 0.5);
+}
+
+.tdl-home .nav-links a:hover::after {
+    width: 100%;
+}
+
+.tdl-home .nav-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 13px 17px;
+    border: 1px solid rgba(154, 123, 255, 0.35);
+    border-radius: 10px;
+    color: var(--home-white);
+    background: rgba(119, 82, 226, 0.13);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.4px;
+    transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+}
+
+.tdl-home .nav-cta span {
+    color: var(--home-cyan);
+    font-size: 15px;
+}
+
+.tdl-home .nav-cta:hover {
+    transform: translateY(-2px);
+    border-color: var(--home-violet);
+    background: rgba(119, 82, 226, 0.25);
+}
+
+/* 05 — HERO */
+
+.tdl-home .hero {
+    position: relative;
+    display: grid;
+    grid-template-columns: 0.95fr 1.05fr;
+    align-items: center;
+    width: min(var(--home-width), calc(100% - 100px));
+    min-height: 680px;
+    margin: 0 auto;
+    padding: 80px 0 90px;
+    isolation: isolate;
+}
+
+.tdl-home .hero-content {
+    position: relative;
+    z-index: 5;
+    max-width: 610px;
+    padding-bottom: 20px;
+}
+
+.tdl-home .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--home-cyan);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+    line-height: 1.7;
+}
+
+.tdl-home .eyebrow-divider {
+    color: var(--home-violet);
+}
+
+.tdl-home .hero h1 {
+    margin: 30px 0 22px;
+    color: var(--home-white);
+    font-size: clamp(62px, 7.2vw, 105px);
+    font-weight: 900;
+    letter-spacing: -7px;
+    line-height: 0.91;
+}
+
+.tdl-home .glitch-word {
+    display: inline-block;
+    color: transparent;
+    background: linear-gradient(105deg, #a77bff 5%, #6b8cff 48%, #69e5ff 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    filter: drop-shadow(0 0 26px rgba(125, 94, 255, 0.19));
+}
+
+.tdl-home .hero-content > p {
+    max-width: 455px;
+    margin: 0;
+    color: var(--home-muted);
+    font-size: 15px;
+    line-height: 1.9;
+    letter-spacing: 0.15px;
+}
+
+.tdl-home .hero-buttons {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 34px;
+}
+
+.tdl-home .primary-button,
+.tdl-home .secondary-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    min-height: 52px;
+    padding: 0 21px;
+    border-radius: 11px;
+    font-size: 9px;
+    font-weight: 850;
+    letter-spacing: 1.5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+}
+
+.tdl-home .primary-button {
+    border: 1px solid rgba(178, 148, 255, 0.65);
+    color: #ffffff;
+    background: linear-gradient(110deg, #8056e9, #526eea);
+    box-shadow: 0 8px 28px rgba(100, 76, 230, 0.24), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.tdl-home .primary-button span {
+    font-size: 16px;
+    color: #c7f6ff;
+}
+
+.tdl-home .primary-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 38px rgba(111, 83, 255, 0.38), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.tdl-home .secondary-button {
+    border: 1px solid var(--home-border-bright);
+    color: var(--home-white);
+    background: rgba(255, 255, 255, 0.035);
+}
+
+.tdl-home .secondary-button:hover {
+    transform: translateY(-3px);
+    border-color: rgba(111, 210, 255, 0.55);
+    background: rgba(90, 135, 255, 0.10);
+}
+
+.tdl-home .hero-meta {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-top: 54px;
+}
+
+.tdl-home .hero-meta span {
+    color: var(--home-dim);
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: 1.7px;
+}
+
+/* 06 — THREE.JS SCULPTURE */
+
+.tdl-home .hero-art {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-width: 0;
+    height: 570px;
+    isolation: isolate;
+}
+
+.tdl-home .sculpture-aura {
+    position: absolute;
+    z-index: -2;
+    width: 440px;
+    height: 440px;
+    border-radius: 50%;
+
+    background: radial-gradient(
+        circle,
+        rgba(121, 76, 255, 0.25) 0%,
+        rgba(69, 107, 255, 0.13) 37%,
+        rgba(52, 202, 255, 0.055) 58%,
+        transparent 73%
+    );
+
+    filter: blur(32px);
+    animation: sculptureAura 8s ease-in-out infinite alternate;
+}
+
+.tdl-home .hero-orbit {
+    position: absolute;
+    z-index: -1;
+    border: 1px solid rgba(157, 139, 255, 0.16);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.tdl-home .orbit-one {
+    width: 430px;
+    height: 430px;
+    transform: rotate(-25deg) scaleY(0.42);
+}
+
+.tdl-home .orbit-two {
+    width: 500px;
+    height: 500px;
+    border-color: rgba(93, 187, 255, 0.12);
+    transform: rotate(35deg) scaleY(0.48);
+}
+
+.tdl-home .orbit-three {
+    width: 350px;
+    height: 350px;
+    border-color: rgba(210, 135, 255, 0.13);
+    transform: rotate(75deg) scaleY(0.45);
+}
+
+.tdl-home .hero-art-image,
+.tdl-home .hero-sculpture {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    isolation: isolate;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    transform: none;
+    animation: none;
+}
+
+.tdl-home #liquid-canvas {
+    position: absolute;
+    top: -5%;
+    left: -5%;
+    display: block;
+    width: 110%;
+    height: 110%;
+    overflow: visible;
+    outline: none;
+    cursor: grab;
+    touch-action: none;
+}
+
+.tdl-home #liquid-canvas:active {
+    cursor: grabbing;
+}
+
+.tdl-home .art-label {
+    position: absolute;
+    z-index: 4;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    color: rgba(221, 216, 255, 0.66);
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: 1.8px;
+    pointer-events: none;
+}
+
+.tdl-home .art-label-top {
+    top: 54px;
+    left: 5px;
+    right: 5px;
+}
+
+.tdl-home .art-label-bottom {
+    bottom: 38px;
+    left: 50%;
+    width: max-content;
+    color: rgba(190, 180, 255, 0.58);
+    transform: translateX(-50%);
+}
+
+.tdl-home .sculpture-coordinate {
+    position: absolute;
+    right: -8px;
+    bottom: 95px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    color: rgba(180, 170, 255, 0.48);
+    font-size: 7px;
+    font-weight: 800;
+    letter-spacing: 1.3px;
+}
+
+.tdl-home .hero-index {
+    position: absolute;
+    bottom: 27px;
+    left: 0;
+    color: var(--home-dim);
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+@keyframes sculptureAura {
+    from { opacity: 0.65; transform: scale(0.94); }
+    to { opacity: 1; transform: scale(1.08); }
+}
+
+/* 07 — MARQUEE */
+
+.tdl-home .marquee {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 21px 0;
+    border-top: 1px solid rgba(175, 157, 255, 0.13);
+    border-bottom: 1px solid rgba(175, 157, 255, 0.13);
+    background: rgba(35, 26, 75, 0.16);
+}
+
+.tdl-home .marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marqueeTravel 28s linear infinite;
+}
+
+.tdl-home .marquee-track span {
+    flex-shrink: 0;
+    padding-right: 50px;
+    color: rgba(196, 182, 255, 0.66);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 3.3px;
+}
+
+.tdl-home .marquee-track span::first-letter {
+    color: var(--home-cyan);
+}
+
+@keyframes marqueeTravel {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+/* 08 — LEARNING ARCHIVE */
+
+.tdl-home .archive {
+    width: min(var(--home-width), calc(100% - 100px));
+    margin: 0 auto;
+    padding: 150px 0 145px;
+}
+
+.tdl-home .section-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 35px;
+    margin-bottom: 58px;
+}
+
+.tdl-home .section-heading h2 {
+    margin: 19px 0 0;
+    color: var(--home-white);
+    font-size: clamp(48px, 6vw, 75px);
+    font-weight: 900;
+    letter-spacing: -4px;
+    line-height: 0.98;
+}
+
+.tdl-home .section-heading h2 span {
+    color: transparent;
+    background: linear-gradient(100deg, var(--home-violet), var(--home-cyan));
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.tdl-home .archive-description {
+    max-width: 290px;
+    margin: 0 0 8px;
+    color: var(--home-muted);
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.tdl-home .learning-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.tdl-home .learning-card {
+    --card-rotate-x: 0deg;
+    --card-rotate-y: 0deg;
+    --mouse-x: 50%;
+    --mouse-y: 50%;
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    min-height: 470px;
+    padding: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(191, 174, 255, 0.18);
+    border-radius: var(--home-radius);
+
+    background: linear-gradient(
+        145deg,
+        rgba(54, 43, 105, 0.34),
+        rgba(20, 19, 49, 0.38)
+    );
+
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    box-shadow:
+        0 18px 60px rgba(0, 0, 0, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.065);
+
+    transform: perspective(1000px) rotateX(var(--card-rotate-x)) rotateY(var(--card-rotate-y));
+
+    transition:
+        border-color 0.35s ease,
+        background 0.35s ease,
+        box-shadow 0.35s ease,
+        transform 0.2s ease;
+
+    isolation: isolate;
+}
+
+.tdl-home .learning-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    opacity: 0;
+
+    background: radial-gradient(
+        circle at var(--mouse-x) var(--mouse-y),
+        rgba(157, 123, 255, 0.19),
+        transparent 55%
+    );
+
+    transition: opacity 0.35s ease;
+}
+
+.tdl-home .learning-card:hover {
+    border-color: rgba(161, 137, 255, 0.42);
+
+    background: linear-gradient(
+        145deg,
+        rgba(70, 54, 133, 0.47),
+        rgba(26, 23, 62, 0.52)
+    );
+
+    box-shadow:
+        0 25px 75px rgba(0, 0, 0, 0.20),
+        0 0 35px rgba(121, 87, 255, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.tdl-home .learning-card:hover::before {
+    opacity: 1;
+}
+
+.tdl-home .card-light {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+
+    background: radial-gradient(
+        circle at var(--mouse-x) var(--mouse-y),
+        rgba(128, 106, 255, 0.12),
+        transparent 55%
+    );
+
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.tdl-home .learning-card:hover .card-light {
+    opacity: 1;
+}
+
+.tdl-home .card-number {
+    display: block;
+    color: var(--home-cyan);
+    font-size: 8px;
+    font-weight: 850;
+    letter-spacing: 2px;
+}
+
+.tdl-home .card-visual {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 205px;
+    margin: 19px 0 21px;
+    overflow: hidden;
+    border: 1px solid rgba(180, 159, 255, 0.11);
+    border-radius: 16px;
+
+    background:
+        radial-gradient(circle at 50% 50%, rgba(112, 76, 222, 0.16), transparent 65%),
+        rgba(20, 17, 46, 0.28);
+}
+
+/* FOUNDATIONS VISUAL */
+
+.tdl-home .visual-orb {
+    position: relative;
+    width: 125px;
+    height: 125px;
+    border: 1px solid rgba(203, 185, 255, 0.56);
+    border-radius: 50%;
+
+    background: radial-gradient(
+        circle at 33% 27%,
+        rgba(255, 255, 255, 0.92),
+        rgba(179, 149, 255, 0.76) 13%,
+        rgba(106, 81, 227, 0.85) 39%,
+        rgba(41, 59, 145, 0.8) 67%,
+        rgba(11, 17, 51, 0.9) 100%
+    );
+
+    box-shadow:
+        inset -15px -18px 35px rgba(0, 0, 0, 0.38),
+        inset 8px 8px 24px rgba(255, 255, 255, 0.28),
+        0 0 45px rgba(130, 92, 255, 0.45);
+
+    animation: foundationFloat 6s ease-in-out infinite;
+}
+
+.tdl-home .visual-orb::before {
+    content: "";
+    position: absolute;
+    inset: -16px;
+    border: 1px solid rgba(143, 123, 255, 0.35);
+    border-radius: 50%;
+    transform: rotateX(68deg);
+}
+
+.tdl-home .visual-orb::after {
+    content: "";
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    top: 19px;
+    left: 22px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.76);
+    filter: blur(12px);
+}
+
+@keyframes foundationFloat {
+    0%, 100% { transform: translateY(0) rotate(-5deg); }
+    50% { transform: translateY(-10px) rotate(5deg); }
+}
+
+/* MOTION VISUAL */
+
+.tdl-home .motion-shape {
+    position: relative;
+    width: 115px;
+    height: 115px;
+    border: 1px solid rgba(145, 207, 255, 0.6);
+    border-radius: 30px;
+
+    background: linear-gradient(
+        135deg,
+        rgba(91, 142, 255, 0.95),
+        rgba(129, 81, 231, 0.85) 50%,
+        rgba(54, 210, 255, 0.7)
+    );
+
+    box-shadow:
+        0 0 35px rgba(82, 118, 255, 0.35),
+        inset 0 0 30px rgba(255, 255, 255, 0.17);
+
+    transform: rotate(35deg);
+    animation: motionOrganic 7s ease-in-out infinite alternate;
+}
+
+.tdl-home .motion-shape::before,
+.tdl-home .motion-shape::after {
+    content: "";
+    position: absolute;
+    border: 1px solid rgba(190, 174, 255, 0.52);
+    border-radius: 50%;
+}
+
+.tdl-home .motion-shape::before {
+    inset: -22px;
+    transform: rotateX(68deg);
+}
+
+.tdl-home .motion-shape::after {
+    inset: 22px;
+    background: rgba(255, 255, 255, 0.13);
+    filter: blur(8px);
+}
+
+@keyframes motionOrganic {
+    from { transform: rotate(25deg) scale(0.92); }
+    to { transform: rotate(65deg) scale(1.08); }
+}
+
+/* EXPERIMENTS VISUAL */
+
+.tdl-home .experiment-shape {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    border: 1px solid rgba(198, 162, 255, 0.58);
+    border-radius: 50%;
+
+    background: conic-gradient(
+        from 30deg,
+        #7354e8,
+        #4a8fff,
+        #54ddf6,
+        #bd75f4,
+        #7354e8
+    );
+
+    box-shadow:
+        0 0 40px rgba(151, 94, 255, 0.34),
+        inset 0 0 25px rgba(255, 255, 255, 0.17);
+
+    animation: experimentSpin 13s linear infinite;
+}
+
+.tdl-home .experiment-shape::before {
+    content: "";
+    position: absolute;
+    inset: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    border-radius: 50%;
+    transform: rotateX(65deg) rotateY(25deg);
+}
+
+.tdl-home .experiment-shape::after {
+    content: "";
+    position: absolute;
+    inset: -15px;
+    border: 1px solid rgba(116, 200, 255, 0.42);
+    border-radius: 50%;
+    transform: rotateY(68deg);
+}
+
+@keyframes experimentSpin {
+    to { transform: rotate(360deg); }
+}
+
+/* CARD CONTENT */
+
+.tdl-home .card-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.tdl-home .card-content h3 {
+    margin: 0 0 12px;
+    color: var(--home-white);
+    font-size: 20px;
+    font-weight: 850;
+    letter-spacing: -0.7px;
+}
+
+.tdl-home .card-content p {
+    max-width: 310px;
+    margin: 0 0 25px;
+    color: var(--home-muted);
+    font-size: 11px;
+    line-height: 1.85;
+}
+
+.tdl-home .card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: auto;
+    padding-top: 16px;
+    border-top: 1px solid rgba(180, 165, 255, 0.12);
+    color: var(--home-cyan);
+    font-size: 8px;
+    font-weight: 850;
+    letter-spacing: 1.7px;
+}
+
+.tdl-home .card-arrow {
+    color: var(--home-white);
+    font-size: 17px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.tdl-home .learning-card:hover .card-arrow {
+    color: var(--home-cyan);
+    transform: translate(4px, -4px);
+}
+
+/* 09 — FEATURED CHAPTER */
+
+.tdl-home .foundations {
+    width: 100%;
+    padding: 85px max(50px, calc((100% - var(--home-width)) / 2)) 110px;
+
+    border-top: 1px solid rgba(175, 157, 255, 0.13);
+    border-bottom: 1px solid rgba(175, 157, 255, 0.13);
+
+    background:
+        radial-gradient(ellipse at 12% 65%, rgba(74, 83, 202, 0.13), transparent 45%),
+        radial-gradient(ellipse at 85% 20%, rgba(112, 68, 190, 0.10), transparent 48%);
+
+    box-shadow: none;
+}
+
+.tdl-home .lesson-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 65px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid rgba(175, 157, 255, 0.13);
+}
+
+.tdl-home .lesson-index {
+    color: var(--home-dim);
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: 1.8px;
+}
+
+.tdl-home .lesson-layout {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    align-items: center;
+    gap: 75px;
+    max-width: var(--home-width);
+    margin: 0 auto;
+}
+
+.tdl-home .lesson-text h2 {
+    margin: 0 0 25px;
+    color: var(--home-white);
+    font-size: clamp(43px, 5.3vw, 70px);
+    font-weight: 900;
+    letter-spacing: -4px;
+    line-height: 0.98;
+}
+
+.tdl-home .lesson-text p {
+    max-width: 390px;
+    margin: 0 0 30px;
+    color: var(--home-muted);
+    font-size: 13px;
+    line-height: 1.95;
+}
+
+.tdl-home .lesson-image {
+    position: relative;
+    min-width: 0;
+    height: 390px;
+    overflow: hidden;
+    border: 1px solid var(--home-border-bright);
+    border-radius: 22px;
+    background: #17152c;
+
+    box-shadow:
+        0 25px 80px rgba(0, 0, 0, 0.3),
+        0 0 45px rgba(107, 78, 224, 0.09);
+}
+
+.tdl-home .lesson-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 48%, rgba(8, 8, 23, 0.75));
+    pointer-events: none;
+}
+
+.tdl-home .lesson-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.82;
+    filter: saturate(0.8) hue-rotate(10deg);
+    transition: transform 0.8s ease, opacity 0.5s ease;
+}
+
+.tdl-home .lesson-image:hover img {
+    opacity: 1;
+    transform: scale(1.045);
+}
+
+.tdl-home .image-caption {
+    position: absolute;
+    right: 24px;
+    bottom: 22px;
+    left: 24px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #ffffff;
+    font-size: 8px;
+    font-weight: 850;
+    letter-spacing: 1.8px;
+}
+
+/* 10 — ABOUT SECTION */
+
+.tdl-home .about-section {
+    width: min(var(--home-width), calc(100% - 100px));
+    margin: 0 auto;
+    padding: 145px 0 130px;
+
+    background: transparent !important;
+    box-shadow: none !important;
+    border: 0;
+}
+
+.tdl-home .about-section h2 {
+    margin: 30px 0 45px;
+    color: var(--home-white);
+    font-size: clamp(52px, 7.5vw, 94px);
+    font-weight: 900;
+    letter-spacing: -6px;
+    line-height: 0.98;
+}
+
+.tdl-home .about-section h2 span {
+    color: transparent;
+    background: linear-gradient(100deg, var(--home-violet), var(--home-blue), var(--home-cyan));
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.tdl-home .about-bottom {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 35px;
+    padding-top: 27px;
+    border-top: 1px solid rgba(175, 157, 255, 0.16);
+}
+
+.tdl-home .about-bottom p {
+    max-width: 510px;
+    margin: 0;
+    color: var(--home-muted);
+    font-size: 13px;
+    line-height: 1.95;
+}
+
+/* 11 — FOOTER */
+
+.tdl-home .footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    width: min(var(--home-width), calc(100% - 100px));
+    margin: 0 auto;
+    padding: 28px 0 35px;
+    border-top: 1px solid rgba(175, 157, 255, 0.15);
+    background: transparent;
+}
+
+.tdl-home .footer > span {
+    color: var(--home-dim);
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: 1.7px;
+}
+
+.tdl-home .back-to-top {
+    color: var(--home-muted);
+    font-size: 8px;
+    font-weight: 850;
+    letter-spacing: 1.5px;
+    transition: color 0.25s ease;
+}
+
+.tdl-home .back-to-top:hover {
+    color: var(--home-cyan);
+}
+
+/* 12 — REVEAL ANIMATIONS */
+
+.tdl-home .tdl-reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.tdl-home .tdl-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 13 — TABLET */
+
+@media (max-width: 1050px) {
+    .tdl-home .hero {
+        grid-template-columns: 1fr 1fr;
+        min-height: 610px;
+    }
+
+    .tdl-home .hero h1 {
+        font-size: clamp(58px, 7vw, 82px);
+        letter-spacing: -5px;
+    }
+
+    .tdl-home .hero-art {
+        height: 480px;
+    }
+
+    .tdl-home .sculpture-aura {
+        width: 340px;
+        height: 340px;
+    }
+
+    .tdl-home .learning-grid {
+        gap: 15px;
+    }
+
+    .tdl-home .learning-card {
+        padding: 16px;
+        min-height: 455px;
+    }
+
+    .tdl-home .lesson-layout {
+        gap: 45px;
+    }
+}
+
+/* 14 — SMALL TABLET */
+
+@media (max-width: 760px) {
+    .tdl-home .navigation {
+        width: calc(100% - 36px);
+        min-height: 68px;
+        margin-top: 18px;
+        padding: 0 17px;
+    }
+
+    .tdl-home .nav-links {
+        gap: 17px;
+    }
+
+    .tdl-home .nav-links a {
+        font-size: 8px;
+        letter-spacing: 1px;
+    }
+
+    .tdl-home .nav-cta {
+        padding: 11px 12px;
+        font-size: 8px;
+    }
+
+    .tdl-home .hero {
+        grid-template-columns: 1fr;
+        width: calc(100% - 48px);
+        min-height: auto;
+        padding: 100px 0 65px;
+    }
+
+    .tdl-home .hero-content {
+        max-width: 580px;
+    }
+
+    .tdl-home .hero h1 {
+        font-size: clamp(64px, 12vw, 90px);
+        letter-spacing: -5px;
+    }
+
+    .tdl-home .hero-art {
+        height: 460px;
+        margin-top: 15px;
+    }
+
+    .tdl-home .hero-index {
+        bottom: 10px;
+    }
+
+    .tdl-home .archive,
+    .tdl-home .about-section {
+        width: calc(100% - 48px);
+    }
+
+    .tdl-home .archive {
+        padding: 105px 0;
+    }
+
+    .tdl-home .learning-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .tdl-home .learning-card {
+        min-height: 430px;
+        padding: 21px;
+    }
+
+    .tdl-home .card-visual {
+        height: 205px;
+    }
+
+    .tdl-home .foundations {
+        padding: 75px 24px 85px;
+    }
+
+    .tdl-home .lesson-top {
+        margin-bottom: 45px;
+    }
+
+    .tdl-home .lesson-layout {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .tdl-home .lesson-image {
+        height: 340px;
+    }
+
+    .tdl-home .about-section {
+        padding: 105px 0 90px;
+    }
+
+    .tdl-home .about-section h2 {
+        font-size: clamp(49px, 9vw, 72px);
+        letter-spacing: -4px;
+    }
+
+    .tdl-home .about-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .tdl-home .footer {
+        width: calc(100% - 48px);
+    }
+}
+
+/* 15 — MOBILE */
+
+@media (max-width: 520px) {
+    .tdl-home .navigation {
+        width: calc(100% - 28px);
+        padding: 0 13px;
+    }
+
+    .tdl-home .logo {
+        font-size: 22px;
+    }
+
+    .tdl-home .nav-links {
+        gap: 12px;
+    }
+
+    .tdl-home .nav-links a {
+        font-size: 7px;
+        letter-spacing: 0.6px;
+    }
+
+    .tdl-home .nav-cta {
+        gap: 5px;
+        padding: 10px 8px;
+        font-size: 7px;
+        letter-spacing: 0.7px;
+    }
+
+    .tdl-home .hero {
+        width: calc(100% - 38px);
+        padding-top: 80px;
+    }
+
+    .tdl-home .eyebrow {
+        font-size: 8px;
+        letter-spacing: 1.5px;
+    }
+
+    .tdl-home .hero h1 {
+        margin-top: 24px;
+        font-size: clamp(56px, 14vw, 73px);
+        letter-spacing: -4px;
+    }
+
+    .tdl-home .hero-content > p {
+        font-size: 13px;
+    }
+
+    .tdl-home .hero-buttons {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .tdl-home .primary-button,
+    .tdl-home .secondary-button {
+        width: 100%;
+    }
+
+    .tdl-home .hero-meta {
+        gap: 14px;
+        margin-top: 35px;
+    }
+
+    .tdl-home .hero-meta span {
+        font-size: 7px;
+        letter-spacing: 1px;
+    }
+
+    .tdl-home .hero-art {
+        height: 365px;
+        margin-top: 25px;
+    }
+
+    .tdl-home .orbit-one {
+        width: 300px;
+        height: 300px;
+    }
+
+    .tdl-home .orbit-two {
+        width: 345px;
+        height: 345px;
+    }
+
+    .tdl-home .orbit-three {
+        width: 260px;
+        height: 260px;
+    }
+
+    .tdl-home .sculpture-aura {
+        width: 280px;
+        height: 280px;
+    }
+
+    .tdl-home .art-label {
+        font-size: 7px;
+        letter-spacing: 1px;
+    }
+
+    .tdl-home .art-label-top {
+        top: 25px;
+    }
+
+    .tdl-home .art-label-bottom {
+        bottom: 22px;
+    }
+
+    .tdl-home .sculpture-coordinate {
+        right: 0;
+        bottom: 65px;
+        font-size: 6px;
+    }
+
+    .tdl-home .marquee-track span {
+        font-size: 8px;
+        letter-spacing: 2px;
+    }
+
+    .tdl-home .archive,
+    .tdl-home .about-section {
+        width: calc(100% - 38px);
+    }
+
+    .tdl-home .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 22px;
+    }
+
+    .tdl-home .section-heading h2 {
+        font-size: 53px;
+        letter-spacing: -3px;
+    }
+
+    .tdl-home .archive-description {
+        font-size: 12px;
+    }
+
+    .tdl-home .foundations {
+        padding-right: 19px;
+        padding-left: 19px;
+    }
+
+    .tdl-home .lesson-top {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .tdl-home .lesson-text h2 {
+        font-size: 47px;
+        letter-spacing: -3px;
+    }
+
+    .tdl-home .lesson-image {
+        height: 265px;
+    }
+
+    .tdl-home .about-section h2 {
+        font-size: 48px;
+        letter-spacing: -3px;
+    }
+
+    .tdl-home .footer {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 17px;
+    }
+
+    .tdl-home .footer > span {
+        font-size: 7px;
+    }
+}
+
+/* 16 — ACCESSIBILITY / PERFORMANCE */
+
+@media (hover: none) {
+    .tdl-home .ambient-cursor {
+        display: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .tdl-home *,
+    .tdl-home *::before,
+    .tdl-home *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .tdl-home .tdl-reveal {
+        opacity: 1;
+        transform: none;
+    }
+}

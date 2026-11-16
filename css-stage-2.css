@@ -1,0 +1,1110 @@
+
+/* =========================================================
+   THE DIGITAL LAB
+   CHAPTER 002 — THE CASCADE
+   STAGE 02 — LAYOUT & STRUCTURE
+   COMPLETE STYLESHEET
+========================================================= */
+
+
+/* =========================================================
+   01 — STAGE DESIGN SYSTEM
+========================================================= */
+
+.css-stage-2 {
+    --stage-bg: #0d0d13;
+    --stage-panel: #15151f;
+    --stage-panel-light: #1c1c29;
+
+    --stage-text: #f1effa;
+    --stage-muted: #9997ad;
+
+    --stage-accent: #b69aff;
+    --stage-accent-light: #d2c2ff;
+    --stage-blue: #83cfff;
+
+    --stage-line: rgba(255,255,255,.10);
+    --stage-glow: rgba(182,154,255,.12);
+
+    --stage-width: 1120px;
+    --stage-gutter: clamp(24px, 6vw, 85px);
+
+    background: var(--stage-bg);
+    color: var(--stage-text);
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.css-stage-2 *,
+.css-stage-2 *::before,
+.css-stage-2 *::after {
+    box-sizing: border-box;
+}
+
+.css-stage-2 a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.css-stage-2 p {
+    line-height: 1.85;
+}
+
+.css-stage-2 h1,
+.css-stage-2 h2,
+.css-stage-2 h3,
+.css-stage-2 h4,
+.css-stage-2 p {
+    overflow-wrap: break-word;
+}
+
+
+/* =========================================================
+   02 — SHARED PAGE WIDTH
+========================================================= */
+
+.css-stage-2 .stage-hero,
+.css-stage-2 .stage-navigation,
+.css-stage-2 .lesson-section,
+.css-stage-2 .stage-completion {
+    width: min(
+        var(--stage-width),
+        calc(100% - var(--stage-gutter) * 2)
+    );
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* =========================================================
+   03 — ATMOSPHERE
+========================================================= */
+
+.css-stage-2 .css-atmosphere {
+    background:
+        radial-gradient(
+            ellipse at 12% 10%,
+            rgba(182,154,255,.13),
+            transparent 36%
+        ),
+        radial-gradient(
+            ellipse at 88% 48%,
+            rgba(83,157,218,.09),
+            transparent 40%
+        ),
+        radial-gradient(
+            ellipse at 45% 100%,
+            rgba(132,100,190,.07),
+            transparent 45%
+        );
+}
+
+
+/* =========================================================
+   04 — NAVIGATION
+========================================================= */
+
+.css-stage-2 .css-nav {
+    min-height: 78px;
+    padding: 0 var(--stage-gutter);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+
+    background: rgba(13,13,19,.82);
+    border-bottom: 1px solid var(--stage-line);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    position: relative;
+    z-index: 10;
+}
+
+.css-stage-2 .css-brand {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    white-space: nowrap;
+}
+
+.css-stage-2 .css-brand span {
+    color: var(--stage-accent);
+}
+
+.css-stage-2 .css-nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 30px;
+}
+
+.css-stage-2 .css-nav-links a {
+    color: var(--stage-muted);
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    transition: color .3s ease;
+}
+
+.css-stage-2 .css-nav-links a:hover {
+    color: var(--stage-accent-light);
+}
+
+
+/* =========================================================
+   05 — STAGE HERO
+========================================================= */
+
+.css-stage-2 .stage-hero {
+    min-height: 540px;
+    padding-top: 115px;
+    padding-bottom: 95px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    position: relative;
+}
+
+.css-stage-2 .stage-hero::after {
+    content: "";
+    position: absolute;
+
+    width: 470px;
+    height: 470px;
+
+    right: -100px;
+    top: 30px;
+
+    background: radial-gradient(
+        circle,
+        rgba(182,154,255,.13),
+        transparent 70%
+    );
+
+    pointer-events: none;
+    z-index: -1;
+}
+
+.css-stage-2 .stage-eyebrow {
+    color: var(--stage-accent);
+    font-size: 10px;
+    letter-spacing: 3px;
+    margin-bottom: 30px;
+}
+
+.css-stage-2 .stage-hero h1 {
+    max-width: 1050px;
+
+    font-size: clamp(65px, 10vw, 125px);
+    line-height: .88;
+    letter-spacing: -8px;
+    font-weight: 700;
+
+    margin: 0;
+}
+
+.css-stage-2 .stage-hero h1 span {
+    display: block;
+
+    background: linear-gradient(
+        100deg,
+        #c5aaff,
+        #83cfff
+    );
+
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.css-stage-2 .stage-description {
+    max-width: 570px;
+
+    color: var(--stage-muted);
+    font-size: 14px;
+    line-height: 1.9;
+
+    margin: 35px 0 0;
+}
+
+.css-stage-2 .stage-meta {
+    width: min(650px, 100%);
+
+    margin-top: 55px;
+    padding: 22px 0;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 35px;
+
+    border-top: 1px solid var(--stage-line);
+    border-bottom: 1px solid var(--stage-line);
+}
+
+.css-stage-2 .stage-meta span {
+    color: var(--stage-muted);
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   06 — LESSON NAVIGATION
+========================================================= */
+
+.css-stage-2 .stage-navigation {
+    padding-top: 75px;
+    padding-bottom: 110px;
+
+    border-top: 1px solid var(--stage-line);
+}
+
+.css-stage-2 .section-heading {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+
+    margin-bottom: 45px;
+}
+
+.css-stage-2 .section-heading > span {
+    color: var(--stage-accent);
+    font-size: 9px;
+    letter-spacing: 2.5px;
+}
+
+.css-stage-2 .section-heading h2 {
+    margin: 17px 0 12px;
+
+    font-size: clamp(35px, 5vw, 57px);
+    line-height: 1;
+    letter-spacing: -3px;
+    font-weight: 600;
+}
+
+.css-stage-2 .section-heading p {
+    max-width: 520px;
+
+    margin: 0;
+
+    color: var(--stage-muted);
+    font-size: 12px;
+}
+
+.css-stage-2 .lesson-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px;
+}
+
+.css-stage-2 .lesson-card {
+    min-height: 155px;
+    padding: 25px;
+
+    display: grid;
+    grid-template-columns: 42px minmax(0, 1fr) 25px;
+    align-items: start;
+    gap: 17px;
+
+    background: linear-gradient(
+        145deg,
+        rgba(255,255,255,.045),
+        rgba(255,255,255,.012)
+    );
+
+    border: 1px solid var(--stage-line);
+    border-radius: 12px;
+
+    position: relative;
+    overflow: hidden;
+
+    transition:
+        transform .35s ease,
+        border-color .35s ease,
+        background .35s ease,
+        box-shadow .35s ease;
+}
+
+.css-stage-2 .lesson-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        120deg,
+        rgba(182,154,255,.12),
+        rgba(131,207,255,.035)
+    );
+
+    opacity: 0;
+    transition: opacity .35s ease;
+}
+
+.css-stage-2 .lesson-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(182,154,255,.5);
+    box-shadow: 0 15px 40px rgba(0,0,0,.22);
+}
+
+.css-stage-2 .lesson-card:hover::before {
+    opacity: 1;
+}
+
+.css-stage-2 .lesson-card > * {
+    position: relative;
+    z-index: 1;
+}
+
+.css-stage-2 .lesson-number {
+    color: var(--stage-accent);
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.css-stage-2 .lesson-card h3 {
+    margin: 2px 0 10px;
+
+    font-size: 16px;
+    line-height: 1.35;
+    font-weight: 600;
+}
+
+.css-stage-2 .lesson-card p {
+    margin: 0;
+
+    color: var(--stage-muted);
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+.css-stage-2 .lesson-arrow {
+    color: var(--stage-accent);
+    font-size: 19px;
+    transition: transform .3s ease;
+}
+
+.css-stage-2 .lesson-card:hover .lesson-arrow {
+    transform: translate(4px, -4px);
+}
+
+
+/* =========================================================
+   07 — LESSON SECTIONS
+========================================================= */
+
+.css-stage-2 .lesson-section {
+    padding-top: 95px;
+    padding-bottom: 100px;
+
+    border-top: 1px solid var(--stage-line);
+    scroll-margin-top: 35px;
+}
+
+.css-stage-2 .lesson-heading {
+    max-width: 850px;
+    margin-bottom: 60px;
+    position: relative;
+}
+
+.css-stage-2 .lesson-heading > span {
+    display: inline-block;
+
+    color: var(--stage-accent);
+    font-size: 9px;
+    letter-spacing: 2.5px;
+
+    margin-bottom: 20px;
+}
+
+.css-stage-2 .lesson-heading h2 {
+    margin: 0;
+
+    font-size: clamp(42px, 6.5vw, 76px);
+    line-height: .98;
+    letter-spacing: -5px;
+    font-weight: 600;
+}
+
+.css-stage-2 .lesson-heading p {
+    max-width: 550px;
+
+    margin: 22px 0 0;
+
+    color: var(--stage-muted);
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   08 — LESSON CONTENT FLOW
+========================================================= */
+
+.css-stage-2 .lesson-content {
+    width: 100%;
+    max-width: 850px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+    gap: 0;
+    padding-top: 0;
+    margin: 0;
+}
+
+.css-stage-2 .lesson-content h3 {
+    margin: 52px 0 16px;
+
+    font-size: 23px;
+    line-height: 1.25;
+    letter-spacing: -.7px;
+    font-weight: 600;
+}
+
+.css-stage-2 .lesson-content h3:first-child {
+    margin-top: 0;
+}
+
+.css-stage-2 .lesson-content > p {
+    margin: 0 0 18px;
+
+    color: var(--stage-muted);
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.css-stage-2 .lesson-content strong {
+    color: var(--stage-accent-light);
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   09 — CONCEPT PANELS
+========================================================= */
+
+.css-stage-2 .concept-panel {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px;
+
+    margin: 25px 0 15px;
+}
+
+.css-stage-2 .concept-item {
+    min-height: 180px;
+    padding: 25px;
+
+    background: var(--stage-panel);
+    border: 1px solid var(--stage-line);
+    border-radius: 10px;
+
+    transition:
+        transform .3s ease,
+        border-color .3s ease;
+}
+
+.css-stage-2 .concept-item:hover {
+    transform: translateY(-4px);
+    border-color: rgba(182,154,255,.45);
+}
+
+.css-stage-2 .concept-item > span {
+    color: var(--stage-accent);
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.css-stage-2 .concept-item h4 {
+    margin: 22px 0 8px;
+    font-size: 19px;
+}
+
+.css-stage-2 .concept-item p {
+    margin: 0;
+    color: var(--stage-muted);
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   10 — CODE PANELS
+========================================================= */
+
+.css-stage-2 .code-panel {
+    width: 100%;
+    margin: 15px 0 25px;
+    padding: 25px 28px;
+
+    background: #11111a;
+    border: 1px solid rgba(182,154,255,.18);
+    border-left: 3px solid var(--stage-accent);
+    border-radius: 8px;
+
+    overflow-x: auto;
+
+    color: #d8d2ed;
+    font-family: Consolas, 'Courier New', monospace;
+    font-size: 12px;
+    line-height: 1.85;
+    tab-size: 4;
+
+    white-space: pre;
+}
+
+.css-stage-2 .code-panel code {
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    white-space: inherit;
+}
+
+
+/* =========================================================
+   11 — LESSON LISTS
+========================================================= */
+
+.css-stage-2 .lesson-list {
+    margin: 12px 0 30px;
+    padding: 22px 25px 22px 45px;
+
+    background: rgba(255,255,255,.025);
+    border: 1px solid var(--stage-line);
+    border-radius: 9px;
+}
+
+.css-stage-2 .lesson-list li {
+    padding: 7px 0 7px 5px;
+
+    color: var(--stage-muted);
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.css-stage-2 .lesson-list li::marker {
+    color: var(--stage-accent);
+}
+
+
+/* =========================================================
+   12 — METHOD / SELECTOR / UNIT CARDS
+========================================================= */
+
+.css-stage-2 .method-card,
+.css-stage-2 .selector-card,
+.css-stage-2 .unit-card,
+.css-stage-2 .box-layer {
+    width: 100%;
+    margin: 16px 0;
+    padding: 24px 26px;
+
+    background: var(--stage-panel);
+    border: 1px solid var(--stage-line);
+    border-radius: 10px;
+
+    transition:
+        border-color .3s ease,
+        transform .3s ease,
+        background .3s ease;
+}
+
+.css-stage-2 .method-card:hover,
+.css-stage-2 .selector-card:hover,
+.css-stage-2 .unit-card:hover,
+.css-stage-2 .box-layer:hover {
+    transform: translateY(-3px);
+    border-color: rgba(182,154,255,.4);
+    background: var(--stage-panel-light);
+}
+
+.css-stage-2 .method-card h4,
+.css-stage-2 .selector-card h4,
+.css-stage-2 .unit-card h4,
+.css-stage-2 .box-layer h4 {
+    margin: 0 0 9px;
+    font-size: 16px;
+}
+
+.css-stage-2 .method-card > p,
+.css-stage-2 .selector-card > p,
+.css-stage-2 .unit-card > p,
+.css-stage-2 .box-layer > p {
+    margin: 0 0 12px;
+
+    color: var(--stage-muted);
+    font-size: 12px;
+}
+
+.css-stage-2 .method-card .code-panel,
+.css-stage-2 .selector-card .code-panel,
+.css-stage-2 .unit-card .code-panel {
+    margin: 16px 0;
+}
+
+.css-stage-2 .method-note {
+    display: block;
+    margin-top: 13px;
+
+    color: var(--stage-muted);
+    font-size: 10px;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   13 — LESSON TAKEAWAY
+========================================================= */
+
+.css-stage-2 .lesson-takeaway {
+    margin-top: 45px;
+    padding: 28px 30px;
+
+    background: linear-gradient(
+        110deg,
+        rgba(182,154,255,.12),
+        rgba(131,207,255,.045)
+    );
+
+    border: 1px solid rgba(182,154,255,.25);
+    border-left: 3px solid var(--stage-accent);
+    border-radius: 8px;
+}
+
+.css-stage-2 .lesson-takeaway > span {
+    color: var(--stage-accent);
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.css-stage-2 .lesson-takeaway p {
+    margin: 13px 0 0;
+
+    color: var(--stage-text);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   14 — STAGE COMPLETION
+========================================================= */
+
+.css-stage-2 .stage-completion {
+    margin-top: 35px;
+    margin-bottom: 100px;
+    padding: 75px clamp(25px, 6vw, 75px);
+
+    background:
+        radial-gradient(
+            ellipse at 85% 20%,
+            rgba(182,154,255,.17),
+            transparent 50%
+        ),
+        linear-gradient(
+            145deg,
+            #191725,
+            #13131d
+        );
+
+    border: 1px solid rgba(182,154,255,.23);
+    border-radius: 14px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.css-stage-2 .stage-completion > span {
+    color: var(--stage-accent);
+    font-size: 9px;
+    letter-spacing: 2.5px;
+}
+
+.css-stage-2 .stage-completion h2 {
+    margin: 28px 0 20px;
+
+    font-size: clamp(35px, 5.5vw, 65px);
+    line-height: 1.05;
+    letter-spacing: -3px;
+}
+
+.css-stage-2 .stage-completion > p {
+    max-width: 580px;
+    margin: 0;
+
+    color: var(--stage-muted);
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.css-stage-2 .stage-next-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 35px;
+    padding: 17px 25px;
+
+    background: var(--stage-accent);
+    border: 1px solid var(--stage-accent);
+    border-radius: 5px;
+
+    color: #100d19;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+
+    transition:
+        transform .3s ease,
+        background .3s ease,
+        box-shadow .3s ease;
+}
+
+.css-stage-2 .stage-next-button:hover {
+    transform: translateY(-4px);
+    background: var(--stage-accent-light);
+    box-shadow: 0 12px 35px rgba(182,154,255,.2);
+}
+
+.css-stage-2 .stage-back-link {
+    margin-top: 25px;
+
+    color: var(--stage-muted);
+    font-size: 9px;
+    letter-spacing: 1.5px;
+
+    transition: color .3s ease;
+}
+
+.css-stage-2 .stage-back-link:hover {
+    color: var(--stage-accent-light);
+}
+
+
+/* =========================================================
+   15 — FOOTER
+========================================================= */
+
+.css-stage-2 .css-footer {
+    width: 100%;
+    padding: 30px var(--stage-gutter);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+
+    border-top: 1px solid var(--stage-line);
+    background: rgba(13,13,19,.65);
+}
+
+.css-stage-2 .css-footer p {
+    margin: 0;
+
+    color: var(--stage-text);
+    font-size: 9px;
+    letter-spacing: 1.5px;
+}
+
+.css-stage-2 .css-footer span {
+    color: var(--stage-muted);
+    font-size: 9px;
+    letter-spacing: 1.5px;
+}
+
+
+/* =========================================================
+   16 — TABLET RESPONSIVENESS
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .css-stage-2 {
+        --stage-gutter: 5%;
+    }
+
+    .css-stage-2 .stage-hero {
+        min-height: 480px;
+        padding-top: 90px;
+        padding-bottom: 80px;
+    }
+
+    .css-stage-2 .stage-hero h1 {
+        font-size: clamp(60px, 11vw, 95px);
+        letter-spacing: -6px;
+    }
+
+    .css-stage-2 .lesson-card {
+        padding: 21px;
+        grid-template-columns: 32px minmax(0, 1fr) 20px;
+        gap: 12px;
+    }
+
+    .css-stage-2 .lesson-heading h2 {
+        font-size: clamp(42px, 7vw, 65px);
+    }
+
+}
+
+
+/* =========================================================
+   17 — MOBILE RESPONSIVENESS
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .css-stage-2 {
+        --stage-gutter: 5%;
+    }
+
+    .css-stage-2 .css-nav {
+        min-height: 68px;
+        padding: 0 var(--stage-gutter);
+        gap: 12px;
+    }
+
+    .css-stage-2 .css-brand {
+        font-size: 11px;
+        letter-spacing: .5px;
+    }
+
+    .css-stage-2 .css-nav-links {
+        gap: 12px;
+    }
+
+    .css-stage-2 .css-nav-links a {
+        font-size: 7px;
+        letter-spacing: .5px;
+    }
+
+    .css-stage-2 .stage-hero {
+        min-height: auto;
+        padding-top: 100px;
+        padding-bottom: 75px;
+    }
+
+    .css-stage-2 .stage-eyebrow {
+        font-size: 8px;
+        letter-spacing: 2px;
+    }
+
+    .css-stage-2 .stage-hero h1 {
+        font-size: clamp(48px, 12vw, 72px);
+        letter-spacing: -4px;
+        line-height: .95;
+    }
+
+    .css-stage-2 .stage-description {
+        margin-top: 25px;
+        font-size: 12px;
+    }
+
+    .css-stage-2 .stage-meta {
+        margin-top: 35px;
+        gap: 15px 22px;
+    }
+
+    .css-stage-2 .stage-meta span {
+        font-size: 8px;
+        letter-spacing: 1px;
+    }
+
+    .css-stage-2 .stage-navigation {
+        padding-top: 65px;
+        padding-bottom: 75px;
+    }
+
+    .css-stage-2 .section-heading {
+        margin-bottom: 30px;
+    }
+
+    .css-stage-2 .section-heading h2 {
+        font-size: clamp(32px, 8vw, 44px);
+        letter-spacing: -2px;
+    }
+
+    .css-stage-2 .section-heading p {
+        font-size: 11px;
+    }
+
+    .css-stage-2 .lesson-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .css-stage-2 .lesson-card {
+        min-height: 130px;
+        padding: 20px;
+    }
+
+    .css-stage-2 .lesson-card h3 {
+        font-size: 14px;
+    }
+
+    .css-stage-2 .lesson-card p {
+        font-size: 10px;
+    }
+
+    .css-stage-2 .lesson-section {
+        padding-top: 75px;
+        padding-bottom: 75px;
+    }
+
+    .css-stage-2 .lesson-heading {
+        margin-bottom: 40px;
+    }
+
+    .css-stage-2 .lesson-heading h2 {
+        font-size: clamp(36px, 9vw, 52px);
+        letter-spacing: -2px;
+    }
+
+    .css-stage-2 .lesson-heading p {
+        font-size: 11px;
+    }
+
+    .css-stage-2 .lesson-content h3 {
+        font-size: 20px;
+        margin-top: 42px;
+    }
+
+    .css-stage-2 .lesson-content > p {
+        font-size: 12px;
+    }
+
+    .css-stage-2 .concept-panel {
+        grid-template-columns: 1fr;
+    }
+
+    .css-stage-2 .concept-item {
+        min-height: 145px;
+    }
+
+    .css-stage-2 .code-panel {
+        padding: 20px 17px;
+        font-size: 10px;
+    }
+
+    .css-stage-2 .lesson-list {
+        padding: 18px 17px 18px 35px;
+    }
+
+    .css-stage-2 .lesson-list li {
+        font-size: 11px;
+    }
+
+    .css-stage-2 .method-card,
+    .css-stage-2 .selector-card,
+    .css-stage-2 .unit-card,
+    .css-stage-2 .box-layer {
+        padding: 20px;
+    }
+
+    .css-stage-2 .lesson-takeaway {
+        padding: 22px;
+    }
+
+    .css-stage-2 .lesson-takeaway p {
+        font-size: 12px;
+    }
+
+    .css-stage-2 .stage-completion {
+        margin-top: 20px;
+        margin-bottom: 65px;
+        padding: 40px 25px;
+    }
+
+    .css-stage-2 .stage-completion h2 {
+        font-size: clamp(32px, 8vw, 45px);
+        letter-spacing: -2px;
+    }
+
+    .css-stage-2 .stage-completion > p {
+        font-size: 11px;
+    }
+
+    .css-stage-2 .css-footer {
+        padding-top: 25px;
+        padding-bottom: 25px;
+
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .css-stage-2 .css-footer p,
+    .css-stage-2 .css-footer span {
+        font-size: 8px;
+    }
+
+}
+
+
+/* =========================================================
+   18 — SMALL MOBILE SCREENS
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .css-stage-2 .css-brand {
+        font-size: 9px;
+    }
+
+    .css-stage-2 .css-nav-links {
+        gap: 8px;
+    }
+
+    .css-stage-2 .css-nav-links a {
+        font-size: 6px;
+    }
+
+    .css-stage-2 .stage-hero h1 {
+        font-size: 12vw;
+        letter-spacing: -3px;
+    }
+
+    .css-stage-2 .stage-meta {
+        gap: 12px;
+    }
+
+    .css-stage-2 .lesson-card {
+        grid-template-columns: 25px minmax(0, 1fr) 16px;
+        gap: 9px;
+        padding: 16px;
+    }
+
+}
+
+
+/* =========================================================
+   19 — ACCESSIBILITY
+========================================================= */
+
+.css-stage-2 a:focus-visible {
+    outline: 2px solid var(--stage-blue);
+    outline-offset: 5px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .css-stage-2 *,
+    .css-stage-2 *::before,
+    .css-stage-2 *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+    }
+
+}

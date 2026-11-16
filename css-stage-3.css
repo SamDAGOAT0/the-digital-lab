@@ -1,0 +1,1937 @@
+
+/* =========================================================
+   THE DIGITAL LAB
+   THE CASCADE — STAGE 03
+   VISUAL MASTERY
+   PURPLE / BLUE GLASSMORPHISM DESIGN SYSTEM
+========================================================= */
+
+
+/* =========================================================
+   01 — DESIGN SYSTEM
+========================================================= */
+
+.css-stage-3 {
+    --vm-bg: #090817;
+    --vm-bg-light: #100e25;
+    --vm-panel: rgba(25, 21, 54, 0.72);
+    --vm-panel-solid: #17132f;
+    --vm-glass: rgba(255, 255, 255, 0.055);
+    --vm-glass-hover: rgba(255, 255, 255, 0.095);
+
+    --vm-purple: #a77bff;
+    --vm-purple-light: #c6a8ff;
+    --vm-blue: #63b8ff;
+    --vm-cyan: #72e0ed;
+    --vm-pink: #ff83c5;
+
+    --vm-text: #f5f1ff;
+    --vm-muted: #aaa4c8;
+    --vm-dim: #77718f;
+
+    --vm-border: rgba(194, 170, 255, 0.15);
+    --vm-border-bright: rgba(194, 170, 255, 0.3);
+
+    --vm-gradient: linear-gradient(
+        120deg,
+        #c18bff,
+        #759bff,
+        #69d9ed
+    );
+
+    --vm-gradient-warm: linear-gradient(
+        120deg,
+        #f17cc4,
+        #a77bff,
+        #70b9ff
+    );
+
+    background: var(--vm-bg);
+    color: var(--vm-text);
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+    font-family: "Space Grotesk", sans-serif;
+}
+
+
+/* =========================================================
+   02 — GLOBAL RESET & FOUNDATION
+========================================================= */
+
+.css-stage-3 *,
+.css-stage-3 *::before,
+.css-stage-3 *::after {
+    box-sizing: border-box;
+}
+
+.css-stage-3 {
+    scroll-behavior: smooth;
+}
+
+.css-stage-3 a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.css-stage-3 button,
+.css-stage-3 input {
+    font: inherit;
+}
+
+.css-stage-3 p {
+    line-height: 1.8;
+}
+
+.css-stage-3 ::selection {
+    background: rgba(167, 123, 255, 0.35);
+    color: white;
+}
+
+.css-stage-3 main {
+    width: 100%;
+    overflow: visible;
+}
+
+
+/* =========================================================
+   03 — AMBIENT ATMOSPHERE
+========================================================= */
+
+.css-stage-3 .visual-atmosphere {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.css-stage-3 .ambient-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(110px);
+    opacity: 0.25;
+    animation: vm-orb-float 14s ease-in-out infinite alternate;
+}
+
+.css-stage-3 .orb-one {
+    width: 550px;
+    height: 550px;
+    background: #7138e8;
+    top: 100px;
+    left: -260px;
+}
+
+.css-stage-3 .orb-two {
+    width: 600px;
+    height: 600px;
+    background: #145fc9;
+    top: 450px;
+    right: -300px;
+    animation-delay: -5s;
+}
+
+.css-stage-3 .orb-three {
+    width: 450px;
+    height: 450px;
+    background: #bd398e;
+    top: 1600px;
+    left: 35%;
+    opacity: 0.12;
+    animation-delay: -8s;
+}
+
+@keyframes vm-orb-float {
+    0% {
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+
+    100% {
+        transform: translate3d(50px, -45px, 0) scale(1.12);
+    }
+}
+
+
+/* =========================================================
+   04 — NAVIGATION
+========================================================= */
+
+.css-stage-3 .visual-nav {
+    position: relative;
+    z-index: 10;
+    width: min(1380px, calc(100% - 100px));
+    margin: 0 auto;
+    padding: 28px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+
+.css-stage-3 .visual-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    white-space: nowrap;
+}
+
+.css-stage-3 .brand-mark {
+    width: 36px;
+    height: 36px;
+    display: grid;
+    place-items: center;
+    border-radius: 12px;
+    background: var(--vm-gradient);
+    color: #17102c;
+    font-size: 19px;
+    font-weight: 800;
+    box-shadow: 0 0 25px rgba(167,123,255,0.35);
+}
+
+.css-stage-3 .visual-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 34px;
+}
+
+.css-stage-3 .visual-nav-links a {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--vm-muted);
+    transition: color 0.3s ease;
+}
+
+.css-stage-3 .visual-nav-links a:hover,
+.css-stage-3 .visual-nav-links .nav-active {
+    color: white;
+}
+
+.css-stage-3 .visual-nav-links .nav-active {
+    position: relative;
+}
+
+.css-stage-3 .visual-nav-links .nav-active::after {
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--vm-purple);
+    left: 50%;
+    bottom: -12px;
+    transform: translateX(-50%);
+    box-shadow: 0 0 12px var(--vm-purple);
+}
+
+.css-stage-3 .nav-cta {
+    padding: 11px 19px;
+    border: 1px solid var(--vm-border-bright);
+    border-radius: 30px;
+    background: rgba(255,255,255,0.045);
+    font-size: 11px;
+    font-weight: 600;
+    transition: 0.3s ease;
+    white-space: nowrap;
+}
+
+.css-stage-3 .nav-cta:hover {
+    background: rgba(167,123,255,0.15);
+    border-color: var(--vm-purple);
+    box-shadow: 0 0 25px rgba(167,123,255,0.18);
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   05 — MAIN CONTENT
+========================================================= */
+
+.css-stage-3 .visual-main {
+    position: relative;
+    z-index: 1;
+    width: min(1380px, calc(100% - 100px));
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   06 — HERO SECTION
+========================================================= */
+
+.css-stage-3 .visual-hero {
+    min-height: 710px;
+    display: grid;
+    grid-template-columns: 1fr 0.95fr;
+    align-items: center;
+    gap: 65px;
+    padding: 85px 0 105px;
+}
+
+.css-stage-3 .hero-copy {
+    position: relative;
+    z-index: 2;
+}
+
+.css-stage-3 .visual-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 16px;
+    border: 1px solid var(--vm-border);
+    background: rgba(167,123,255,0.07);
+    border-radius: 30px;
+    color: var(--vm-purple-light);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.css-stage-3 .eyebrow-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #75e6d0;
+    box-shadow: 0 0 12px #75e6d0;
+}
+
+.css-stage-3 .hero-copy h1 {
+    margin: 30px 0 22px;
+    font-size: clamp(65px, 8vw, 112px);
+    font-weight: 800;
+    line-height: 0.91;
+    letter-spacing: -7px;
+    color: white;
+}
+
+.css-stage-3 .hero-copy h1 span {
+    background: var(--vm-gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    filter: drop-shadow(0 5px 25px rgba(133,130,255,0.15));
+}
+
+.css-stage-3 .hero-description {
+    max-width: 530px;
+    color: var(--vm-muted);
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+.css-stage-3 .hero-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 34px;
+}
+
+.css-stage-3 .primary-button,
+.css-stage-3 .secondary-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 15px 22px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 700;
+    transition: 0.3s ease;
+}
+
+.css-stage-3 .primary-button {
+    background: var(--vm-gradient);
+    color: #17102c;
+    box-shadow: 0 8px 35px rgba(128,108,255,0.25);
+}
+
+.css-stage-3 .primary-button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 40px rgba(128,108,255,0.4);
+}
+
+.css-stage-3 .secondary-button {
+    border: 1px solid var(--vm-border);
+    background: rgba(255,255,255,0.04);
+    color: white;
+}
+
+.css-stage-3 .secondary-button:hover {
+    background: rgba(255,255,255,0.09);
+    border-color: var(--vm-purple);
+}
+
+.css-stage-3 .hero-stats {
+    display: flex;
+    align-items: center;
+    gap: 27px;
+    margin-top: 55px;
+}
+
+.css-stage-3 .hero-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.css-stage-3 .hero-stat strong {
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.css-stage-3 .hero-stat span {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    color: var(--vm-dim);
+}
+
+.css-stage-3 .stat-divider {
+    width: 1px;
+    height: 34px;
+    background: var(--vm-border);
+}
+
+
+/* =========================================================
+   07 — HERO VISUAL / GLASS SHOWCASE
+========================================================= */
+
+.css-stage-3 .hero-visual {
+    position: relative;
+    min-height: 480px;
+    display: grid;
+    place-items: center;
+}
+
+.css-stage-3 .visual-orbit {
+    position: absolute;
+    border: 1px solid rgba(178,151,255,0.15);
+    border-radius: 50%;
+    transform: rotate(-25deg);
+}
+
+.css-stage-3 .orbit-large {
+    width: 490px;
+    height: 350px;
+}
+
+.css-stage-3 .orbit-small {
+    width: 390px;
+    height: 280px;
+    transform: rotate(35deg);
+    border-color: rgba(104,190,255,0.15);
+}
+
+.css-stage-3 .glass-showcase {
+    position: relative;
+    z-index: 2;
+    width: min(410px, 90%);
+    padding: 18px;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 25px;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(117,91,194,0.28),
+            rgba(34,39,92,0.48)
+        );
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    box-shadow:
+        0 35px 90px rgba(0,0,0,0.4),
+        inset 0 1px 1px rgba(255,255,255,0.2);
+    transform: rotate(-4deg);
+    transition: transform 0.5s ease;
+}
+
+.css-stage-3 .glass-showcase:hover {
+    transform: rotate(0deg) translateY(-8px);
+}
+
+.css-stage-3 .showcase-topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 4px 17px;
+    color: rgba(255,255,255,0.55);
+    font-size: 8px;
+    letter-spacing: 1.5px;
+}
+
+.css-stage-3 .window-dots {
+    display: flex;
+    gap: 5px;
+}
+
+.css-stage-3 .window-dots i {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #ff8bba;
+}
+
+.css-stage-3 .window-dots i:nth-child(2) {
+    background: #ffd17e;
+}
+
+.css-stage-3 .window-dots i:nth-child(3) {
+    background: #7de2c3;
+}
+
+.css-stage-3 .showcase-content {
+    position: relative;
+    overflow: hidden;
+    padding: 36px 25px 20px;
+    min-height: 330px;
+    border-radius: 16px;
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(153,114,255,0.5),
+            transparent 50%
+        ),
+        linear-gradient(145deg, #30225f, #151d49);
+}
+
+.css-stage-3 .showcase-caption {
+    font-size: 8px;
+    letter-spacing: 2px;
+    color: #c7b6ff;
+}
+
+.css-stage-3 .showcase-content h2 {
+    position: relative;
+    z-index: 2;
+    margin-top: 30px;
+    font-size: 43px;
+    line-height: 1.05;
+    letter-spacing: -2px;
+    color: white;
+}
+
+.css-stage-3 .showcase-content h2 span {
+    background: linear-gradient(90deg, #f0a2ff, #7ecbff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.css-stage-3 .showcase-gradient {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    right: -35px;
+    bottom: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #bc6aff, #448cff);
+    filter: blur(12px);
+    opacity: 0.55;
+}
+
+.css-stage-3 .showcase-bottom {
+    position: absolute;
+    bottom: 19px;
+    left: 25px;
+    right: 25px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 8px;
+    letter-spacing: 1px;
+    color: rgba(255,255,255,0.6);
+}
+
+.css-stage-3 .floating-label {
+    position: absolute;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 12px 16px;
+    border: 1px solid var(--vm-border-bright);
+    border-radius: 30px;
+    background: rgba(22,18,53,0.75);
+    backdrop-filter: blur(15px);
+    color: white;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.2);
+}
+
+.css-stage-3 .label-top {
+    top: 25px;
+    right: -5px;
+}
+
+.css-stage-3 .label-bottom {
+    bottom: 22px;
+    left: -5px;
+    font-size: 8px;
+}
+
+.css-stage-3 .label-icon {
+    color: #d5a2ff;
+    font-size: 15px;
+}
+
+.css-stage-3 .floating-card {
+    position: absolute;
+    z-index: 4;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 17px;
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 15px;
+    background: rgba(30,25,68,0.8);
+    backdrop-filter: blur(18px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+    animation: vm-card-float 5s ease-in-out infinite;
+}
+
+.css-stage-3 .floating-card-one {
+    bottom: 110px;
+    left: -30px;
+}
+
+.css-stage-3 .floating-card-two {
+    top: 110px;
+    right: -35px;
+    animation-delay: -2.5s;
+}
+
+.css-stage-3 .mini-card-icon {
+    font-size: 22px;
+    color: var(--vm-purple-light);
+}
+
+.css-stage-3 .floating-card strong,
+.css-stage-3 .floating-card small {
+    display: block;
+}
+
+.css-stage-3 .floating-card strong {
+    font-size: 10px;
+}
+
+.css-stage-3 .floating-card small {
+    margin-top: 5px;
+    font-size: 7px;
+    letter-spacing: 1px;
+    color: var(--vm-muted);
+}
+
+@keyframes vm-card-float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+
+/* =========================================================
+   08 — SECTION INTRODUCTIONS
+========================================================= */
+
+.css-stage-3 .visual-lessons,
+.css-stage-3 .visual-playground,
+.css-stage-3 .visual-lesson-section {
+    padding-top: 105px;
+}
+
+.css-stage-3 .section-intro {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 42px;
+}
+
+.css-stage-3 .section-eyebrow {
+    display: block;
+    margin-bottom: 14px;
+    color: var(--vm-purple-light);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+}
+
+.css-stage-3 .section-intro h2,
+.css-stage-3 .playground-heading h2 {
+    margin: 0;
+    font-size: clamp(30px, 4vw, 47px);
+    line-height: 1.2;
+    letter-spacing: -2px;
+}
+
+.css-stage-3 .section-intro h2 span,
+.css-stage-3 .playground-heading h2 span {
+    background: var(--vm-gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.css-stage-3 .section-intro > p {
+    max-width: 330px;
+    margin: 0;
+    color: var(--vm-muted);
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   09 — LESSON SHOWCASE CARDS
+========================================================= */
+
+.css-stage-3 .lesson-showcase-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.css-stage-3 .visual-lesson-card {
+    min-width: 0;
+    overflow: hidden;
+    padding: 15px;
+    border: 1px solid var(--vm-border);
+    border-radius: 21px;
+    background: linear-gradient(
+        145deg,
+        rgba(255,255,255,0.07),
+        rgba(255,255,255,0.025)
+    );
+    backdrop-filter: blur(15px);
+    transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.css-stage-3 .visual-lesson-card:hover {
+    transform: translateY(-9px);
+    border-color: rgba(188,155,255,0.55);
+    box-shadow: 0 22px 55px rgba(0,0,0,0.25);
+}
+
+.css-stage-3 .lesson-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--vm-muted);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.css-stage-3 .card-arrow {
+    width: 29px;
+    height: 29px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.08);
+    color: white;
+    font-size: 14px;
+    transition: 0.3s ease;
+}
+
+.css-stage-3 .visual-lesson-card:hover .card-arrow {
+    background: var(--vm-purple);
+    color: #17102c;
+    transform: rotate(45deg);
+}
+
+.css-stage-3 .lesson-art {
+    position: relative;
+    height: 170px;
+    margin: 15px 0;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.css-stage-3 .art-gradient {
+    background: linear-gradient(135deg, #522a9c, #263b9e);
+}
+
+.css-stage-3 .gradient-shape {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(2px);
+}
+
+.css-stage-3 .shape-one {
+    width: 130px;
+    height: 130px;
+    top: -25px;
+    left: 20px;
+    background: linear-gradient(135deg, #ff92df, #9d6aff);
+}
+
+.css-stage-3 .shape-two {
+    width: 120px;
+    height: 120px;
+    bottom: -45px;
+    right: 5px;
+    background: linear-gradient(135deg, #60d9ff, #6564f5);
+}
+
+.css-stage-3 .shape-three {
+    width: 75px;
+    height: 75px;
+    top: 45px;
+    left: 125px;
+    background: #f3a6ff;
+    opacity: 0.65;
+}
+
+.css-stage-3 .art-motion {
+    display: grid;
+    place-items: center;
+    background: linear-gradient(135deg, #182e72, #48266f);
+}
+
+.css-stage-3 .motion-square {
+    position: absolute;
+    width: 65px;
+    height: 65px;
+    border-radius: 16px;
+    transform: rotate(35deg);
+}
+
+.css-stage-3 .square-one {
+    background: linear-gradient(135deg, #7bdcff, #6877ff);
+    transform: translate(-45px, -10px) rotate(35deg);
+}
+
+.css-stage-3 .square-two {
+    background: linear-gradient(135deg, #ff8ed2, #a16aff);
+    transform: translate(0, 10px) rotate(35deg);
+    opacity: 0.9;
+}
+
+.css-stage-3 .square-three {
+    background: linear-gradient(135deg, #ffcb88, #ff7da7);
+    transform: translate(45px, -10px) rotate(35deg);
+    opacity: 0.8;
+}
+
+.css-stage-3 .art-advanced {
+    display: grid;
+    place-items: center;
+    background: linear-gradient(135deg, #123d64, #20275d);
+}
+
+.css-stage-3 .advanced-ring {
+    position: absolute;
+    border: 2px solid rgba(130,220,255,0.7);
+    border-radius: 50%;
+}
+
+.css-stage-3 .ring-one {
+    width: 125px;
+    height: 125px;
+}
+
+.css-stage-3 .ring-two {
+    width: 85px;
+    height: 85px;
+    border-color: rgba(219,151,255,0.9);
+}
+
+.css-stage-3 .advanced-center {
+    font-size: 21px;
+    font-weight: 800;
+    color: white;
+    text-shadow: 0 0 20px #75cfff;
+}
+
+.css-stage-3 .art-project {
+    display: grid;
+    place-items: center;
+    background: linear-gradient(135deg, #563071, #263e7e);
+}
+
+.css-stage-3 .project-window {
+    width: 170px;
+    padding: 8px;
+    border: 1px solid rgba(255,255,255,0.35);
+    border-radius: 10px;
+    background: rgba(255,255,255,0.13);
+    transform: rotate(-7deg);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+}
+
+.css-stage-3 .project-window-top {
+    height: 8px;
+    width: 50px;
+    margin-bottom: 8px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.6);
+}
+
+.css-stage-3 .project-window-body {
+    display: flex;
+    gap: 6px;
+}
+
+.css-stage-3 .project-window-body div {
+    flex: 1;
+    height: 65px;
+    border-radius: 5px;
+    background: linear-gradient(145deg, #c38cff, #6aaaff);
+}
+
+.css-stage-3 .project-window-body div:nth-child(2) {
+    background: linear-gradient(145deg, #ff9ed1, #a879ff);
+}
+
+.css-stage-3 .project-window-body div:nth-child(3) {
+    background: linear-gradient(145deg, #7ce6e3, #688eff);
+}
+
+.css-stage-3 .lesson-card-bottom h3 {
+    min-height: 48px;
+    margin: 20px 0 8px;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.css-stage-3 .lesson-card-bottom p {
+    min-height: 45px;
+    margin: 0;
+    color: var(--vm-muted);
+    font-size: 11px;
+}
+
+.css-stage-3 .lesson-card-link {
+    display: inline-block;
+    margin-top: 20px;
+    color: var(--vm-purple-light);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+}
+
+
+/* =========================================================
+   10 — VISUAL PLAYGROUND
+========================================================= */
+
+.css-stage-3 .playground-heading {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.css-stage-3 .playground-heading p {
+    max-width: 490px;
+    margin: 15px auto 0;
+    color: var(--vm-muted);
+    font-size: 13px;
+}
+
+.css-stage-3 .playground-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.css-stage-3 .playground-card {
+    padding: 20px;
+    border: 1px solid var(--vm-border);
+    border-radius: 22px;
+    background: var(--vm-glass);
+    backdrop-filter: blur(15px);
+    transition: 0.35s ease;
+}
+
+.css-stage-3 .playground-card:hover {
+    transform: translateY(-6px);
+    background: var(--vm-glass-hover);
+    border-color: var(--vm-border-bright);
+}
+
+.css-stage-3 .playground-number {
+    color: var(--vm-muted);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.css-stage-3 .playground-card h3 {
+    margin: 22px 0 7px;
+    font-size: 17px;
+}
+
+.css-stage-3 .playground-card > p {
+    margin: 0;
+    color: var(--vm-muted);
+    font-size: 11px;
+}
+
+.css-stage-3 .glass-demo,
+.css-stage-3 .colour-demo,
+.css-stage-3 .depth-demo {
+    position: relative;
+    height: 190px;
+    margin-top: 17px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.css-stage-3 .glass-demo {
+    display: grid;
+    place-items: center;
+    background:
+        radial-gradient(circle at 20% 30%, #ff8dcc, transparent 40%),
+        radial-gradient(circle at 80% 80%, #57a9ff, transparent 45%),
+        linear-gradient(135deg, #713db7, #263c94);
+}
+
+.css-stage-3 .glass-demo-inner {
+    padding: 20px 27px;
+    border: 1px solid rgba(255,255,255,0.45);
+    border-radius: 15px;
+    background: rgba(255,255,255,0.16);
+    backdrop-filter: blur(14px);
+    text-align: center;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.css-stage-3 .glass-demo-inner span {
+    display: block;
+    font-size: 8px;
+    letter-spacing: 2px;
+    color: #e4d9ff;
+}
+
+.css-stage-3 .glass-demo-inner strong {
+    display: block;
+    margin-top: 9px;
+    font-size: 18px;
+}
+
+.css-stage-3 .glass-demo-inner p {
+    margin: 5px 0 0;
+    font-size: 9px;
+    color: rgba(255,255,255,0.8);
+}
+
+.css-stage-3 .colour-demo {
+    display: grid;
+    place-items: center;
+    background: linear-gradient(135deg, #402071, #164d82);
+}
+
+.css-stage-3 .colour-orb {
+    position: absolute;
+    width: 145px;
+    height: 145px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ff91d3, #8b75ff, #67d9ff);
+    filter: blur(1px);
+    box-shadow: 0 0 60px rgba(163,114,255,0.55);
+    animation: vm-colour-pulse 5s ease-in-out infinite alternate;
+}
+
+@keyframes vm-colour-pulse {
+    from {
+        transform: scale(0.85);
+        filter: hue-rotate(0deg);
+    }
+
+    to {
+        transform: scale(1.08);
+        filter: hue-rotate(35deg);
+    }
+}
+
+.css-stage-3 .colour-demo > span {
+    position: relative;
+    z-index: 2;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.4);
+}
+
+.css-stage-3 .depth-demo {
+    display: grid;
+    place-items: center;
+    background: linear-gradient(135deg, #192b67, #43245e);
+}
+
+.css-stage-3 .depth-layer {
+    position: absolute;
+    width: 105px;
+    height: 105px;
+    border-radius: 20px;
+    transform: rotate(45deg);
+}
+
+.css-stage-3 .layer-back {
+    background: #638aff;
+    transform: translate(-27px, -20px) rotate(45deg);
+    opacity: 0.45;
+}
+
+.css-stage-3 .layer-middle {
+    background: #bd83ff;
+    transform: translate(0, 0) rotate(45deg);
+    opacity: 0.75;
+}
+
+.css-stage-3 .layer-front {
+    background: linear-gradient(135deg, #f3a5df, #9e7cff);
+    transform: translate(27px, 20px) rotate(45deg);
+    box-shadow: 15px 20px 40px rgba(0,0,0,0.3);
+}
+
+
+/* =========================================================
+   11 — LESSON SECTIONS
+========================================================= */
+
+.css-stage-3 .visual-lesson-section {
+    scroll-margin-top: 35px;
+}
+
+.css-stage-3 .lesson-section-heading {
+    max-width: 760px;
+    margin-bottom: 45px;
+}
+
+.css-stage-3 .lesson-section-heading h2 {
+    margin: 0;
+    font-size: clamp(32px, 4.5vw, 52px);
+    letter-spacing: -2px;
+    line-height: 1.15;
+}
+
+.css-stage-3 .lesson-section-heading h2 span {
+    background: var(--vm-gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.css-stage-3 .lesson-section-heading > p {
+    max-width: 570px;
+    margin-top: 15px;
+    color: var(--vm-muted);
+    font-size: 13px;
+}
+
+.css-stage-3 .lesson-content-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    align-items: stretch;
+    gap: 25px;
+}
+
+.css-stage-3 .lesson-explanation,
+.css-stage-3 .lesson-code-card {
+    min-width: 0;
+    padding: 32px;
+    border: 1px solid var(--vm-border);
+    border-radius: 22px;
+    background: linear-gradient(
+        145deg,
+        rgba(255,255,255,0.065),
+        rgba(255,255,255,0.025)
+    );
+    backdrop-filter: blur(15px);
+}
+
+.css-stage-3 .content-label {
+    color: var(--vm-purple-light);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.css-stage-3 .lesson-explanation h3 {
+    margin: 18px 0 12px;
+    font-size: 25px;
+    line-height: 1.3;
+    letter-spacing: -0.7px;
+}
+
+.css-stage-3 .lesson-explanation > p {
+    color: var(--vm-muted);
+    font-size: 12px;
+}
+
+.css-stage-3 .concept-list {
+    display: flex;
+    flex-direction: column;
+    gap: 21px;
+    margin-top: 30px;
+}
+
+.css-stage-3 .concept-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.css-stage-3 .concept-icon {
+    flex-shrink: 0;
+    width: 37px;
+    height: 37px;
+    display: grid;
+    place-items: center;
+    border-radius: 11px;
+    background: rgba(167,123,255,0.13);
+    color: var(--vm-purple-light);
+    font-size: 18px;
+}
+
+.css-stage-3 .concept-item strong {
+    display: block;
+    font-size: 12px;
+}
+
+.css-stage-3 .concept-item p {
+    margin: 5px 0 0;
+    color: var(--vm-muted);
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   12 — CODE PANELS
+========================================================= */
+
+.css-stage-3 .lesson-code-card {
+    background: rgba(12,11,31,0.85);
+    box-shadow: 0 20px 55px rgba(0,0,0,0.18);
+}
+
+.css-stage-3 .code-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+}
+
+.css-stage-3 .code-card-header > span:first-child {
+    color: #d4c8ff;
+}
+
+.css-stage-3 .code-status {
+    color: #7de1c1;
+    font-size: 8px;
+}
+
+.css-stage-3 .code-display {
+    overflow-x: auto;
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 13px;
+    background: #0b0a1b;
+}
+
+.css-stage-3 .code-display pre {
+    margin: 0;
+    white-space: pre;
+}
+
+.css-stage-3 .code-display code {
+    color: #c4b8ee;
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 11px;
+    line-height: 1.85;
+}
+
+.css-stage-3 .code-preview {
+    margin-top: 23px;
+    padding: 18px;
+    border-radius: 13px;
+    background: rgba(255,255,255,0.035);
+}
+
+.css-stage-3 .code-preview > span {
+    display: block;
+    margin-bottom: 16px;
+    color: var(--vm-muted);
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.css-stage-3 .design-preview-card {
+    padding: 25px;
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 15px;
+    background: linear-gradient(135deg, #8b5cf6, #2563eb);
+    box-shadow: 0 15px 40px rgba(80,50,180,0.3);
+    transition: transform 0.3s ease;
+}
+
+.css-stage-3 .design-preview-card:hover {
+    transform: translateY(-5px);
+}
+
+.css-stage-3 .design-preview-card strong {
+    font-size: 17px;
+}
+
+.css-stage-3 .design-preview-card p {
+    margin: 6px 0 0;
+    color: rgba(255,255,255,0.8);
+    font-size: 10px;
+}
+
+.css-stage-3 .motion-demo-button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 11px;
+    background: linear-gradient(120deg, #986cff, #579eff);
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.css-stage-3 .motion-demo-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(150,100,255,0.3);
+}
+
+.css-stage-3 .selector-demo {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.css-stage-3 .selector-demo button,
+.css-stage-3 .selector-demo input {
+    min-width: 0;
+    padding: 12px 15px;
+    border: 1px solid var(--vm-border-bright);
+    border-radius: 9px;
+    background: rgba(255,255,255,0.06);
+    color: white;
+    font-size: 10px;
+    transition: 0.3s ease;
+}
+
+.css-stage-3 .selector-demo button {
+    cursor: pointer;
+}
+
+.css-stage-3 .selector-demo button:hover {
+    background: #8b5cf6;
+    border-color: #b69aff;
+}
+
+.css-stage-3 .selector-demo input {
+    flex: 1;
+    width: 100%;
+}
+
+.css-stage-3 .selector-demo input::placeholder {
+    color: #85809e;
+}
+
+.css-stage-3 .selector-demo input:focus {
+    outline: none;
+    border-color: var(--vm-blue);
+    box-shadow: 0 0 0 3px rgba(99,184,255,0.12);
+}
+
+
+/* =========================================================
+   13 — FINAL PROJECT
+========================================================= */
+
+.css-stage-3 .final-project-section {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 0.85fr;
+    align-items: center;
+    gap: 50px;
+    margin-top: 120px;
+    padding: 65px;
+    overflow: hidden;
+    border: 1px solid rgba(177,146,255,0.24);
+    border-radius: 30px;
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(148,90,255,0.25),
+            transparent 45%
+        ),
+        linear-gradient(135deg, #1c1744, #111b3c);
+}
+
+.css-stage-3 .final-project-glow {
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    top: -180px;
+    right: 20%;
+    border-radius: 50%;
+    background: #8c58ff;
+    filter: blur(130px);
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+.css-stage-3 .final-project-content {
+    position: relative;
+    z-index: 2;
+}
+
+.css-stage-3 .final-project-content h2 {
+    margin: 0;
+    font-size: clamp(45px, 6vw, 73px);
+    line-height: 1.05;
+    letter-spacing: -4px;
+}
+
+.css-stage-3 .final-project-content h2 span {
+    background: var(--vm-gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.css-stage-3 .final-project-content > p {
+    max-width: 500px;
+    margin-top: 20px;
+    color: var(--vm-muted);
+    font-size: 12px;
+}
+
+.css-stage-3 .project-checklist {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-top: 30px;
+}
+
+.css-stage-3 .project-check {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #ded8f5;
+    font-size: 10px;
+}
+
+.css-stage-3 .project-check span {
+    width: 21px;
+    height: 21px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: rgba(116,225,194,0.15);
+    color: #7de1c1;
+}
+
+.css-stage-3 .final-project-note {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    margin-top: 35px;
+    padding: 17px;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 14px;
+    background: rgba(255,255,255,0.045);
+}
+
+.css-stage-3 .note-icon {
+    font-size: 24px;
+    color: #c69cff;
+}
+
+.css-stage-3 .final-project-note strong {
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+.css-stage-3 .final-project-note p {
+    margin: 5px 0 0;
+    color: var(--vm-muted);
+    font-size: 9px;
+}
+
+.css-stage-3 .final-project-art {
+    position: relative;
+    min-height: 320px;
+    display: grid;
+    place-items: center;
+    perspective: 800px;
+}
+
+.css-stage-3 .project-art-window {
+    width: 100%;
+    max-width: 340px;
+    padding: 12px;
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 19px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(20px);
+    transform: rotateY(-12deg) rotateX(5deg);
+    box-shadow: 20px 30px 60px rgba(0,0,0,0.3);
+    transition: transform 0.5s ease;
+}
+
+.css-stage-3 .project-art-window:hover {
+    transform: rotateY(0) rotateX(0) translateY(-7px);
+}
+
+.css-stage-3 .art-window-header {
+    display: flex;
+    gap: 5px;
+    padding-bottom: 13px;
+}
+
+.css-stage-3 .art-window-header span {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #ff8ebf;
+}
+
+.css-stage-3 .art-window-header span:nth-child(2) {
+    background: #ffd28c;
+}
+
+.css-stage-3 .art-window-header span:nth-child(3) {
+    background: #7ee0bf;
+}
+
+.css-stage-3 .art-window-content {
+    min-height: 210px;
+    padding: 23px;
+    border-radius: 11px;
+    background: linear-gradient(145deg, #35256e, #1c3267);
+}
+
+.css-stage-3 .art-heading {
+    width: 75%;
+    height: 13px;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #e2b2ff, #83d3ff);
+}
+
+.css-stage-3 .art-subheading {
+    width: 45%;
+    height: 6px;
+    margin-top: 10px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.35);
+}
+
+.css-stage-3 .art-cards {
+    display: flex;
+    gap: 8px;
+    margin-top: 30px;
+}
+
+.css-stage-3 .art-cards div {
+    flex: 1;
+    height: 75px;
+    border-radius: 8px;
+    background: linear-gradient(145deg, #c17dff, #6b8dff);
+}
+
+.css-stage-3 .art-cards div:nth-child(2) {
+    background: linear-gradient(145deg, #ff94ce, #a16bff);
+}
+
+.css-stage-3 .art-cards div:nth-child(3) {
+    background: linear-gradient(145deg, #7ce5dd, #668cff);
+}
+
+.css-stage-3 .art-footer-line {
+    width: 65%;
+    height: 6px;
+    margin-top: 20px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.3);
+}
+
+
+/* =========================================================
+   14 — COMPLETION SECTION
+========================================================= */
+
+.css-stage-3 .visual-completion {
+    padding: 140px 20px 120px;
+    text-align: center;
+}
+
+.css-stage-3 .completion-symbol {
+    width: 65px;
+    height: 65px;
+    display: grid;
+    place-items: center;
+    margin: 0 auto 25px;
+    border: 1px solid var(--vm-border-bright);
+    border-radius: 20px;
+    background: rgba(167,123,255,0.12);
+    color: #d6b6ff;
+    font-size: 29px;
+    box-shadow: 0 0 45px rgba(167,123,255,0.15);
+}
+
+.css-stage-3 .visual-completion h2 {
+    margin: 0;
+    font-size: clamp(35px, 5vw, 58px);
+    letter-spacing: -2px;
+}
+
+.css-stage-3 .visual-completion h2 span {
+    background: var(--vm-gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.css-stage-3 .visual-completion > p {
+    max-width: 570px;
+    margin: 17px auto 30px;
+    color: var(--vm-muted);
+    font-size: 12px;
+}
+
+.css-stage-3 .completion-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 25px;
+    border-radius: 12px;
+    background: var(--vm-gradient);
+    color: #17102c;
+    font-size: 11px;
+    font-weight: 800;
+    transition: 0.3s ease;
+}
+
+.css-stage-3 .completion-button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 35px rgba(137,115,255,0.3);
+}
+
+.css-stage-3 .completion-back {
+    display: block;
+    width: fit-content;
+    margin: 22px auto 0;
+    color: var(--vm-muted);
+    font-size: 10px;
+    transition: color 0.3s ease;
+}
+
+.css-stage-3 .completion-back:hover {
+    color: white;
+}
+
+
+/* =========================================================
+   15 — FOOTER
+========================================================= */
+
+.css-stage-3 .visual-footer {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    width: min(1380px, calc(100% - 100px));
+    margin: 0 auto;
+    padding: 28px 0;
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.css-stage-3 .footer-brand {
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.css-stage-3 .footer-brand span {
+    color: var(--vm-purple);
+}
+
+.css-stage-3 .visual-footer p,
+.css-stage-3 .visual-footer > span {
+    color: var(--vm-dim);
+    font-size: 8px;
+    letter-spacing: 1.5px;
+}
+
+
+/* =========================================================
+   16 — RESPONSIVE DESIGN / TABLETS
+========================================================= */
+
+@media (max-width: 1050px) {
+
+    .css-stage-3 .visual-nav,
+    .css-stage-3 .visual-main,
+    .css-stage-3 .visual-footer {
+        width: calc(100% - 60px);
+    }
+
+    .css-stage-3 .visual-hero {
+        gap: 25px;
+    }
+
+    .css-stage-3 .hero-copy h1 {
+        font-size: 75px;
+        letter-spacing: -5px;
+    }
+
+    .css-stage-3 .hero-visual {
+        transform: scale(0.9);
+    }
+
+    .css-stage-3 .lesson-showcase-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .css-stage-3 .lesson-card-bottom h3,
+    .css-stage-3 .lesson-card-bottom p {
+        min-height: auto;
+    }
+
+    .css-stage-3 .final-project-section {
+        padding: 40px;
+    }
+
+}
+
+
+/* =========================================================
+   17 — RESPONSIVE DESIGN / MOBILE
+========================================================= */
+
+@media (max-width: 720px) {
+
+    .css-stage-3 .visual-nav,
+    .css-stage-3 .visual-main,
+    .css-stage-3 .visual-footer {
+        width: calc(100% - 36px);
+    }
+
+    .css-stage-3 .visual-nav {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .css-stage-3 .visual-nav-links {
+        order: 3;
+        width: 100%;
+        justify-content: space-between;
+        gap: 10px;
+        overflow-x: auto;
+    }
+
+    .css-stage-3 .visual-nav-links a {
+        font-size: 10px;
+        white-space: nowrap;
+    }
+
+    .css-stage-3 .nav-cta {
+        font-size: 9px;
+        padding: 9px 12px;
+    }
+
+    .css-stage-3 .visual-hero {
+        grid-template-columns: 1fr;
+        padding: 70px 0 50px;
+        gap: 25px;
+    }
+
+    .css-stage-3 .hero-copy h1 {
+        font-size: clamp(60px, 13vw, 85px);
+        letter-spacing: -4px;
+    }
+
+    .css-stage-3 .hero-description {
+        font-size: 13px;
+    }
+
+    .css-stage-3 .hero-stats {
+        margin-top: 35px;
+        gap: 18px;
+    }
+
+    .css-stage-3 .hero-visual {
+        min-height: 430px;
+        transform: scale(0.9);
+        margin: -15px 0;
+    }
+
+    .css-stage-3 .label-top {
+        right: 0;
+    }
+
+    .css-stage-3 .floating-card-one {
+        left: -5px;
+    }
+
+    .css-stage-3 .floating-card-two {
+        right: -5px;
+    }
+
+    .css-stage-3 .section-intro {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .css-stage-3 .visual-lessons,
+    .css-stage-3 .visual-playground,
+    .css-stage-3 .visual-lesson-section {
+        padding-top: 75px;
+    }
+
+    .css-stage-3 .lesson-showcase-grid {
+        gap: 13px;
+    }
+
+    .css-stage-3 .visual-lesson-card {
+        padding: 11px;
+    }
+
+    .css-stage-3 .lesson-art {
+        height: 130px;
+    }
+
+    .css-stage-3 .lesson-card-bottom h3 {
+        font-size: 12px;
+    }
+
+    .css-stage-3 .lesson-card-bottom p {
+        font-size: 10px;
+    }
+
+    .css-stage-3 .playground-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .css-stage-3 .playground-card {
+        padding: 17px;
+    }
+
+    .css-stage-3 .lesson-content-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .css-stage-3 .lesson-explanation,
+    .css-stage-3 .lesson-code-card {
+        padding: 22px;
+    }
+
+    .css-stage-3 .final-project-section {
+        grid-template-columns: 1fr;
+        padding: 30px 22px;
+        gap: 25px;
+    }
+
+    .css-stage-3 .final-project-art {
+        min-height: 250px;
+    }
+
+    .css-stage-3 .visual-completion {
+        padding: 90px 10px;
+    }
+
+    .css-stage-3 .visual-footer {
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+    }
+
+}
+
+
+/* =========================================================
+   18 — SMALL MOBILE SCREENS
+========================================================= */
+
+@media (max-width: 420px) {
+
+    .css-stage-3 .hero-copy h1 {
+        font-size: 57px;
+    }
+
+    .css-stage-3 .hero-actions {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .css-stage-3 .hero-actions a {
+        width: 100%;
+    }
+
+    .css-stage-3 .hero-visual {
+        transform: scale(0.78);
+        margin: -45px -25px;
+    }
+
+    .css-stage-3 .hero-stats {
+        gap: 12px;
+    }
+
+    .css-stage-3 .hero-stat strong {
+        font-size: 20px;
+    }
+
+    .css-stage-3 .hero-stat span {
+        font-size: 7px;
+    }
+
+    .css-stage-3 .lesson-showcase-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .css-stage-3 .lesson-art {
+        height: 165px;
+    }
+
+    .css-stage-3 .project-checklist {
+        grid-template-columns: 1fr;
+    }
+
+    .css-stage-3 .final-project-content h2 {
+        font-size: 48px;
+    }
+
+}
+
+
+/* =========================================================
+   19 — ACCESSIBILITY / REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .css-stage-3 *,
+    .css-stage-3 *::before,
+    .css-stage-3 *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+
+}

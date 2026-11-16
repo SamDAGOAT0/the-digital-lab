@@ -1,0 +1,1010 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Stage 02 — Layout & Structure | THE CASCADE</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css.css">
+    <link rel="stylesheet" href="css-stage-2.css">
+</head>
+
+<body class="css-chapter css-stage-2">
+
+    <!-- ATMOSPHERE -->
+    <div class="css-atmosphere"></div>
+
+
+    <!-- NAVIGATION -->
+    <nav class="css-nav">
+
+        <a href="css.html" class="css-brand">
+            THE DIGITAL LAB <span>/ CSS</span>
+        </a>
+
+        <div class="css-nav-links">
+            <a href="css.html">Chapter Overview</a>
+            <a href="css-stage-1.html">Previous Stage</a>
+        </div>
+
+    </nav>
+
+
+    <!-- STAGE HERO -->
+    <header class="stage-hero">
+
+        <div class="stage-eyebrow">
+            CHAPTER 002 / STAGE 02
+        </div>
+
+        <h1>
+            LAYOUT <span>& STRUCTURE.</span>
+        </h1>
+
+        <p class="stage-description">
+            A beautiful website needs more than good colors and typography.
+            It needs structure. Learn how elements occupy space,
+            how layouts are built, and how interfaces adapt to every screen.
+        </p>
+
+        <div class="stage-meta">
+            <span>04 LESSONS</span>
+            <span>02 STAGE</span>
+            <span>INTERMEDIATE LEVEL</span>
+        </div>
+
+    </header>
+
+
+    <!-- LESSON NAVIGATION -->
+    <section class="stage-navigation">
+
+        <div class="section-heading">
+            <span>02 — YOUR LEARNING PATH</span>
+            <h2>From elements to entire layouts.</h2>
+            <p>Four essential techniques for building structured, responsive websites.</p>
+        </div>
+
+
+        <div class="lesson-grid">
+
+            <a href="#lesson-05" class="lesson-card">
+                <span class="lesson-number">05</span>
+
+                <div>
+                    <h3>Display & Positioning</h3>
+                    <p>Understand how elements behave, flow and occupy space.</p>
+                </div>
+
+                <span class="lesson-arrow">↗</span>
+            </a>
+
+
+            <a href="#lesson-06" class="lesson-card">
+                <span class="lesson-number">06</span>
+
+                <div>
+                    <h3>Flexbox</h3>
+                    <p>Align, distribute and organize elements with flexibility.</p>
+                </div>
+
+                <span class="lesson-arrow">↗</span>
+            </a>
+
+
+            <a href="#lesson-07" class="lesson-card">
+                <span class="lesson-number">07</span>
+
+                <div>
+                    <h3>CSS Grid</h3>
+                    <p>Create structured layouts using rows and columns.</p>
+                </div>
+
+                <span class="lesson-arrow">↗</span>
+            </a>
+
+
+            <a href="#lesson-08" class="lesson-card">
+                <span class="lesson-number">08</span>
+
+                <div>
+                    <h3>Responsive Design</h3>
+                    <p>Make websites adapt to phones, tablets and desktops.</p>
+                </div>
+
+                <span class="lesson-arrow">↗</span>
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         LESSON 05 — DISPLAY & POSITIONING
+    ====================================================== -->
+
+    <section class="lesson-section" id="lesson-05">
+
+        <div class="lesson-heading">
+
+            <span>LESSON 05 / ELEMENT BEHAVIOUR</span>
+
+            <h2>Display & Positioning</h2>
+
+            <p>
+                Understand how HTML elements behave in a layout
+                and how CSS controls their position.
+            </p>
+
+        </div>
+
+
+        <div class="lesson-content">
+
+            <h3>01. Understanding display</h3>
+
+            <p>
+                The display property determines how an element
+                participates in the layout of a webpage.
+                Different display values produce different behaviours.
+            </p>
+
+
+            <h3>02. The essential display values</h3>
+
+
+            <div class="method-card">
+
+                <h4>01 — Block</h4>
+
+                <p>
+                    A block element starts on a new line and normally
+                    occupies the available width of its containing block.
+                </p>
+
+                <pre class="code-panel"><code>div {
+    display: block;
+}</code></pre>
+
+                <span class="method-note">
+                    Common examples include div, section, article and p.
+                </span>
+
+            </div>
+
+
+            <div class="method-card">
+
+                <h4>02 — Inline</h4>
+
+                <p>
+                    Inline elements flow within the surrounding text
+                    and generally occupy only the space their content needs.
+                </p>
+
+                <pre class="code-panel"><code>span {
+    display: inline;
+}</code></pre>
+
+                <span class="method-note">
+                    Common examples include span, a and strong.
+                </span>
+
+            </div>
+
+
+            <div class="method-card">
+
+                <h4>03 — Inline-block</h4>
+
+                <p>
+                    Combines inline flow with the ability to set
+                    dimensions and other box properties.
+                </p>
+
+                <pre class="code-panel"><code>.button {
+    display: inline-block;
+    width: 150px;
+    padding: 12px;
+}</code></pre>
+
+            </div>
+
+
+            <div class="method-card">
+
+                <h4>04 — None</h4>
+
+                <p>
+                    Removes the element from the layout entirely.
+                    It does not occupy space while display is set to none.
+                </p>
+
+                <pre class="code-panel"><code>.hidden {
+    display: none;
+}</code></pre>
+
+            </div>
+
+
+            <h3>03. Understanding positioning</h3>
+
+            <p>
+                The position property controls how an element
+                is placed in relation to its normal position,
+                containing block or viewport.
+            </p>
+
+
+            <div class="selector-card">
+
+                <h4>Static</h4>
+
+                <p>
+                    The default positioning behaviour.
+                    The element follows the normal document flow.
+                </p>
+
+                <pre class="code-panel"><code>.element {
+    position: static;
+}</code></pre>
+
+            </div>
+
+
+            <div class="selector-card">
+
+                <h4>Relative</h4>
+
+                <p>
+                    Keeps the element in the normal flow but allows
+                    it to be visually offset from its original position.
+                </p>
+
+                <pre class="code-panel"><code>.element {
+    position: relative;
+    top: 10px;
+    left: 15px;
+}</code></pre>
+
+            </div>
+
+
+            <div class="selector-card">
+
+                <h4>Absolute</h4>
+
+                <p>
+                    Removes the element from normal document flow
+                    and positions it relative to its nearest
+                    qualifying positioned ancestor.
+                </p>
+
+                <pre class="code-panel"><code>.parent {
+    position: relative;
+}
+
+.child {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}</code></pre>
+
+            </div>
+
+
+            <div class="selector-card">
+
+                <h4>Fixed</h4>
+
+                <p>
+                    Positions an element relative to the viewport.
+                    It generally stays in the same place while scrolling.
+                </p>
+
+                <pre class="code-panel"><code>.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}</code></pre>
+
+            </div>
+
+
+            <div class="selector-card">
+
+                <h4>Sticky</h4>
+
+                <p>
+                    Behaves like a relatively positioned element
+                    until it reaches a specified scrolling threshold.
+                </p>
+
+                <pre class="code-panel"><code>.sidebar {
+    position: sticky;
+    top: 20px;
+}</code></pre>
+
+            </div>
+
+
+            <h3>04. Enter z-index</h3>
+
+            <p>
+                When elements overlap, z-index can control
+                their stacking order. A higher stacking level
+                generally appears in front of a lower one
+                within the relevant stacking context.
+            </p>
+
+            <pre class="code-panel"><code>.background {
+    position: relative;
+    z-index: 1;
+}
+
+.foreground {
+    position: relative;
+    z-index: 2;
+}</code></pre>
+
+
+            <div class="lesson-takeaway">
+
+                <span>THE KEY IDEA</span>
+
+                <p>
+                    Display determines how elements participate in a layout.
+                    Positioning controls where they appear.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         LESSON 06 — FLEXBOX
+    ====================================================== -->
+
+    <section class="lesson-section" id="lesson-06">
+
+        <div class="lesson-heading">
+
+            <span>LESSON 06 / FLEXIBLE LAYOUTS</span>
+
+            <h2>Flexbox</h2>
+
+            <p>
+                Learn how to align, distribute and organize elements
+                using a powerful one-dimensional layout system.
+            </p>
+
+        </div>
+
+
+        <div class="lesson-content">
+
+            <h3>01. What is Flexbox?</h3>
+
+            <p>
+                Flexbox, short for Flexible Box Layout,
+                is a CSS layout system designed to arrange elements
+                along a single main axis at a time.
+            </p>
+
+            <p>
+                It makes alignment, spacing and distribution
+                much easier than relying on older layout techniques.
+            </p>
+
+
+            <h3>02. Activating Flexbox</h3>
+
+            <p>
+                To use Flexbox, first turn an element into a flex container.
+                Its direct children automatically become flex items.
+            </p>
+
+            <pre class="code-panel"><code>.container {
+    display: flex;
+}</code></pre>
+
+
+            <h3>03. Understanding the axes</h3>
+
+            <p>
+                Flexbox works with two axes:
+                the main axis and the cross axis.
+                Their directions depend on flex-direction.
+            </p>
+
+
+            <div class="concept-panel">
+
+                <div class="concept-item">
+
+                    <span>MAIN AXIS</span>
+
+                    <h4>Primary direction</h4>
+
+                    <p>
+                        The direction in which flex items are arranged.
+                        It is horizontal by default.
+                    </p>
+
+                </div>
+
+
+                <div class="concept-item">
+
+                    <span>CROSS AXIS</span>
+
+                    <h4>Perpendicular direction</h4>
+
+                    <p>
+                        The axis that runs perpendicular
+                        to the main axis.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <h3>04. flex-direction</h3>
+
+            <p>
+                Determines the direction in which flex items
+                are placed inside the container.
+            </p>
+
+            <pre class="code-panel"><code>.container {
+    display: flex;
+    flex-direction: row;
+}
+
+/* Other values */
+
+flex-direction: column;
+flex-direction: row-reverse;
+flex-direction: column-reverse;</code></pre>
+
+
+            <h3>05. justify-content</h3>
+
+            <p>
+                Controls how flex items are distributed
+                along the main axis.
+            </p>
+
+            <pre class="code-panel"><code>.container {
+    display: flex;
+    justify-content: center;
+}
+
+/* Other useful values */
+
+justify-content: flex-start;
+justify-content: flex-end;
+justify-content: space-between;
+justify-content: space-around;
+justify-content: space-evenly;</code></pre>
+
+
+            <h3>06. align-items</h3>
+
+            <p>
+                Aligns flex items along the cross axis
+                within the flex container.
+            </p>
+
+            <pre class="code-panel"><code>.container {
+    display: flex;
+    align-items: center;
+}
+
+/* Other values */
+
+align-items: flex-start;
+align-items: flex-end;
+align-items: stretch;
+align-items: baseline;</code></pre>
+
+
+            <h3>07. gap and flex-wrap</h3>
+
+            <p>
+                Gap controls the spacing between flex items.
+                Flex-wrap determines whether items can move
+                onto another line when space is limited.
+            </p>
+
+            <pre class="code-panel"><code>.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}</code></pre>
+
+
+            <h3>08. A complete Flexbox example</h3>
+
+            <pre class="code-panel"><code>.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.navigation-links {
+    display: flex;
+    gap: 15px;
+}</code></pre>
+
+            <p>
+                This is a common pattern for building
+                website navigation bars.
+            </p>
+
+
+            <div class="lesson-takeaway">
+
+                <span>THE KEY IDEA</span>
+
+                <p>
+                    Flexbox gives you control over alignment,
+                    spacing and direction along a flexible axis.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         LESSON 07 — CSS GRID
+    ====================================================== -->
+
+    <section class="lesson-section" id="lesson-07">
+
+        <div class="lesson-heading">
+
+            <span>LESSON 07 / TWO-DIMENSIONAL LAYOUTS</span>
+
+            <h2>CSS Grid</h2>
+
+            <p>
+                Build complex layouts using rows, columns
+                and precise control over available space.
+            </p>
+
+        </div>
+
+
+        <div class="lesson-content">
+
+            <h3>01. What is CSS Grid?</h3>
+
+            <p>
+                CSS Grid is a two-dimensional layout system.
+                It allows you to organize elements using
+                both rows and columns at the same time.
+            </p>
+
+            <p>
+                While Flexbox focuses on one dimension,
+                Grid is especially useful for larger page structures.
+            </p>
+
+
+            <h3>02. Creating a grid container</h3>
+
+            <p>
+                Start by setting display to grid.
+                Direct children then become grid items.
+            </p>
+
+            <pre class="code-panel"><code>.container {
+    display: grid;
+}</code></pre>
+
+
+            <h3>03. Defining columns</h3>
+
+            <p>
+                The grid-template-columns property determines
+                how many columns exist and how much space
+                each column receives.
+            </p>
+
+            <pre class="code-panel"><code>.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}</code></pre>
+
+            <p>
+                The fr unit represents a fraction of the
+                available space in the grid container.
+            </p>
+
+
+            <h3>04. Defining rows</h3>
+
+            <p>
+                Grid rows can be controlled using
+                grid-template-rows.
+            </p>
+
+            <pre class="code-panel"><code>.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 150px 200px;
+}</code></pre>
+
+
+            <h3>05. The power of repeat()</h3>
+
+            <p>
+                Instead of writing the same column size repeatedly,
+                use the repeat() function.
+            </p>
+
+            <pre class="code-panel"><code>.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}</code></pre>
+
+
+            <h3>06. Understanding gap</h3>
+
+            <p>
+                Gap controls the space between rows and columns.
+            </p>
+
+            <pre class="code-panel"><code>.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* Separate row and column gaps */
+
+row-gap: 15px;
+column-gap: 25px;</code></pre>
+
+
+            <h3>07. Spanning multiple columns</h3>
+
+            <p>
+                Grid items can occupy more than one column
+                or row using grid-column and grid-row.
+            </p>
+
+            <pre class="code-panel"><code>.featured-card {
+    grid-column: span 2;
+}
+
+.tall-card {
+    grid-row: span 2;
+}</code></pre>
+
+
+            <h3>08. Responsive grids with auto-fit</h3>
+
+            <p>
+                Grid can automatically create as many columns
+                as fit inside the available space.
+            </p>
+
+            <pre class="code-panel"><code>.container {
+    display: grid;
+    grid-template-columns:
+        repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}</code></pre>
+
+            <p>
+                This is an especially useful technique for
+                responsive card layouts.
+            </p>
+
+
+            <h3>09. Grid or Flexbox?</h3>
+
+            <div class="concept-panel">
+
+                <div class="concept-item">
+
+                    <span>FLEXBOX</span>
+
+                    <h4>One dimension</h4>
+
+                    <p>
+                        Best for navigation bars, button groups,
+                        alignment and linear arrangements.
+                    </p>
+
+                </div>
+
+
+                <div class="concept-item">
+
+                    <span>CSS GRID</span>
+
+                    <h4>Two dimensions</h4>
+
+                    <p>
+                        Best for page layouts, dashboards,
+                        galleries and structured card systems.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="lesson-takeaway">
+
+                <span>THE KEY IDEA</span>
+
+                <p>
+                    Grid gives you control over rows and columns.
+                    Flexbox gives you control over a single layout axis.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         LESSON 08 — RESPONSIVE DESIGN
+    ====================================================== -->
+
+    <section class="lesson-section" id="lesson-08">
+
+        <div class="lesson-heading">
+
+            <span>LESSON 08 / ADAPTIVE EXPERIENCES</span>
+
+            <h2>Responsive Design</h2>
+
+            <p>
+                Create websites that remain usable and visually
+                consistent across different screen sizes.
+            </p>
+
+        </div>
+
+
+        <div class="lesson-content">
+
+            <h3>01. What is responsive design?</h3>
+
+            <p>
+                Responsive design is an approach to web development
+                where layouts adapt to the available screen space.
+            </p>
+
+            <p>
+                A responsive website should work comfortably
+                on desktop computers, tablets and smartphones.
+            </p>
+
+
+            <h3>02. Start with the viewport</h3>
+
+            <p>
+                The viewport meta tag tells mobile browsers
+                how to control the dimensions and scaling
+                of a webpage.
+            </p>
+
+            <pre class="code-panel"><code>&lt;meta name="viewport"
+content="width=device-width, initial-scale=1.0"&gt;</code></pre>
+
+            <p>
+                This tag is normally placed inside
+                the HTML head element.
+            </p>
+
+
+            <h3>03. Flexible measurements</h3>
+
+            <p>
+                Fixed dimensions can cause problems when
+                a screen becomes smaller. Flexible measurements
+                help layouts adapt naturally.
+            </p>
+
+            <pre class="code-panel"><code>.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}</code></pre>
+
+
+            <h3>04. Understanding media queries</h3>
+
+            <p>
+                Media queries allow CSS rules to apply only
+                when certain conditions are met, such as
+                a particular viewport width.
+            </p>
+
+            <pre class="code-panel"><code>/* Desktop styles */
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* Smaller screens */
+
+@media (max-width: 768px) {
+
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}</code></pre>
+
+
+            <h3>05. Mobile layouts</h3>
+
+            <p>
+                On narrow screens, multi-column layouts
+                may need to become a single column.
+            </p>
+
+            <pre class="code-panel"><code>@media (max-width: 480px) {
+
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+}</code></pre>
+
+
+            <h3>06. Responsive images</h3>
+
+            <p>
+                Images should not overflow their containing elements.
+                A common approach is to make them flexible.
+            </p>
+
+            <pre class="code-panel"><code>img {
+    max-width: 100%;
+    height: auto;
+}</code></pre>
+
+
+            <h3>07. Mobile-first design</h3>
+
+            <p>
+                Mobile-first development means designing
+                the basic layout for smaller screens first,
+                then adding enhancements for larger screens.
+            </p>
+
+            <pre class="code-panel"><code>/* Base mobile styles */
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+/* Larger screens */
+
+@media (min-width: 768px) {
+
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (min-width: 1100px) {
+
+    .container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}</code></pre>
+
+
+            <h3>08. The responsive design checklist</h3>
+
+            <ul class="lesson-list">
+
+                <li>Use a viewport meta tag.</li>
+
+                <li>Prefer flexible widths where appropriate.</li>
+
+                <li>Use media queries when layouts need to change.</li>
+
+                <li>Make images scale within their containers.</li>
+
+                <li>Keep text readable on smaller screens.</li>
+
+                <li>Test layouts at multiple viewport sizes.</li>
+
+            </ul>
+
+
+            <div class="lesson-takeaway">
+
+                <span>THE KEY IDEA</span>
+
+                <p>
+                    A good website doesn't just look great on one screen.
+                    It adapts to the screen it's being viewed on.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         STAGE COMPLETION
+    ====================================================== -->
+
+    <section class="stage-completion">
+
+        <span>STAGE 02 / MASTER THE STRUCTURE</span>
+
+        <h2>
+            You understand the layout.<br>
+            Now master the visual experience.
+        </h2>
+
+        <p>
+            Four lessons completed. You've explored display,
+            positioning, Flexbox, Grid and responsive design.
+            Now it's time to bring your layouts to life
+            with advanced visual techniques.
+        </p>
+
+        <a href="css-stage-3.html" class="stage-next-button">
+            ENTER STAGE 03 ↗
+        </a>
+
+        <a href="css.html" class="stage-back-link">
+            ← BACK TO CHAPTER OVERVIEW
+        </a>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer class="css-footer">
+
+        <p>THE DIGITAL LAB — CHAPTER 002</p>
+
+        <span>LEARN. BUILD. EXPERIMENT.</span>
+
+    </footer>
+
+
+</body>
+</html>

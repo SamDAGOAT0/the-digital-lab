@@ -1,0 +1,2036 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Stage 03 — DOM & Visual Mastery | THE DIGITAL LAB</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="JS.css">
+
+    <!-- Reuse the shared JavaScript stage layout -->
+    <link rel="stylesheet" href="JS stage 2.css">
+    <link rel="stylesheet" href="JS stage 3.css">
+</head>
+
+<body class="js-chapter js-learning-stage">
+
+    <!-- ATMOSPHERE -->
+    <div class="js-atmosphere"></div>
+
+
+    <!-- NAVIGATION -->
+    <nav class="js-stage-nav">
+
+        <a href="JS.html" class="js-stage-brand">
+            THE DIGITAL LAB <span>/ JAVASCRIPT</span>
+        </a>
+
+        <div class="js-stage-nav-links">
+            <a href="JS.html">Chapter Overview</a>
+            <a href="JS stage 2.html">Previous Stage</a>
+        </div>
+
+    </nav>
+
+
+    <main>
+
+        <!-- STAGE HERO -->
+        <header class="js-stage-hero">
+
+            <div class="js-stage-eyebrow">
+                CHAPTER 003 / STAGE 03
+            </div>
+
+            <h1>
+                DOM <span>& VISUAL MASTERY.</span>
+            </h1>
+
+            <p class="js-stage-description">
+                You've learned the language, explored logic and
+                started responding to user actions. Now it's time
+                to take control of the webpage itself.
+                Connect JavaScript to HTML, change what appears
+                on screen and build complete interactive experiences.
+            </p>
+
+            <div class="js-stage-meta">
+                <span>04 LESSONS</span>
+                <span>03 STAGE</span>
+                <span>INTERMEDIATE LEVEL</span>
+            </div>
+
+        </header>
+
+
+        <!-- LESSON NAVIGATION -->
+        <section class="js-stage-navigation">
+
+            <div class="js-section-heading">
+
+                <span>03 — YOUR LEARNING PATH</span>
+
+                <h2>Four steps. Real interaction.</h2>
+
+                <p>
+                    Choose a lesson or work through the stage
+                    from beginning to end.
+                </p>
+
+            </div>
+
+
+            <div class="js-lesson-grid">
+
+                <a href="#lesson-nine" class="js-lesson-card">
+                    <span class="js-lesson-number">09</span>
+
+                    <div>
+                        <h3>Understanding the DOM</h3>
+                        <p>
+                            Learn how JavaScript finds and interacts
+                            with HTML elements.
+                        </p>
+                    </div>
+
+                    <span class="js-lesson-arrow">↗</span>
+                </a>
+
+
+                <a href="#lesson-ten" class="js-lesson-card">
+                    <span class="js-lesson-number">10</span>
+
+                    <div>
+                        <h3>Changing Content & Styles</h3>
+                        <p>
+                            Update text, change styles and control
+                            webpage elements dynamically.
+                        </p>
+                    </div>
+
+                    <span class="js-lesson-arrow">↗</span>
+                </a>
+
+
+                <a href="#lesson-eleven" class="js-lesson-card">
+                    <span class="js-lesson-number">11</span>
+
+                    <div>
+                        <h3>Building Interactive Components</h3>
+                        <p>
+                            Combine events and DOM manipulation
+                            to create useful website features.
+                        </p>
+                    </div>
+
+                    <span class="js-lesson-arrow">↗</span>
+                </a>
+
+
+                <a href="#lesson-twelve" class="js-lesson-card">
+                    <span class="js-lesson-number">12</span>
+
+                    <div>
+                        <h3>Final Project</h3>
+                        <p>
+                            Build a complete interactive webpage
+                            using everything you've learned.
+                        </p>
+                    </div>
+
+                    <span class="js-lesson-arrow">↗</span>
+                </a>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             LESSON 09
+        ========================================== -->
+
+        <section class="js-lesson-section" id="lesson-09">
+
+            <span id="lesson-nine" class="js-anchor-alias"></span>
+
+            <div class="js-lesson-heading">
+
+                <span>LESSON 09 / CONNECTING TO HTML</span>
+
+                <h2>Understanding the DOM</h2>
+
+                <p>
+                    Discover how JavaScript sees your webpage
+                    and learns to find individual HTML elements.
+                </p>
+
+            </div>
+
+
+            <div class="js-lesson-content">
+
+                <h3>01. What is the DOM?</h3>
+
+                <p>
+                    DOM stands for <strong>Document Object Model</strong>.
+                    It is a programming representation of an HTML
+                    document that JavaScript can interact with.
+                </p>
+
+                <p>
+                    When a browser loads an HTML page, it parses
+                    the markup and creates a structured tree
+                    of objects. JavaScript can use this structure
+                    to find elements, read their information
+                    and change the document.
+                </p>
+
+                <p>
+                    Imagine a webpage containing a heading,
+                    a paragraph and a button. The DOM represents
+                    these elements and their relationships.
+                </p>
+
+
+                <h3>02. Understanding the DOM tree</h3>
+
+                <p>
+                    HTML elements can contain other elements.
+                    This creates a parent-child relationship.
+                </p>
+
+                <pre class="js-code-panel"><code>&lt;body&gt;
+
+    &lt;main&gt;
+
+        &lt;h1&gt;Welcome to TDL&lt;/h1&gt;
+
+        &lt;p&gt;Learn JavaScript.&lt;/p&gt;
+
+        &lt;button&gt;Start Learning&lt;/button&gt;
+
+    &lt;/main&gt;
+
+&lt;/body&gt;</code></pre>
+
+                <p>
+                    In this example:
+                </p>
+
+                <ul class="js-lesson-list">
+                    <li>body is the parent of main.</li>
+                    <li>main is the parent of h1, p and button.</li>
+                    <li>h1, p and button are child elements of main.</li>
+                </ul>
+
+                <div class="js-dom-tree">
+
+                    <div class="js-dom-tree-node js-dom-root">
+                        <span>DOCUMENT</span>
+                    </div>
+
+                    <div class="js-dom-tree-branch">
+                        <div class="js-dom-tree-node">
+                            <span>BODY</span>
+                        </div>
+
+                        <div class="js-dom-tree-branch js-dom-tree-children">
+                            <div class="js-dom-tree-node js-dom-highlight">
+                                <span>MAIN</span>
+                            </div>
+
+                            <div class="js-dom-tree-branch js-dom-tree-children">
+                                <div class="js-dom-tree-node">
+                                    <span>H1</span>
+                                </div>
+
+                                <div class="js-dom-tree-node">
+                                    <span>P</span>
+                                </div>
+
+                                <div class="js-dom-tree-node">
+                                    <span>BUTTON</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <h3>03. The document object</h3>
+
+                <p>
+                    JavaScript accesses the webpage through
+                    an object called <strong>document</strong>.
+                    It provides methods and properties that
+                    help you work with the HTML page.
+                </p>
+
+                <pre class="js-code-panel"><code>console.log(document);
+
+console.log(document.title);
+
+console.log(document.body);</code></pre>
+
+                <p>
+                    These instructions let you inspect the
+                    document, read its title and access its
+                    body element.
+                </p>
+
+
+                <h3>04. Selecting elements by ID</h3>
+
+                <p>
+                    Every HTML element can be given an ID.
+                    You can use <strong>getElementById()</strong>
+                    to find an element with a particular ID.
+                </p>
+
+                <p>HTML:</p>
+
+                <pre class="js-code-panel"><code>&lt;h1 id="main-title"&gt;
+    Welcome to TDL
+&lt;/h1&gt;</code></pre>
+
+                <p>JavaScript:</p>
+
+                <pre class="js-code-panel"><code>const title = document.getElementById("main-title");
+
+console.log(title);</code></pre>
+
+                <p>
+                    JavaScript finds the heading and stores
+                    the element in the title variable.
+                </p>
+
+
+                <h3>05. Using querySelector()</h3>
+
+                <p>
+                    Another common method is
+                    <strong>querySelector()</strong>.
+                    It finds the first element that matches
+                    a CSS selector.
+                </p>
+
+                <pre class="js-code-panel"><code>const heading = document.querySelector("h1");
+
+const card = document.querySelector(".card");
+
+const menu = document.querySelector("#menu");</code></pre>
+
+                <p>
+                    Notice how it uses the same selector
+                    symbols as CSS:
+                </p>
+
+                <div class="js-comparison-panel">
+
+                    <div>
+                        <span>CLASS</span>
+                        <h4>.card</h4>
+                        <p>Finds an element with the class card.</p>
+                    </div>
+
+                    <div>
+                        <span>ID</span>
+                        <h4>#menu</h4>
+                        <p>Finds an element with the ID menu.</p>
+                    </div>
+
+                </div>
+
+
+                <h3>06. Selecting multiple elements</h3>
+
+                <p>
+                    What if you want to find every card
+                    on the page?
+                </p>
+
+                <p>
+                    Use <strong>querySelectorAll()</strong>.
+                    It returns a collection of all matching
+                    elements.
+                </p>
+
+                <pre class="js-code-panel"><code>const cards = document.querySelectorAll(".card");
+
+console.log(cards);</code></pre>
+
+                <p>
+                    You can then use forEach() to work with
+                    each matching element.
+                </p>
+
+                <pre class="js-code-panel"><code>const cards = document.querySelectorAll(".card");
+
+cards.forEach(function(card) {
+
+    console.log(card);
+
+});</code></pre>
+
+
+                <h3>07. Reading element information</h3>
+
+                <p>
+                    Once you've selected an element,
+                    you can read useful information from it.
+                </p>
+
+                <pre class="js-code-panel"><code>const heading = document.querySelector("h1");
+
+console.log(heading.textContent);
+
+console.log(heading.id);
+
+console.log(heading.className);</code></pre>
+
+                <p>
+                    textContent reads the text inside an element.
+                    id reads its ID, and className reads
+                    its class attribute as a string.
+                </p>
+
+
+                <h3>08. Making sure the HTML exists</h3>
+
+                <p>
+                    JavaScript needs to find an element that
+                    already exists in the document.
+                </p>
+
+                <p>
+                    When using an external JavaScript file,
+                    the <strong>defer</strong> attribute is a
+                    simple way to make sure the HTML has
+                    been parsed before the script runs.
+                </p>
+
+                <pre class="js-code-panel"><code>&lt;script src="script.js" defer&gt;&lt;/script&gt;</code></pre>
+
+                <p>
+                    You can also check whether an element
+                    was found before using it.
+                </p>
+
+                <pre class="js-code-panel"><code>const button = document.querySelector("#my-button");
+
+if (button) {
+
+    console.log("Button found!");
+
+}</code></pre>
+
+
+                <div class="js-task-panel">
+
+                    <span>YOUR PRACTICAL TASK</span>
+
+                    <h4>Explore the DOM of your own webpage.</h4>
+
+                    <p>
+                        Create a simple HTML page containing:
+                    </p>
+
+                    <ul>
+                        <li>A heading with an ID.</li>
+                        <li>Two paragraphs with the same class.</li>
+                        <li>A button with an ID.</li>
+                    </ul>
+
+                    <p>
+                        Write JavaScript that:
+                    </p>
+
+                    <ul>
+                        <li>Selects the heading using getElementById().</li>
+                        <li>Selects one paragraph using querySelector().</li>
+                        <li>Selects both paragraphs using querySelectorAll().</li>
+                        <li>Prints the selected elements in the console.</li>
+                    </ul>
+
+                </div>
+
+
+                <div class="js-lesson-takeaway">
+                    <span>THE KEY IDEA</span>
+                    <p>
+                        The DOM gives JavaScript a structured
+                        way to access and interact with HTML elements.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             LESSON 10
+        ========================================== -->
+
+        <section class="js-lesson-section" id="lesson-10">
+
+            <span id="lesson-ten" class="js-anchor-alias"></span>
+
+            <div class="js-lesson-heading">
+
+                <span>LESSON 10 / CHANGING THE PAGE</span>
+
+                <h2>Changing Content & Styles</h2>
+
+                <p>
+                    Learn how to update text, modify CSS classes,
+                    change styles and create new HTML elements
+                    directly through JavaScript.
+                </p>
+
+            </div>
+
+
+            <div class="js-lesson-content">
+
+                <h3>01. Making a webpage dynamic</h3>
+
+                <p>
+                    So far, you've learned how to find HTML
+                    elements using the DOM.
+                    Now you'll learn what to do after finding them.
+                </p>
+
+                <p>
+                    JavaScript can change the contents,
+                    appearance and structure of a webpage
+                    without needing to reload the entire page.
+                </p>
+
+
+                <h3>02. Changing text with textContent</h3>
+
+                <p>
+                    The <strong>textContent</strong> property
+                    lets you read or replace the text inside
+                    an element.
+                </p>
+
+                <p>HTML:</p>
+
+                <pre class="js-code-panel"><code>&lt;h1 id="title"&gt;Old Heading&lt;/h1&gt;</code></pre>
+
+                <p>JavaScript:</p>
+
+                <pre class="js-code-panel"><code>const title = document.querySelector("#title");
+
+title.textContent = "Welcome to the Future";</code></pre>
+
+                <p>
+                    The heading now displays the new text.
+                </p>
+
+
+                <h3>03. Understanding innerHTML</h3>
+
+                <p>
+                    <strong>innerHTML</strong> lets you read
+                    or replace the HTML markup inside an element.
+                    This means you can insert elements as well
+                    as text.
+                </p>
+
+                <pre class="js-code-panel"><code>const container = document.querySelector("#container");
+
+container.innerHTML = "&lt;strong&gt;Hello, world!&lt;/strong&gt;";</code></pre>
+
+                <p>
+                    The browser interprets the supplied string
+                    as HTML and creates a strong element inside
+                    the container.
+                </p>
+
+                <div class="js-note-panel">
+                    <strong>Security warning:</strong>
+                    Avoid placing untrusted user input directly
+                    into innerHTML. It can create cross-site
+                    scripting vulnerabilities. Use textContent
+                    when you only need to display plain text.
+                </div>
+
+
+                <h3>04. Changing styles with JavaScript</h3>
+
+                <p>
+                    JavaScript can also modify an element's
+                    inline CSS styles using the
+                    <strong>style</strong> property.
+                </p>
+
+                <pre class="js-code-panel"><code>const heading = document.querySelector("h1");
+
+heading.style.color = "yellow";
+
+heading.style.fontSize = "48px";
+
+heading.style.backgroundColor = "#151515";</code></pre>
+
+                <p>
+                    JavaScript style properties use camelCase.
+                    For example, CSS background-color becomes
+                    backgroundColor in JavaScript.
+                </p>
+
+
+                <h3>05. The better way: classList</h3>
+
+                <p>
+                    Instead of writing lots of individual
+                    style changes in JavaScript, you can
+                    create CSS classes and control them
+                    through <strong>classList</strong>.
+                </p>
+
+                <p>CSS:</p>
+
+                <pre class="js-code-panel"><code>.highlight {
+    background: #f7df1e;
+    color: #090a0c;
+    padding: 20px;
+    border-radius: 12px;
+}</code></pre>
+
+                <p>JavaScript:</p>
+
+                <pre class="js-code-panel"><code>const card = document.querySelector(".card");
+
+card.classList.add("highlight");</code></pre>
+
+                <p>
+                    The card now receives the styles from
+                    the highlight class.
+                </p>
+
+
+                <h3>06. Four useful classList methods</h3>
+
+                <div class="js-operator-table">
+
+                    <div>
+                        <strong>add()</strong>
+                        <span>Add a class</span>
+                        <code>card.classList.add("active");</code>
+                    </div>
+
+                    <div>
+                        <strong>remove()</strong>
+                        <span>Remove a class</span>
+                        <code>card.classList.remove("active");</code>
+                    </div>
+
+                    <div>
+                        <strong>toggle()</strong>
+                        <span>Add or remove a class</span>
+                        <code>card.classList.toggle("active");</code>
+                    </div>
+
+                    <div>
+                        <strong>contains()</strong>
+                        <span>Check for a class</span>
+                        <code>card.classList.contains("active");</code>
+                    </div>
+
+                </div>
+
+
+                <h3>07. Changing HTML attributes</h3>
+
+                <p>
+                    HTML elements have attributes such as
+                    src, href, alt and title.
+                    JavaScript can read and update them.
+                </p>
+
+                <pre class="js-code-panel"><code>const image = document.querySelector("#profile-image");
+
+image.setAttribute("alt", "Player profile");
+
+console.log(image.getAttribute("alt"));</code></pre>
+
+                <p>
+                    You can also update an image source:
+                </p>
+
+                <pre class="js-code-panel"><code>image.setAttribute("src", "new-image.jpg");</code></pre>
+
+                <p>
+                    For form controls, the value property
+                    is especially useful.
+                </p>
+
+                <pre class="js-code-panel"><code>const username = document.querySelector("#username");
+
+console.log(username.value);</code></pre>
+
+
+                <h3>08. Creating new elements</h3>
+
+                <p>
+                    JavaScript can create completely new HTML
+                    elements using <strong>createElement()</strong>.
+                </p>
+
+                <pre class="js-code-panel"><code>const newParagraph = document.createElement("p");
+
+newParagraph.textContent = "Created with JavaScript!";
+
+document.body.appendChild(newParagraph);</code></pre>
+
+                <p>
+                    Let's break this down:
+                </p>
+
+                <ul class="js-lesson-list">
+                    <li>createElement("p") creates a new paragraph element.</li>
+                    <li>textContent gives it some text.</li>
+                    <li>appendChild() inserts it into the webpage.</li>
+                </ul>
+
+
+                <h3>09. Removing elements</h3>
+
+                <p>
+                    You can also remove an element from the
+                    webpage when it is no longer needed.
+                </p>
+
+                <pre class="js-code-panel"><code>const message = document.querySelector("#message");
+
+message.remove();</code></pre>
+
+                <p>
+                    This removes the selected element from
+                    the document.
+                </p>
+
+
+                <h3>10. Bringing it together</h3>
+
+                <p>
+                    Imagine a button that changes a card's
+                    appearance when clicked.
+                </p>
+
+                <p>HTML:</p>
+
+                <pre class="js-code-panel"><code>&lt;div class="card" id="my-card"&gt;
+    &lt;h2&gt;My Card&lt;/h2&gt;
+    &lt;p&gt;This card can change.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;button id="theme-button"&gt;
+    Change Appearance
+&lt;/button&gt;</code></pre>
+
+                <p>CSS:</p>
+
+                <pre class="js-code-panel"><code>.active-card {
+    background: #f7df1e;
+    color: #090a0c;
+    border-radius: 18px;
+    padding: 25px;
+}</code></pre>
+
+                <p>JavaScript:</p>
+
+                <pre class="js-code-panel"><code>const card = document.querySelector("#my-card");
+
+const button = document.querySelector("#theme-button");
+
+button.addEventListener("click", function() {
+
+    card.classList.toggle("active-card");
+
+});</code></pre>
+
+                <p>
+                    Every click switches the active-card
+                    class on or off. CSS controls the appearance,
+                    while JavaScript controls when the class changes.
+                </p>
+
+
+                <div class="js-task-panel">
+
+                    <span>YOUR PRACTICAL TASK</span>
+
+                    <h4>Build a dynamic profile card.</h4>
+
+                    <p>
+                        Create an HTML card containing a heading,
+                        paragraph and button.
+                    </p>
+
+                    <ul>
+                        <li>Change the heading using textContent.</li>
+                        <li>Change the paragraph's text.</li>
+                        <li>Create an active CSS class.</li>
+                        <li>Toggle the class when the button is clicked.</li>
+                        <li>Create a new paragraph using createElement().</li>
+                    </ul>
+
+                    <p>
+                        Try creating the new paragraph only once,
+                        even if the button is clicked repeatedly.
+                    </p>
+
+                </div>
+
+
+                <div class="js-lesson-takeaway">
+                    <span>THE KEY IDEA</span>
+                    <p>
+                        JavaScript can dynamically change content,
+                        styles, attributes and even the structure
+                        of a webpage.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             LESSON 11
+        ========================================== -->
+
+        <section class="js-lesson-section" id="lesson-11">
+
+            <span id="lesson-eleven" class="js-anchor-alias"></span>
+
+            <div class="js-lesson-heading">
+
+                <span>LESSON 11 / BUILDING EXPERIENCES</span>
+
+                <h2>Building Interactive Components</h2>
+
+                <p>
+                    Combine the DOM, functions, events and CSS
+                    to create components that people can
+                    actually interact with.
+                </p>
+
+            </div>
+
+
+            <div class="js-lesson-content">
+
+                <h3>01. From individual features to components</h3>
+
+                <p>
+                    You've learned how to select elements,
+                    update their content and listen for events.
+                    Now you can combine these skills to create
+                    complete interface components.
+                </p>
+
+                <p>
+                    A component is a reusable part of an interface
+                    that performs a particular job.
+                </p>
+
+                <p>Common website components include:</p>
+
+                <ul class="js-lesson-list">
+                    <li>Navigation menus.</li>
+                    <li>Dropdowns and accordions.</li>
+                    <li>Tabs and content panels.</li>
+                    <li>Pop-up dialogs and modals.</li>
+                    <li>Interactive counters and forms.</li>
+                </ul>
+
+
+                <h3>02. Building an accordion</h3>
+
+                <p>
+                    An accordion is a component that expands
+                    or collapses to show additional information.
+                    It is commonly used in FAQs and content sections.
+                </p>
+
+                <p>HTML:</p>
+
+                <pre class="js-code-panel"><code>&lt;button
+    id="faq-button"
+    aria-expanded="false"
+    aria-controls="faq-answer"&gt;
+
+    What is JavaScript?
+
+&lt;/button&gt;
+
+&lt;div id="faq-answer" hidden&gt;
+    JavaScript makes webpages interactive.
+&lt;/div&gt;</code></pre>
+
+                <p>JavaScript:</p>
+
+                <pre class="js-code-panel"><code>const faqButton = document.querySelector("#faq-button");
+
+const faqAnswer = document.querySelector("#faq-answer");
+
+faqButton.addEventListener("click", function() {
+
+    const isOpen =
+        faqButton.getAttribute("aria-expanded") === "true";
+
+    faqButton.setAttribute(
+        "aria-expanded",
+        String(!isOpen)
+    );
+
+    faqAnswer.hidden = isOpen;
+
+});</code></pre>
+
+                <p>
+                    When the button is clicked, JavaScript
+                    checks the current state and reverses it.
+                    The hidden property controls whether the
+                    answer is displayed.
+                </p>
+
+                <div class="js-note-panel">
+                    <strong>Accessibility tip:</strong>
+                    aria-expanded communicates whether the
+                    accordion is open or closed to assistive
+                    technologies. Always keep it synchronized
+                    with the actual component state.
+                </div>
+
+
+                <h3>03. Building tabs</h3>
+
+                <p>
+                    Tabs let users switch between different
+                    content panels without leaving the page.
+                </p>
+
+                <p>HTML:</p>
+
+                <pre class="js-code-panel"><code>&lt;div class="tabs"&gt;
+
+    &lt;button data-tab="overview" aria-selected="true"&gt;
+        Overview
+    &lt;/button&gt;
+
+    &lt;button data-tab="details" aria-selected="false"&gt;
+        Details
+    &lt;/button&gt;
+
+&lt;/div&gt;
+
+&lt;section data-panel="overview"&gt;
+    Welcome to the overview.
+&lt;/section&gt;
+
+&lt;section data-panel="details" hidden&gt;
+    Here are the details.
+&lt;/section&gt;</code></pre>
+
+                <p>JavaScript:</p>
+
+                <pre class="js-code-panel"><code>const tabButtons = document.querySelectorAll("[data-tab]");
+
+const tabPanels = document.querySelectorAll("[data-panel]");
+
+tabButtons.forEach(function(button) {
+
+    button.addEventListener("click", function() {
+
+        const target = button.dataset.tab;
+
+        tabButtons.forEach(function(tab) {
+
+            const selected = tab === button;
+
+            tab.setAttribute(
+                "aria-selected",
+                String(selected)
+            );
+
+        });
+
+        tabPanels.forEach(function(panel) {
+
+            panel.hidden = panel.dataset.panel !== target;
+
+        });
+
+    });
+
+});</code></pre>
+
+                <p>
+                    The data-tab attribute identifies which
+                    content panel a button controls.
+                    JavaScript updates the selected state and
+                    displays the matching panel.
+                </p>
+
+
+                <h3>04. Understanding data attributes</h3>
+
+                <p>
+                    HTML allows you to store custom information
+                    using attributes that begin with
+                    <strong>data-</strong>.
+                </p>
+
+                <pre class="js-code-panel"><code>&lt;button data-player="lamine"&gt;
+    Lamine Yamal
+&lt;/button&gt;</code></pre>
+
+                <p>
+                    JavaScript can read the custom value through
+                    the <strong>dataset</strong> property.
+                </p>
+
+                <pre class="js-code-panel"><code>const playerButton = document.querySelector("button");
+
+console.log(playerButton.dataset.player);</code></pre>
+
+                <div class="js-output-panel">
+                    <span>CONSOLE OUTPUT</span>
+                    <code>lamine</code>
+                </div>
+
+
+                <h3>05. Understanding event delegation</h3>
+
+                <p>
+                    Sometimes a page has many buttons that
+                    perform similar actions.
+                    Instead of adding a separate event listener
+                    to every button, you can listen on a parent
+                    element and check which child was clicked.
+                </p>
+
+                <p>
+                    This technique is called
+                    <strong>event delegation</strong>.
+                </p>
+
+                <pre class="js-code-panel"><code>const menu = document.querySelector("#menu");
+
+menu.addEventListener("click", function(event) {
+
+    const button = event.target.closest("button");
+
+    if (!button || !menu.contains(button)) {
+        return;
+    }
+
+    console.log("Selected:", button.textContent);
+
+});</code></pre>
+
+                <p>
+                    The closest() method searches for the
+                    nearest matching button.
+                    The contains() check makes sure the
+                    button belongs to the menu.
+                </p>
+
+                <p>
+                    Event delegation is useful when you have
+                    lists of buttons or elements that are
+                    created dynamically.
+                </p>
+
+
+                <h3>06. Building a modal</h3>
+
+                <p>
+                    A modal is a dialog that appears above
+                    the rest of the webpage.
+                    It is often used for confirmations,
+                    forms and additional information.
+                </p>
+
+                <p>HTML:</p>
+
+                <pre class="js-code-panel"><code>&lt;button id="open-modal"&gt;
+    Open Dialog
+&lt;/button&gt;
+
+&lt;dialog id="info-modal"&gt;
+
+    &lt;h2&gt;Welcome!&lt;/h2&gt;
+
+    &lt;p&gt;This is an interactive dialog.&lt;/p&gt;
+
+    &lt;button id="close-modal"&gt;
+        Close
+    &lt;/button&gt;
+
+&lt;/dialog&gt;</code></pre>
+
+                <p>JavaScript:</p>
+
+                <pre class="js-code-panel"><code>const modal = document.querySelector("#info-modal");
+
+const openButton = document.querySelector("#open-modal");
+
+const closeButton = document.querySelector("#close-modal");
+
+openButton.addEventListener("click", function() {
+
+    modal.showModal();
+
+});
+
+closeButton.addEventListener("click", function() {
+
+    modal.close();
+
+});</code></pre>
+
+                <p>
+                    The browser's dialog element provides
+                    built-in methods for opening and closing
+                    the modal.
+                </p>
+
+
+                <h3>07. Why component thinking matters</h3>
+
+                <p>
+                    Rather than treating a website as one giant
+                    block of code, you can split it into smaller
+                    parts with clear responsibilities.
+                </p>
+
+                <div class="js-comparison-panel">
+
+                    <div>
+                        <span>COMPONENT</span>
+                        <h4>Accordion</h4>
+                        <p>
+                            Controls whether additional
+                            information is visible.
+                        </p>
+                    </div>
+
+                    <div>
+                        <span>COMPONENT</span>
+                        <h4>Tabs</h4>
+                        <p>
+                            Switches between different
+                            content panels.
+                        </p>
+                    </div>
+
+                    <div>
+                        <span>COMPONENT</span>
+                        <h4>Modal</h4>
+                        <p>
+                            Displays a separate dialog
+                            above the page.
+                        </p>
+                    </div>
+
+                    <div>
+                        <span>COMPONENT</span>
+                        <h4>Menu</h4>
+                        <p>
+                            Organises navigation and
+                            responds to user actions.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="js-task-panel">
+
+                    <span>YOUR PRACTICAL TASK</span>
+
+                    <h4>Build an interactive FAQ section.</h4>
+
+                    <p>
+                        Create three questions, each with an
+                        answer that can be expanded and collapsed.
+                    </p>
+
+                    <ul>
+                        <li>Use a button for each question.</li>
+                        <li>Give each answer its own HTML element.</li>
+                        <li>Use event listeners to toggle visibility.</li>
+                        <li>Update aria-expanded when answers open or close.</li>
+                        <li>Use CSS to make the open state visually clear.</li>
+                    </ul>
+
+                    <p>
+                        Bonus: Use event delegation so one
+                        event listener can handle the questions.
+                    </p>
+
+                </div>
+
+
+                <div class="js-lesson-takeaway">
+                    <span>THE KEY IDEA</span>
+                    <p>
+                        Interactive components combine HTML,
+                        CSS, DOM manipulation and events to
+                        create useful website experiences.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             LESSON 12
+        ========================================== -->
+
+        <section class="js-lesson-section" id="lesson-12">
+
+            <span id="lesson-twelve" class="js-anchor-alias"></span>
+
+            <div class="js-lesson-heading">
+
+                <span>LESSON 12 / THE FINAL BUILD</span>
+
+                <h2>Final Project</h2>
+
+                <p>
+                    Bring everything together and build
+                    a complete interactive webpage using
+                    the JavaScript skills you've developed.
+                </p>
+
+            </div>
+
+
+            <div class="js-lesson-content">
+
+                <h3>01. Your mission: Matchday Dashboard</h3>
+
+                <p>
+                    It's time to stop looking at isolated code
+                    examples and start building a complete
+                    interface.
+                </p>
+
+                <p>
+                    You'll create a football Matchday Dashboard
+                    where users can update the score, change
+                    the match status and switch the appearance.
+                </p>
+
+                <div class="js-project-preview">
+
+                    <div class="js-project-preview-top">
+                        <span>THE DIGITAL LAB</span>
+                        <span>PROJECT / 001</span>
+                    </div>
+
+                    <div class="js-project-preview-title">
+                        <span>LIVE MATCH CENTRE</span>
+                        <h3>MATCHDAY.</h3>
+                    </div>
+
+                    <div class="js-project-preview-score">
+
+                        <div>
+                            <span>HOME</span>
+                            <strong>02</strong>
+                            <small>HOME TEAM</small>
+                        </div>
+
+                        <span class="js-project-preview-divider">:</span>
+
+                        <div>
+                            <span>AWAY</span>
+                            <strong>01</strong>
+                            <small>AWAY TEAM</small>
+                        </div>
+
+                    </div>
+
+                    <div class="js-project-preview-status">
+                        <span>●</span> MATCH IN PROGRESS
+                    </div>
+
+                </div>
+
+
+                <h3>02. What will your project do?</h3>
+
+                <ul class="js-lesson-list">
+                    <li>Display two football teams and their scores.</li>
+                    <li>Increase or decrease scores using buttons.</li>
+                    <li>Update the match status.</li>
+                    <li>Reset the match information.</li>
+                    <li>Switch between two visual themes.</li>
+                </ul>
+
+                <p>
+                    The project will use all three core technologies:
+                </p>
+
+                <div class="js-concept-panel">
+
+                    <div>
+                        <span>HTML</span>
+                        <h4>Build the interface</h4>
+                        <p>
+                            Create the scoreboard,
+                            buttons and status display.
+                        </p>
+                    </div>
+
+                    <div>
+                        <span>CSS</span>
+                        <h4>Design the dashboard</h4>
+                        <p>
+                            Style the layout, colours,
+                            cards and controls.
+                        </p>
+                    </div>
+
+                    <div>
+                        <span>JAVASCRIPT</span>
+                        <h4>Power the interaction</h4>
+                        <p>
+                            Update scores, respond to clicks
+                            and change the theme.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <h3>03. Create your project files</h3>
+
+                <p>
+                    Create a new folder named
+                    <strong>matchday-dashboard</strong>.
+                    Inside it, create three files:
+                </p>
+
+                <div class="js-file-panel">
+
+                    <span>PROJECT STRUCTURE</span>
+
+                    <code>matchday.html</code>
+                    <code>matchday.css</code>
+                    <code>matchday.js</code>
+
+                </div>
+
+                <p>
+                    Keeping the files separate makes your
+                    project easier to understand and maintain.
+                </p>
+
+
+                <h3>04. Step one — Build the HTML</h3>
+
+                <p>
+                    Open matchday.html and add the following code.
+                    It creates the dashboard's structure.
+                </p>
+
+                <pre class="js-code-panel"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+
+    &lt;meta charset="UTF-8"&gt;
+
+    &lt;meta name="viewport"
+        content="width=device-width, initial-scale=1.0"&gt;
+
+    &lt;title&gt;Matchday Dashboard&lt;/title&gt;
+
+    &lt;link rel="stylesheet" href="matchday.css"&gt;
+
+    &lt;script src="matchday.js" defer&gt;&lt;/script&gt;
+
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;main class="dashboard"&gt;
+
+        &lt;header class="dashboard-header"&gt;
+
+            &lt;span&gt;THE DIGITAL LAB&lt;/span&gt;
+
+            &lt;button id="theme-button" type="button"&gt;
+                SWITCH THEME
+            &lt;/button&gt;
+
+        &lt;/header&gt;
+
+
+        &lt;section class="match-card"&gt;
+
+            &lt;div class="match-heading"&gt;
+
+                &lt;span&gt;LIVE MATCH CENTRE&lt;/span&gt;
+
+                &lt;h1&gt;MATCHDAY.&lt;/h1&gt;
+
+                &lt;p id="match-status" aria-live="polite"&gt;
+                    UPCOMING
+                &lt;/p&gt;
+
+            &lt;/div&gt;
+
+
+            &lt;div class="scoreboard"&gt;
+
+                &lt;div class="team"&gt;
+
+                    &lt;span&gt;HOME&lt;/span&gt;
+
+                    &lt;h2&gt;Barcelona&lt;/h2&gt;
+
+                    &lt;strong id="home-score"&gt;0&lt;/strong&gt;
+
+                    &lt;div class="score-controls"&gt;
+
+                        &lt;button
+                            id="home-minus"
+                            type="button"&gt;
+                            −
+                        &lt;/button&gt;
+
+                        &lt;button
+                            id="home-plus"
+                            type="button"&gt;
+                            +
+                        &lt;/button&gt;
+
+                    &lt;/div&gt;
+
+                &lt;/div&gt;
+
+
+                &lt;div class="score-divider"&gt;:&lt;/div&gt;
+
+
+                &lt;div class="team"&gt;
+
+                    &lt;span&gt;AWAY&lt;/span&gt;
+
+                    &lt;h2&gt;Arsenal&lt;/h2&gt;
+
+                    &lt;strong id="away-score"&gt;0&lt;/strong&gt;
+
+                    &lt;div class="score-controls"&gt;
+
+                        &lt;button
+                            id="away-minus"
+                            type="button"&gt;
+                            −
+                        &lt;/button&gt;
+
+                        &lt;button
+                            id="away-plus"
+                            type="button"&gt;
+                            +
+                        &lt;/button&gt;
+
+                    &lt;/div&gt;
+
+                &lt;/div&gt;
+
+            &lt;/div&gt;
+
+
+            &lt;div class="match-actions"&gt;
+
+                &lt;button
+                    id="status-button"
+                    type="button"&gt;
+                    UPDATE STATUS
+                &lt;/button&gt;
+
+                &lt;button
+                    id="reset-button"
+                    type="button"&gt;
+                    RESET MATCH
+                &lt;/button&gt;
+
+            &lt;/div&gt;
+
+        &lt;/section&gt;
+
+
+        &lt;footer class="dashboard-footer"&gt;
+            BUILT WITH HTML / CSS / JAVASCRIPT
+        &lt;/footer&gt;
+
+    &lt;/main&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
+
+
+                <h3>05. Step two — Design with CSS</h3>
+
+                <p>
+                    Open matchday.css and create the dashboard's
+                    visual identity.
+                </p>
+
+                <pre class="js-code-panel"><code>* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 35px 20px;
+
+    background: #101116;
+    color: #f5f5f5;
+
+    font-family: Arial, sans-serif;
+
+    display: grid;
+    place-items: center;
+
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.dashboard {
+    width: min(100%, 760px);
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+
+    margin-bottom: 25px;
+}
+
+.dashboard-header span {
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.match-card {
+    padding: 35px;
+
+    background: #1b1d25;
+    border: 1px solid #343642;
+    border-radius: 18px;
+}
+
+.match-heading {
+    text-align: center;
+}
+
+.match-heading span {
+    color: #f7df1e;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.match-heading h1 {
+    margin: 15px 0;
+    font-size: clamp(38px, 8vw, 65px);
+}
+
+#match-status {
+    color: #f7df1e;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.scoreboard {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 20px;
+
+    margin: 50px 0;
+}
+
+.team {
+    text-align: center;
+}
+
+.team > span {
+    color: #999ca5;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.team h2 {
+    font-size: clamp(17px, 4vw, 25px);
+}
+
+.team strong {
+    display: block;
+    margin: 20px 0;
+
+    color: #f7df1e;
+    font-size: clamp(60px, 10vw, 90px);
+}
+
+.score-divider {
+    color: #777;
+    font-size: 45px;
+}
+
+.score-controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+button {
+    padding: 11px 17px;
+
+    background: #f7df1e;
+    color: #101116;
+
+    border: none;
+    border-radius: 7px;
+
+    font-weight: bold;
+    cursor: pointer;
+
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+}
+
+button:focus-visible {
+    outline: 3px solid white;
+    outline-offset: 3px;
+}
+
+.match-actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+#reset-button {
+    background: #343642;
+    color: white;
+}
+
+.dashboard-footer {
+    margin-top: 25px;
+    color: #777;
+    text-align: center;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+}
+
+.matchday-light {
+    background: #eef0f5;
+    color: #151721;
+}
+
+.matchday-light .match-card {
+    background: white;
+    border-color: #d9dce6;
+}
+
+.matchday-light #reset-button {
+    background: #242631;
+    color: white;
+}
+
+@media (max-width: 520px) {
+
+    .match-card {
+        padding: 23px 15px;
+    }
+
+    .scoreboard {
+        gap: 8px;
+    }
+
+    .team h2 {
+        font-size: 17px;
+    }
+
+    .match-actions {
+        flex-direction: column;
+    }
+
+    .match-actions button {
+        width: 100%;
+    }
+
+}</code></pre>
+
+
+                <h3>06. Step three — Add JavaScript</h3>
+
+                <p>
+                    Now open matchday.js.
+                    This is where the dashboard becomes interactive.
+                </p>
+
+                <pre class="js-code-panel"><code>// SELECT THE HTML ELEMENTS
+
+const homeScoreDisplay =
+    document.querySelector("#home-score");
+
+const awayScoreDisplay =
+    document.querySelector("#away-score");
+
+const homePlus =
+    document.querySelector("#home-plus");
+
+const homeMinus =
+    document.querySelector("#home-minus");
+
+const awayPlus =
+    document.querySelector("#away-plus");
+
+const awayMinus =
+    document.querySelector("#away-minus");
+
+const resetButton =
+    document.querySelector("#reset-button");
+
+const statusButton =
+    document.querySelector("#status-button");
+
+const matchStatus =
+    document.querySelector("#match-status");
+
+const themeButton =
+    document.querySelector("#theme-button");
+
+
+// STORE THE SCORES
+
+let homeScore = 0;
+
+let awayScore = 0;
+
+
+// UPDATE THE SCOREBOARD
+
+function updateScoreboard() {
+
+    homeScoreDisplay.textContent = homeScore;
+
+    awayScoreDisplay.textContent = awayScore;
+
+}
+
+
+// HOME TEAM CONTROLS
+
+homePlus.addEventListener("click", function() {
+
+    homeScore++;
+
+    updateScoreboard();
+
+});
+
+
+homeMinus.addEventListener("click", function() {
+
+    if (homeScore > 0) {
+
+        homeScore--;
+
+        updateScoreboard();
+
+    }
+
+});
+
+
+// AWAY TEAM CONTROLS
+
+awayPlus.addEventListener("click", function() {
+
+    awayScore++;
+
+    updateScoreboard();
+
+});
+
+
+awayMinus.addEventListener("click", function() {
+
+    if (awayScore > 0) {
+
+        awayScore--;
+
+        updateScoreboard();
+
+    }
+
+});
+
+
+// MATCH STATUS
+
+const statuses = [
+    "UPCOMING",
+    "LIVE",
+    "FULL TIME"
+];
+
+let statusIndex = 0;
+
+statusButton.addEventListener("click", function() {
+
+    statusIndex++;
+
+    if (statusIndex >= statuses.length) {
+
+        statusIndex = 0;
+
+    }
+
+    matchStatus.textContent = statuses[statusIndex];
+
+});
+
+
+// RESET THE MATCH
+
+resetButton.addEventListener("click", function() {
+
+    homeScore = 0;
+
+    awayScore = 0;
+
+    statusIndex = 0;
+
+    matchStatus.textContent = statuses[statusIndex];
+
+    updateScoreboard();
+
+});
+
+
+// SWITCH THEME
+
+themeButton.addEventListener("click", function() {
+
+    document.body.classList.toggle("matchday-light");
+
+});</code></pre>
+
+
+                <h3>07. Understanding how it works</h3>
+
+                <p>
+                    Let's connect the project to the concepts
+                    you've learned throughout the course.
+                </p>
+
+                <div class="js-concept-panel">
+
+                    <div>
+                        <span>DOM</span>
+                        <h4>Selecting elements</h4>
+                        <p>
+                            querySelector() finds the scores,
+                            buttons and status display.
+                        </p>
+                    </div>
+
+                    <div>
+                        <span>VARIABLES</span>
+                        <h4>Storing scores</h4>
+                        <p>
+                            homeScore and awayScore hold
+                            the current match scores.
+                        </p>
+                    </div>
+
+                    <div>
+                        <span>FUNCTIONS</span>
+                        <h4>Updating the page</h4>
+                        <p>
+                            updateScoreboard() keeps the
+                            displayed scores in sync.
+                        </p>
+                    </div>
+
+                    <div>
+                        <span>EVENTS</span>
+                        <h4>Responding to clicks</h4>
+                        <p>
+                            Event listeners control the
+                            buttons and theme switch.
+                        </p>
+                    </div>
+
+                    <div>
+                        <span>CONDITIONS</span>
+                        <h4>Preventing negative scores</h4>
+                        <p>
+                            An if statement prevents a score
+                            from dropping below zero.
+                        </p>
+                    </div>
+
+                    <div>
+                        <span>DOM MANIPULATION</span>
+                        <h4>Changing the interface</h4>
+                        <p>
+                            textContent and classList update
+                            what the user sees.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <h3>08. Test your project</h3>
+
+                <p>
+                    Open matchday.html with Live Server.
+                    Test every button and make sure the
+                    dashboard responds correctly.
+                </p>
+
+                <ul class="js-lesson-list">
+                    <li>Increase and decrease both scores.</li>
+                    <li>Check that a score never becomes negative.</li>
+                    <li>Cycle through the match statuses.</li>
+                    <li>Reset the match and check that everything returns to its initial state.</li>
+                    <li>Switch between light and dark themes.</li>
+                </ul>
+
+                <div class="js-note-panel">
+                    <strong>Project tip:</strong>
+                    Build one feature at a time. First connect
+                    the HTML and CSS, then add score controls,
+                    then match status and finally the theme switch.
+                    Test each feature before moving on.
+                </div>
+
+
+                <div class="js-task-panel">
+
+                    <span>YOUR FINAL CHALLENGE</span>
+
+                    <h4>Make the dashboard your own.</h4>
+
+                    <p>
+                        The Matchday Dashboard is your starting point.
+                        Now personalise it.
+                    </p>
+
+                    <ul>
+                        <li>Change the team names.</li>
+                        <li>Choose a different colour palette.</li>
+                        <li>Add a match timer.</li>
+                        <li>Add a goal event message.</li>
+                        <li>Create a list of recent match events.</li>
+                    </ul>
+
+                    <p>
+                        Try building these additions independently
+                        before looking for solutions.
+                    </p>
+
+                </div>
+
+
+                <div class="js-lesson-takeaway">
+                    <span>THE KEY IDEA</span>
+                    <p>
+                        A complete interactive webpage combines
+                        structure, design, logic, functions,
+                        events and DOM manipulation.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- STAGE COMPLETION -->
+        <section class="js-stage-completion">
+
+            <span>CHAPTER 003 / ALL 12 LESSONS COMPLETE</span>
+
+            <h2>
+                You didn't just learn JavaScript.<br>
+                You learned how to build with it.
+            </h2>
+
+            <p>
+                You've explored programming fundamentals,
+                learned how to control logic, worked with functions,
+                connected JavaScript to the DOM and built
+                interactive experiences.
+
+                Your next step is to take these skills beyond
+                the lessons and use them in your own projects.
+            </p>
+
+            <a href="JS.html" class="js-next-stage-button">
+                BACK TO JAVASCRIPT CHAPTER ↗
+            </a>
+
+            <a href="JS stage 2.html" class="js-back-link">
+                ← BACK TO STAGE 02
+            </a>
+
+        </section>
+
+
+        <!-- FOOTER -->
+        <footer class="js-stage-footer">
+
+            <p>THE DIGITAL LAB — CHAPTER 003</p>
+
+            <span>LEARN. BUILD. EXPERIMENT.</span>
+
+        </footer>
+
+    </main>
+
+</body>
+
+</html>

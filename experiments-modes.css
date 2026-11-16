@@ -1,0 +1,515 @@
+
+/* =========================================================
+   THE DIGITAL LAB — EXPERIMENT 003
+   LIGHT / DARK VISUAL TRANSITION
+========================================================= */
+
+
+/* 01 — SECTION */
+
+.mode-experiment {
+    position: relative;
+
+    padding: 120px 8%;
+
+    overflow: hidden;
+}
+
+.mode-experiment-heading {
+    max-width: 750px;
+    margin-bottom: 70px;
+}
+
+.mode-eyebrow {
+    margin-bottom: 22px;
+
+    color: var(--lime, #c5ff41);
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+}
+
+.mode-experiment-heading h2 {
+    margin: 0 0 25px;
+
+    font-size: clamp(55px, 8vw, 100px);
+    font-weight: 700;
+    line-height: 0.92;
+    letter-spacing: -5px;
+}
+
+.mode-experiment-heading h2 span {
+    color: var(--lime, #c5ff41);
+}
+
+.mode-experiment-heading > p:last-child {
+    max-width: 520px;
+
+    color: var(--muted, #999);
+
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+
+/* 02 — MAIN GRID */
+
+.mode-experiment-grid {
+    display: grid;
+
+    grid-template-columns: 0.8fr 1.2fr;
+
+    align-items: center;
+
+    gap: 65px;
+}
+
+
+/* 03 — LEFT INFORMATION */
+
+.mode-experiment-info {
+    max-width: 380px;
+}
+
+.mode-experiment-label {
+    color: var(--lime, #c5ff41);
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.mode-experiment-info h3 {
+    margin: 22px 0;
+
+    font-size: clamp(38px, 5vw, 60px);
+    font-weight: 700;
+    line-height: 0.95;
+    letter-spacing: -2px;
+}
+
+.mode-experiment-info > p {
+    color: var(--muted, #999);
+
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+
+/* 04 — TOGGLE AREA */
+
+.mode-toggle-area {
+    width: fit-content;
+    margin-top: 40px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 13px;
+}
+
+.mode-toggle-labels {
+    width: 83px;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.mode-toggle-labels span {
+    color: var(--muted, #999);
+
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+
+/* SWITCH TRACK */
+
+.mode-toggle {
+    position: relative;
+
+    width: 86px;
+    height: 46px;
+
+    padding: 4px;
+
+    display: flex;
+    align-items: center;
+
+    background: #ecece8;
+
+    border: 1px solid rgba(0, 0, 0, 0.18);
+    border-radius: 50px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.45s ease,
+        border-color 0.45s ease,
+        box-shadow 0.45s ease;
+}
+
+
+/* SWITCH CIRCLE */
+
+.mode-toggle-thumb {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+
+    width: 34px;
+    height: 34px;
+
+    display: block;
+
+    background: #171717;
+
+    border-radius: 50%;
+
+    box-shadow: 0 3px 9px rgba(0, 0, 0, 0.2);
+
+    transition:
+        transform 0.55s cubic-bezier(.22, 1, .36, 1),
+        background 0.35s ease;
+}
+
+
+/* DARK SWITCH STATE */
+
+.mode-experiment.is-dark .mode-toggle {
+    background: #22232c;
+
+    border-color: rgba(255, 255, 255, 0.2);
+
+    box-shadow: 0 0 25px rgba(120, 120, 255, 0.1);
+}
+
+.mode-experiment.is-dark .mode-toggle-thumb {
+    background: #ffffff;
+
+    transform: translateX(40px);
+}
+
+.mode-state-label {
+    margin: 0;
+
+    color: var(--muted, #999);
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+
+    transition: color 0.3s ease;
+}
+
+.mode-experiment.is-dark .mode-state-label {
+    color: #d6d6e5;
+}
+
+
+/* 05 — EXPERIMENT NOTE */
+
+.mode-experiment-note {
+    margin-top: 45px;
+    padding: 20px;
+
+    border-left: 2px solid var(--lime, #c5ff41);
+
+    background: rgba(255, 255, 255, 0.025);
+}
+
+.mode-experiment-note span {
+    color: var(--lime, #c5ff41);
+
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.mode-experiment-note p {
+    margin: 12px 0 0;
+
+    color: var(--muted, #999);
+
+    font-size: 11px;
+    line-height: 1.8;
+}
+
+
+/* 06 — INTERACTIVE FRAME */
+
+.mode-stage {
+    position: relative;
+
+    min-height: 470px;
+
+    display: flex;
+    align-items: stretch;
+
+    overflow: hidden;
+
+    isolation: isolate;
+
+    background: #f1f0e9;
+    color: #171717;
+
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.15),
+        0 0 0 1px rgba(255, 255, 255, 0.025);
+
+    transition:
+        border-color 0.5s ease,
+        box-shadow 0.5s ease;
+}
+
+
+/* 07 — CIRCULAR WIPE */
+
+.mode-stage-wipe {
+    position: absolute;
+
+    z-index: 0;
+
+    width: 220%;
+    aspect-ratio: 1;
+
+    top: 50%;
+    right: 0;
+
+    border-radius: 50%;
+
+    background: #11131b;
+
+    transform: translate(50%, -50%) scale(0);
+
+    transform-origin: center;
+
+    pointer-events: none;
+
+    transition:
+        transform 1.15s cubic-bezier(.16, 1, .3, 1);
+}
+
+
+/* EXPANDING DARK CIRCLE */
+
+.mode-stage.is-dark .mode-stage-wipe {
+    transform: translate(50%, -50%) scale(1.15);
+}
+
+
+/* DARK FRAME DETAILS */
+
+.mode-stage.is-dark {
+    border-color: rgba(255, 255, 255, 0.13);
+
+    box-shadow:
+        0 30px 90px rgba(0, 0, 0, 0.35),
+        0 0 55px rgba(90, 90, 160, 0.08);
+}
+
+
+/* 08 — FRAME CONTENT */
+
+.mode-stage-content {
+    position: relative;
+    z-index: 1;
+
+    width: 100%;
+
+    padding: 32px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    color: #171717;
+
+    transition:
+        color 0.65s ease 0.15s;
+}
+
+
+/* DARK TEXT STATE */
+
+.mode-stage.is-dark .mode-stage-content {
+    color: #f3f3f5;
+}
+
+
+/* TOP BAR */
+
+.mode-stage-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.mode-stage-top span {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+
+/* CENTRAL DISPLAY */
+
+.mode-stage-main {
+    margin: 65px 0;
+}
+
+.mode-stage-kicker {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.mode-stage-main h3 {
+    margin: 22px 0;
+
+    font-size: clamp(35px, 5.5vw, 65px);
+    font-weight: 700;
+    line-height: 0.9;
+    letter-spacing: -3px;
+}
+
+.mode-stage-main h3 span {
+    color: #888;
+    transition: color 0.6s ease;
+}
+
+.mode-stage.is-dark .mode-stage-main h3 span {
+    color: #c3baff;
+}
+
+.mode-stage-main p {
+    margin-top: 25px;
+
+    font-size: 12px;
+    line-height: 1.8;
+    opacity: 0.7;
+}
+
+
+/* BOTTOM BAR */
+
+.mode-stage-bottom {
+    padding-top: 20px;
+
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+
+    border-top: 1px solid rgba(0, 0, 0, 0.16);
+
+    transition: border-color 0.6s ease;
+}
+
+.mode-stage.is-dark .mode-stage-bottom {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.mode-stage-bottom span {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+}
+
+
+/* PREVIEW CAPTION */
+
+.mode-stage-caption {
+    position: absolute;
+
+    z-index: 2;
+
+    right: 17px;
+    bottom: -27px;
+
+    color: var(--muted, #999);
+
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+
+/* 09 — ACCESSIBILITY */
+
+.mode-toggle:focus-visible {
+    outline: 3px solid var(--lime, #c5ff41);
+    outline-offset: 5px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .mode-stage-wipe,
+    .mode-stage-content,
+    .mode-stage,
+    .mode-toggle,
+    .mode-toggle-thumb {
+        transition-duration: 0.01ms !important;
+    }
+
+}
+
+
+/* 10 — RESPONSIVE */
+
+@media (max-width: 950px) {
+
+    .mode-experiment-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .mode-experiment-info {
+        max-width: 600px;
+    }
+
+    .mode-stage {
+        min-height: 420px;
+    }
+
+}
+
+
+@media (max-width: 550px) {
+
+    .mode-experiment {
+        padding: 85px 6%;
+    }
+
+    .mode-experiment-heading h2 {
+        font-size: 58px;
+        letter-spacing: -3px;
+    }
+
+    .mode-experiment-grid {
+        gap: 35px;
+    }
+
+    .mode-stage {
+        min-height: 370px;
+    }
+
+    .mode-stage-content {
+        padding: 22px;
+    }
+
+    .mode-stage-main h3 {
+        font-size: 45px;
+    }
+
+    .mode-stage-bottom span,
+    .mode-stage-top span {
+        font-size: 8px;
+    }
+
+}

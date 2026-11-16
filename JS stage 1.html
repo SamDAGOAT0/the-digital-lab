@@ -1,0 +1,1183 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Stage 01 — The Foundations | THE DIGITAL LAB</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="JS.css">
+    <link rel="stylesheet" href="JS stage 1.css">
+</head>
+
+<body class="js-chapter js-learning-stage">
+
+    <!-- ATMOSPHERE -->
+    <div class="js-atmosphere"></div>
+
+
+    <!-- NAVIGATION -->
+    <nav class="js-stage-nav">
+
+        <a href="JS.html" class="js-stage-brand">
+            THE DIGITAL LAB <span>/ JAVASCRIPT</span>
+        </a>
+
+        <div class="js-stage-nav-links">
+            <a href="JS.html">Chapter Overview</a>
+            <a href="css.html">Previous Chapter</a>
+        </div>
+
+    </nav>
+
+
+    <main>
+
+        <!-- STAGE HERO -->
+        <header class="js-stage-hero">
+
+            <div class="js-stage-eyebrow">
+                CHAPTER 003 / STAGE 01
+            </div>
+
+            <h1>
+                THE <span>FOUNDATIONS.</span>
+            </h1>
+
+            <p class="js-stage-description">
+                Every interaction begins with an instruction.
+                Before building complex experiences, understand
+                the language behind them. Learn how JavaScript
+                stores information, works with values and
+                processes instructions.
+            </p>
+
+            <div class="js-stage-meta">
+                <span>04 LESSONS</span>
+                <span>01 STAGE</span>
+                <span>BEGINNER LEVEL</span>
+            </div>
+
+        </header>
+
+
+        <!-- LESSON NAVIGATION -->
+        <section class="js-stage-navigation">
+
+            <div class="js-section-heading">
+
+                <span>01 — YOUR LEARNING PATH</span>
+
+                <h2>Four steps. One language.</h2>
+
+                <p>
+                    Choose a lesson or work through the stage
+                    from beginning to end.
+                </p>
+
+            </div>
+
+
+            <div class="js-lesson-grid">
+
+                <a href="#lesson-01" class="js-lesson-card">
+                    <span class="js-lesson-number">01</span>
+
+                    <div>
+                        <h3>Introduction to JavaScript</h3>
+                        <p>
+                            Discover JavaScript and understand
+                            how it brings websites to life.
+                        </p>
+                    </div>
+
+                    <span class="js-lesson-arrow">↗</span>
+                </a>
+
+
+                <a href="#lesson-02" class="js-lesson-card">
+                    <span class="js-lesson-number">02</span>
+
+                    <div>
+                        <h3>Variables & Constants</h3>
+                        <p>
+                            Learn how to store information
+                            using let and const.
+                        </p>
+                    </div>
+
+                    <span class="js-lesson-arrow">↗</span>
+                </a>
+
+
+                <a href="#lesson-03" class="js-lesson-card">
+                    <span class="js-lesson-number">03</span>
+
+                    <div>
+                        <h3>Data Types & Values</h3>
+                        <p>
+                            Understand strings, numbers,
+                            booleans and other JavaScript values.
+                        </p>
+                    </div>
+
+                    <span class="js-lesson-arrow">↗</span>
+                </a>
+
+
+                <a href="#lesson-04" class="js-lesson-card">
+                    <span class="js-lesson-number">04</span>
+
+                    <div>
+                        <h3>Operators & Expressions</h3>
+                        <p>
+                            Make calculations, compare values
+                            and combine logical conditions.
+                        </p>
+                    </div>
+
+                    <span class="js-lesson-arrow">↗</span>
+                </a>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             LESSON 01
+        ========================================== -->
+
+        <section class="js-lesson-section" id="lesson-01">
+
+            <span id="lesson-one" class="js-anchor-alias"></span>
+
+            <div class="js-lesson-heading">
+
+                <span>LESSON 01 / THE BEGINNING</span>
+
+                <h2>Introduction to JavaScript</h2>
+
+                <p>
+                    What is JavaScript, why does it exist,
+                    and how does it work with HTML and CSS?
+                </p>
+
+            </div>
+
+
+            <div class="js-lesson-content">
+
+                <h3>01. What exactly is JavaScript?</h3>
+
+                <p>
+                    JavaScript is a programming language used to
+                    make websites interactive and dynamic.
+                    It allows a webpage to respond to actions,
+                    process information and change what appears
+                    on the screen.
+                </p>
+
+                <p>
+                    Think about a website with a menu button.
+                    HTML creates the button, CSS controls how it
+                    looks, and JavaScript can make the menu open
+                    when someone clicks it.
+                </p>
+
+
+                <div class="js-concept-panel">
+
+                    <div>
+                        <span>HTML</span>
+                        <h4>The Structure</h4>
+                        <p>
+                            Creates headings, paragraphs,
+                            buttons, images and other elements.
+                        </p>
+                    </div>
+
+                    <div>
+                        <span>CSS</span>
+                        <h4>The Appearance</h4>
+                        <p>
+                            Controls colours, layouts,
+                            typography and visual design.
+                        </p>
+                    </div>
+
+                    <div>
+                        <span>JAVASCRIPT</span>
+                        <h4>The Behaviour</h4>
+                        <p>
+                            Adds logic, interaction,
+                            calculations and dynamic behaviour.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <h3>02. What can JavaScript actually do?</h3>
+
+                <p>
+                    JavaScript can control many parts of a website.
+                    Here are some everyday examples:
+                </p>
+
+                <ul class="js-lesson-list">
+                    <li>Open and close navigation menus.</li>
+                    <li>Respond to clicks and keyboard input.</li>
+                    <li>Validate information entered into forms.</li>
+                    <li>Update text and images without reloading the page.</li>
+                    <li>Create animations and interactive components.</li>
+                    <li>Build games, tools and web applications.</li>
+                </ul>
+
+
+                <h3>03. Your first JavaScript instruction</h3>
+
+                <p>
+                    One of the simplest ways to start using
+                    JavaScript is with <strong>console.log()</strong>.
+                    It prints information into the browser's
+                    developer console.
+                </p>
+
+                <pre class="js-code-panel"><code>console.log("Hello, world!");
+
+console.log("Welcome to JavaScript.");
+
+console.log(10 + 5);</code></pre>
+
+                <p>
+                    The browser evaluates each instruction.
+                    The console displays the results:
+                </p>
+
+                <div class="js-output-panel">
+                    <span>CONSOLE OUTPUT</span>
+                    <code>Hello, world!</code>
+                    <code>Welcome to JavaScript.</code>
+                    <code>15</code>
+                </div>
+
+                <p>
+                    To open the developer console in Chrome,
+                    press <strong>F12</strong> and select the
+                    Console tab.
+                </p>
+
+
+                <h3>04. Connecting JavaScript to HTML</h3>
+
+                <p>
+                    JavaScript can be written directly inside
+                    an HTML document, but larger projects usually
+                    use a separate JavaScript file.
+                </p>
+
+                <p>
+                    Let's imagine you have two files:
+                </p>
+
+                <div class="js-file-panel">
+                    <span>PROJECT FILES</span>
+                    <code>index.html</code>
+                    <code>script.js</code>
+                </div>
+
+                <p>
+                    Inside your HTML document, connect the
+                    JavaScript file using a script element:
+                </p>
+
+                <pre class="js-code-panel"><code>&lt;script src="script.js" defer&gt;&lt;/script&gt;</code></pre>
+
+                <p>
+                    The <strong>src</strong> attribute tells
+                    the browser where to find the JavaScript file.
+                    The <strong>defer</strong> attribute tells the
+                    browser to run the script after the HTML
+                    document has been parsed.
+                </p>
+
+
+                <h3>05. Your first JavaScript file</h3>
+
+                <p>
+                    Open script.js and write:
+                </p>
+
+                <pre class="js-code-panel"><code>console.log("My first JavaScript file!");
+
+console.log("I am learning to make websites interactive.");</code></pre>
+
+                <p>
+                    Save both files, open your HTML page in the
+                    browser and check the Console tab.
+                    You should see your messages.
+                </p>
+
+
+                <div class="js-task-panel">
+
+                    <span>YOUR FIRST PRACTICAL TASK</span>
+
+                    <h4>Make the browser speak.</h4>
+
+                    <p>
+                        Create a JavaScript file named
+                        <strong>script.js</strong>.
+                        Connect it to an HTML page and use
+                        console.log() to display three messages:
+                    </p>
+
+                    <ul>
+                        <li>Your name or a nickname.</li>
+                        <li>The name of a website you want to build.</li>
+                        <li>A message saying you're learning JavaScript.</li>
+                    </ul>
+
+                    <p>
+                        Open the browser console and check that
+                        all three messages appear.
+                    </p>
+
+                </div>
+
+
+                <div class="js-lesson-takeaway">
+                    <span>THE KEY IDEA</span>
+                    <p>
+                        HTML structures a webpage, CSS styles it,
+                        and JavaScript gives it behaviour.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             LESSON 02
+        ========================================== -->
+
+        <section class="js-lesson-section" id="lesson-02">
+
+            <span id="lesson-two" class="js-anchor-alias"></span>
+
+            <div class="js-lesson-heading">
+
+                <span>LESSON 02 / STORING INFORMATION</span>
+
+                <h2>Variables & Constants</h2>
+
+                <p>
+                    Learn how to store information, give it a name
+                    and use it throughout your code.
+                </p>
+
+            </div>
+
+
+            <div class="js-lesson-content">
+
+                <h3>01. What is a variable?</h3>
+
+                <p>
+                    A variable is a named place in your program
+                    where a value can be stored.
+                    It allows you to save information and use
+                    that information again whenever you need it.
+                </p>
+
+                <p>
+                    Imagine building a football scoreboard.
+                    You need to remember the names of the teams
+                    and their current scores.
+                    Variables can store all of that information.
+                </p>
+
+                <pre class="js-code-panel"><code>let teamName = "Barcelona";
+
+let score = 2;
+
+console.log(teamName);
+console.log(score);</code></pre>
+
+                <div class="js-output-panel">
+                    <span>CONSOLE OUTPUT</span>
+                    <code>Barcelona</code>
+                    <code>2</code>
+                </div>
+
+
+                <h3>02. Creating variables with let</h3>
+
+                <p>
+                    The <strong>let</strong> keyword creates
+                    a variable whose value can be reassigned.
+                </p>
+
+                <pre class="js-code-panel"><code>let score = 0;
+
+score = 1;
+
+score = 2;
+
+console.log(score);</code></pre>
+
+                <p>
+                    We first created score with a value of 0.
+                    Then we changed its value twice.
+                    The final output is 2.
+                </p>
+
+                <div class="js-note-panel">
+                    <strong>Remember:</strong>
+                    You use let when a variable's value is
+                    expected to change.
+                </div>
+
+
+                <h3>03. Creating constants with const</h3>
+
+                <p>
+                    The <strong>const</strong> keyword creates
+                    a variable binding that cannot be reassigned.
+                </p>
+
+                <pre class="js-code-panel"><code>const club = "Barcelona";
+
+console.log(club);</code></pre>
+
+                <p>
+                    The value stored in club can be read and
+                    used, but you cannot assign a completely
+                    different value to that const variable later.
+                </p>
+
+                <p>
+                    For example, trying to write
+                    <strong>club = "Argentina"</strong> would
+                    produce an error.
+                </p>
+
+                <div class="js-note-panel">
+                    <strong>Remember:</strong>
+                    Use const when you don't intend to reassign
+                    the variable.
+                </div>
+
+
+                <h3>04. let vs const</h3>
+
+                <div class="js-comparison-panel">
+
+                    <div>
+                        <span>LET</span>
+                        <h4>Can be reassigned</h4>
+                        <pre class="js-code-panel"><code>let level = 1;
+
+level = 2;</code></pre>
+                    </div>
+
+                    <div>
+                        <span>CONST</span>
+                        <h4>Cannot be reassigned</h4>
+                        <pre class="js-code-panel"><code>const maxLevel = 10;
+
+// Reassignment is not allowed.</code></pre>
+                    </div>
+
+                </div>
+
+
+                <h3>05. Naming your variables</h3>
+
+                <p>
+                    Variable names should explain what
+                    information they hold.
+                </p>
+
+                <pre class="js-code-panel"><code>let playerName = "Alex";
+
+let currentScore = 120;
+
+const maximumAttempts = 3;</code></pre>
+
+                <p>
+                    JavaScript commonly uses a naming style
+                    called <strong>camelCase</strong>.
+                    The first word starts with a lowercase
+                    letter, and each following word begins
+                    with a capital letter.
+                </p>
+
+                <div class="js-example-panel">
+
+                    <span>GOOD VARIABLE NAMES</span>
+                    <code>playerName</code>
+                    <code>totalPrice</code>
+                    <code>currentLevel</code>
+
+                    <span>AVOID UNCLEAR NAMES</span>
+                    <code>x</code>
+                    <code>thing</code>
+                    <code>abc</code>
+
+                </div>
+
+                <p>
+                    Some naming rules are important:
+                </p>
+
+                <ul class="js-lesson-list">
+                    <li>Names cannot begin with a number.</li>
+                    <li>Spaces are not allowed in variable names.</li>
+                    <li>JavaScript keywords cannot be used as variable names.</li>
+                    <li>Variable names are case-sensitive.</li>
+                </ul>
+
+
+                <div class="js-task-panel">
+
+                    <span>YOUR PRACTICAL TASK</span>
+
+                    <h4>Build a tiny player profile.</h4>
+
+                    <p>
+                        Create a JavaScript file that stores
+                        the following information:
+                    </p>
+
+                    <ul>
+                        <li>A player's name using let.</li>
+                        <li>A club name using const.</li>
+                        <li>A player's starting score using let.</li>
+                    </ul>
+
+                    <p>
+                        Print all three values using console.log().
+                        Then increase the score and print it again.
+                    </p>
+
+                </div>
+
+
+                <div class="js-lesson-takeaway">
+                    <span>THE KEY IDEA</span>
+                    <p>
+                        Variables store information.
+                        Use let for values that may change and
+                        const for values you don't intend to reassign.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             LESSON 03
+        ========================================== -->
+
+        <section class="js-lesson-section" id="lesson-03">
+
+            <span id="lesson-three" class="js-anchor-alias"></span>
+
+            <div class="js-lesson-heading">
+
+                <span>LESSON 03 / UNDERSTANDING VALUES</span>
+
+                <h2>Data Types & Values</h2>
+
+                <p>
+                    Discover the different kinds of information
+                    JavaScript can work with.
+                </p>
+
+            </div>
+
+
+            <div class="js-lesson-content">
+
+                <h3>01. What are data types?</h3>
+
+                <p>
+                    Every value in JavaScript has a data type.
+                    A data type describes what kind of information
+                    a value represents and what operations can
+                    be performed with it.
+                </p>
+
+                <p>
+                    For example, a person's name is text,
+                    their age is a number, and whether a door
+                    is open can be represented as true or false.
+                </p>
+
+
+                <h3>02. Strings</h3>
+
+                <p>
+                    A string is text. It can contain letters,
+                    numbers, spaces and symbols.
+                    Strings are written inside quotation marks.
+                </p>
+
+                <pre class="js-code-panel"><code>let player = "Lamine Yamal";
+
+let country = 'Spain';
+
+let message = "Welcome to the lab!";
+
+console.log(player);
+console.log(country);
+console.log(message);</code></pre>
+
+                <p>
+                    Single quotes and double quotes can both
+                    create strings. Just make sure the opening
+                    and closing quotation marks match.
+                </p>
+
+
+                <h3>03. Numbers</h3>
+
+                <p>
+                    The number type is used for numerical values.
+                    JavaScript uses one main number type for
+                    regular whole numbers and decimal numbers.
+                </p>
+
+                <pre class="js-code-panel"><code>let age = 14;
+
+let price = 99.50;
+
+let temperature = -5;
+
+console.log(age);
+console.log(price);</code></pre>
+
+                <p>
+                    You don't need quotation marks around
+                    numbers when you want JavaScript to treat
+                    them as numerical values.
+                </p>
+
+
+                <h3>04. Booleans</h3>
+
+                <p>
+                    A Boolean has only two possible values:
+                    <strong>true</strong> or <strong>false</strong>.
+                    Booleans are especially useful when your
+                    program needs to keep track of a condition.
+                </p>
+
+                <pre class="js-code-panel"><code>let isLoggedIn = true;
+
+let hasAccess = false;
+
+console.log(isLoggedIn);
+console.log(hasAccess);</code></pre>
+
+                <p>
+                    For example, a website can use a Boolean
+                    to remember whether someone is logged in.
+                </p>
+
+
+                <h3>05. Undefined</h3>
+
+                <p>
+                    A variable that has been declared but
+                    hasn't been assigned a value is undefined.
+                </p>
+
+                <pre class="js-code-panel"><code>let username;
+
+console.log(username);</code></pre>
+
+                <div class="js-output-panel">
+                    <span>CONSOLE OUTPUT</span>
+                    <code>undefined</code>
+                </div>
+
+
+                <h3>06. Null</h3>
+
+                <p>
+                    Null represents the intentional absence
+                    of a value.
+                </p>
+
+                <pre class="js-code-panel"><code>let selectedPlayer = null;
+
+console.log(selectedPlayer);</code></pre>
+
+                <p>
+                    The difference is that undefined often
+                    means a value hasn't been assigned,
+                    while null is a value deliberately used
+                    to represent "nothing" or "no current value".
+                </p>
+
+
+                <h3>07. Objects</h3>
+
+                <p>
+                    Objects let you group related information
+                    together using named properties.
+                </p>
+
+                <pre class="js-code-panel"><code>const player = {
+    name: "Lamine Yamal",
+    club: "Barcelona",
+    age: 18
+};
+
+console.log(player.name);
+console.log(player.club);</code></pre>
+
+                <p>
+                    Instead of keeping each detail in a separate
+                    variable, an object groups information
+                    about one player.
+                </p>
+
+
+                <h3>08. Arrays</h3>
+
+                <p>
+                    An array stores an ordered collection
+                    of values.
+                </p>
+
+                <pre class="js-code-panel"><code>const clubs = [
+    "Barcelona",
+    "Arsenal",
+    "Bayern Munich"
+];
+
+console.log(clubs[0]);
+console.log(clubs[1]);</code></pre>
+
+                <p>
+                    Array positions start at zero.
+                    That means clubs[0] gives you the first
+                    item, while clubs[1] gives you the second.
+                </p>
+
+
+                <h3>09. Checking data types</h3>
+
+                <p>
+                    JavaScript includes an operator called
+                    <strong>typeof</strong>, which helps you
+                    identify the type of a value.
+                </p>
+
+                <pre class="js-code-panel"><code>console.log(typeof "Hello");
+
+console.log(typeof 25);
+
+console.log(typeof true);
+
+console.log(typeof undefined);</code></pre>
+
+                <div class="js-output-panel">
+                    <span>CONSOLE OUTPUT</span>
+                    <code>string</code>
+                    <code>number</code>
+                    <code>boolean</code>
+                    <code>undefined</code>
+                </div>
+
+                <div class="js-note-panel">
+                    <strong>A small JavaScript quirk:</strong>
+                    typeof null returns "object". This is a
+                    historical behaviour of JavaScript.
+                    It does not mean null is actually an object.
+                </div>
+
+
+                <div class="js-task-panel">
+
+                    <span>YOUR PRACTICAL TASK</span>
+
+                    <h4>Create a football team profile.</h4>
+
+                    <p>
+                        Create variables that represent:
+                    </p>
+
+                    <ul>
+                        <li>A player's name as a string.</li>
+                        <li>The player's shirt number as a number.</li>
+                        <li>Whether the player is available as a Boolean.</li>
+                        <li>A selected substitute as null.</li>
+                        <li>A list of three teammates using an array.</li>
+                    </ul>
+
+                    <p>
+                        Print each value and use typeof to
+                        inspect the types. Remember that arrays
+                        can also be checked with Array.isArray().
+                    </p>
+
+                </div>
+
+
+                <div class="js-lesson-takeaway">
+                    <span>THE KEY IDEA</span>
+                    <p>
+                        JavaScript works with different kinds
+                        of values, including strings, numbers,
+                        Booleans, objects and arrays.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             LESSON 04
+        ========================================== -->
+
+        <section class="js-lesson-section" id="lesson-04">
+
+            <span id="lesson-four" class="js-anchor-alias"></span>
+
+            <div class="js-lesson-heading">
+
+                <span>LESSON 04 / WORKING WITH VALUES</span>
+
+                <h2>Operators & Expressions</h2>
+
+                <p>
+                    Learn how JavaScript performs calculations,
+                    compares information and combines conditions.
+                </p>
+
+            </div>
+
+
+            <div class="js-lesson-content">
+
+                <h3>01. What are operators?</h3>
+
+                <p>
+                    Operators are symbols or keywords that
+                    perform operations on values.
+                    They allow JavaScript to calculate,
+                    compare and work with information.
+                </p>
+
+                <p>
+                    For example, the plus sign can add two
+                    numbers together.
+                </p>
+
+                <pre class="js-code-panel"><code>let result = 10 + 5;
+
+console.log(result);</code></pre>
+
+                <div class="js-output-panel">
+                    <span>CONSOLE OUTPUT</span>
+                    <code>15</code>
+                </div>
+
+
+                <h3>02. Arithmetic operators</h3>
+
+                <p>
+                    Arithmetic operators are used to perform
+                    mathematical calculations.
+                </p>
+
+                <div class="js-operator-table">
+
+                    <div><strong>+</strong><span>Addition</span><code>10 + 5 = 15</code></div>
+                    <div><strong>-</strong><span>Subtraction</span><code>10 - 5 = 5</code></div>
+                    <div><strong>*</strong><span>Multiplication</span><code>10 * 5 = 50</code></div>
+                    <div><strong>/</strong><span>Division</span><code>10 / 5 = 2</code></div>
+                    <div><strong>%</strong><span>Remainder</span><code>10 % 3 = 1</code></div>
+                    <div><strong>**</strong><span>Exponentiation</span><code>2 ** 3 = 8</code></div>
+
+                </div>
+
+                <p>
+                    The remainder operator (%) gives you what
+                    remains after a division.
+                </p>
+
+                <pre class="js-code-panel"><code>let remainder = 10 % 3;
+
+console.log(remainder);</code></pre>
+
+
+                <h3>03. Assignment operators</h3>
+
+                <p>
+                    Assignment operators allow you to assign
+                    values to variables and update them.
+                </p>
+
+                <pre class="js-code-panel"><code>let score = 10;
+
+score += 5;
+
+console.log(score);</code></pre>
+
+                <p>
+                    The += operator adds a value to the current
+                    variable and stores the result back in it.
+                    Here, score becomes 15.
+                </p>
+
+                <div class="js-operator-table">
+
+                    <div><strong>=</strong><span>Assign</span><code>score = 10</code></div>
+                    <div><strong>+=</strong><span>Add and assign</span><code>score += 5</code></div>
+                    <div><strong>-=</strong><span>Subtract and assign</span><code>score -= 2</code></div>
+                    <div><strong>*=</strong><span>Multiply and assign</span><code>score *= 2</code></div>
+                    <div><strong>/=</strong><span>Divide and assign</span><code>score /= 2</code></div>
+
+                </div>
+
+
+                <h3>04. Comparison operators</h3>
+
+                <p>
+                    Comparison operators compare two values.
+                    Their result is a Boolean: either true or false.
+                </p>
+
+                <pre class="js-code-panel"><code>console.log(10 > 5);
+
+console.log(10 < 5);
+
+console.log(10 === 10);
+
+console.log(10 !== 5);</code></pre>
+
+                <div class="js-output-panel">
+                    <span>CONSOLE OUTPUT</span>
+                    <code>true</code>
+                    <code>false</code>
+                    <code>true</code>
+                    <code>true</code>
+                </div>
+
+                <p>
+                    Some common comparison operators:
+                </p>
+
+                <div class="js-operator-table">
+
+                    <div><strong>===</strong><span>Strictly equal</span><code>5 === 5</code></div>
+                    <div><strong>!==</strong><span>Strictly not equal</span><code>5 !== 3</code></div>
+                    <div><strong>&gt;</strong><span>Greater than</span><code>8 &gt; 4</code></div>
+                    <div><strong>&lt;</strong><span>Less than</span><code>3 &lt; 7</code></div>
+                    <div><strong>&gt;=</strong><span>Greater or equal</span><code>8 &gt;= 8</code></div>
+                    <div><strong>&lt;=</strong><span>Less or equal</span><code>4 &lt;= 6</code></div>
+
+                </div>
+
+                <div class="js-note-panel">
+                    <strong>Important:</strong>
+                    Prefer === and !== for equality checks.
+                    They compare values without automatically
+                    converting between different data types.
+                </div>
+
+
+                <h3>05. Logical operators</h3>
+
+                <p>
+                    Logical operators combine or reverse
+                    Boolean conditions.
+                </p>
+
+                <div class="js-operator-table">
+
+                    <div>
+                        <strong>&&</strong>
+                        <span>AND</span>
+                        <code>true && true</code>
+                    </div>
+
+                    <div>
+                        <strong>||</strong>
+                        <span>OR</span>
+                        <code>true || false</code>
+                    </div>
+
+                    <div>
+                        <strong>!</strong>
+                        <span>NOT</span>
+                        <code>!true</code>
+                    </div>
+
+                </div>
+
+                <pre class="js-code-panel"><code>let hasTicket = true;
+
+let isOldEnough = true;
+
+console.log(hasTicket && isOldEnough);</code></pre>
+
+                <p>
+                    The AND operator (&&) returns true when
+                    both conditions are true.
+                </p>
+
+
+                <h3>06. What is an expression?</h3>
+
+                <p>
+                    An expression is a piece of code that
+                    produces a value.
+                </p>
+
+                <pre class="js-code-panel"><code>10 + 5
+
+score > 100
+
+"Hello " + "world"</code></pre>
+
+                <p>
+                    Each example produces a value:
+                    a number, a Boolean or a string.
+                </p>
+
+
+                <h3>07. Combining operators</h3>
+
+                <p>
+                    You can combine multiple operations
+                    in one expression.
+                </p>
+
+                <pre class="js-code-panel"><code>let total = 100 + 50 * 2;
+
+console.log(total);</code></pre>
+
+                <p>
+                    The output is 200, not 300, because
+                    multiplication takes priority over
+                    addition in this expression.
+                </p>
+
+                <p>
+                    Use parentheses when you want to control
+                    the order:
+                </p>
+
+                <pre class="js-code-panel"><code>let total = (100 + 50) * 2;
+
+console.log(total);</code></pre>
+
+                <div class="js-output-panel">
+                    <span>CONSOLE OUTPUT</span>
+                    <code>300</code>
+                </div>
+
+
+                <div class="js-task-panel">
+
+                    <span>YOUR PRACTICAL TASK</span>
+
+                    <h4>Build a mini match scoreboard.</h4>
+
+                    <p>
+                        Create two score variables and use
+                        JavaScript operators to:
+                    </p>
+
+                    <ul>
+                        <li>Add goals to a team's score.</li>
+                        <li>Calculate the total number of goals.</li>
+                        <li>Compare the two teams' scores.</li>
+                        <li>Use a logical operator to check whether both teams have scored.</li>
+                    </ul>
+
+                    <p>
+                        Print your calculations and comparison
+                        results in the console.
+                    </p>
+
+                </div>
+
+
+                <div class="js-lesson-takeaway">
+                    <span>THE KEY IDEA</span>
+                    <p>
+                        Operators let JavaScript calculate,
+                        compare and combine values to produce
+                        meaningful results.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- STAGE COMPLETION -->
+        <section class="js-stage-completion">
+
+            <span>STAGE 01 / FOUNDATION COMPLETE</span>
+
+            <h2>
+                You understand the language.<br>
+                Now give it some logic.
+            </h2>
+
+            <p>
+                You've explored JavaScript, stored information,
+                understood data types and learned how to work
+                with values. Next, you'll teach your code to
+                make decisions, repeat actions and respond
+                to the world around it.
+            </p>
+
+            <a href="JS stage 2.html" class="js-next-stage-button">
+                ENTER STAGE 02 →
+            </a>
+
+            <a href="JS.html" class="js-back-link">
+                ← BACK TO CHAPTER OVERVIEW
+            </a>
+
+        </section>
+
+
+        <!-- FOOTER -->
+        <footer class="js-stage-footer">
+
+            <p>THE DIGITAL LAB — CHAPTER 003</p>
+
+            <span>LEARN. BUILD. EXPERIMENT.</span>
+
+        </footer>
+
+    </main>
+
+</body>
+</html>

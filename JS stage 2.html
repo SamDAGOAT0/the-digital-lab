@@ -1,0 +1,1447 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Stage 02 — Logic & Interaction | THE DIGITAL LAB</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="JS.css">
+    <link rel="stylesheet" href="JS stage 2.css">
+</head>
+
+<body class="js-chapter js-learning-stage">
+
+    <!-- ATMOSPHERE -->
+    <div class="js-atmosphere"></div>
+
+
+    <!-- NAVIGATION -->
+    <nav class="js-stage-nav">
+
+        <a href="JS.html" class="js-stage-brand">
+            THE DIGITAL LAB <span>/ JAVASCRIPT</span>
+        </a>
+
+        <div class="js-stage-nav-links">
+            <a href="JS.html">Chapter Overview</a>
+            <a href="JS stage 1.html">Previous Stage</a>
+        </div>
+
+    </nav>
+
+
+    <main>
+
+        <!-- STAGE HERO -->
+        <header class="js-stage-hero">
+
+            <div class="js-stage-eyebrow">
+                CHAPTER 003 / STAGE 02
+            </div>
+
+            <h1>
+                LOGIC <span>& INTERACTION.</span>
+            </h1>
+
+            <p class="js-stage-description">
+                Your code can now store information and work with values.
+                But what happens when it needs to make a decision,
+                repeat an action or respond to someone?
+                Learn how to give your programs logic and behaviour.
+            </p>
+
+            <div class="js-stage-meta">
+                <span>04 LESSONS</span>
+                <span>02 STAGE</span>
+                <span>BEGINNER → INTERMEDIATE</span>
+            </div>
+
+        </header>
+
+
+        <!-- LESSON NAVIGATION -->
+        <section class="js-stage-navigation">
+
+            <div class="js-section-heading">
+
+                <span>02 — YOUR LEARNING PATH</span>
+
+                <h2>Four steps. Smarter code.</h2>
+
+                <p>
+                    Choose a lesson or work through the stage
+                    from beginning to end.
+                </p>
+
+            </div>
+
+
+            <div class="js-lesson-grid">
+
+                <a href="#lesson-five" class="js-lesson-card">
+                    <span class="js-lesson-number">05</span>
+
+                    <div>
+                        <h3>Conditional Statements</h3>
+                        <p>
+                            Teach your code to make decisions
+                            using if, else and switch.
+                        </p>
+                    </div>
+
+                    <span class="js-lesson-arrow">↗</span>
+                </a>
+
+
+                <a href="#lesson-six" class="js-lesson-card">
+                    <span class="js-lesson-number">06</span>
+
+                    <div>
+                        <h3>Loops & Repetition</h3>
+                        <p>
+                            Repeat instructions with for,
+                            while and other loop structures.
+                        </p>
+                    </div>
+
+                    <span class="js-lesson-arrow">↗</span>
+                </a>
+
+
+                <a href="#lesson-seven" class="js-lesson-card">
+                    <span class="js-lesson-number">07</span>
+
+                    <div>
+                        <h3>Functions</h3>
+                        <p>
+                            Organise code into reusable blocks
+                            with parameters and return values.
+                        </p>
+                    </div>
+
+                    <span class="js-lesson-arrow">↗</span>
+                </a>
+
+
+                <a href="#lesson-eight" class="js-lesson-card">
+                    <span class="js-lesson-number">08</span>
+
+                    <div>
+                        <h3>Events & Event Listeners</h3>
+                        <p>
+                            Make websites react to clicks,
+                            typing and other user actions.
+                        </p>
+                    </div>
+
+                    <span class="js-lesson-arrow">↗</span>
+                </a>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             LESSON 05
+        ========================================== -->
+
+        <section class="js-lesson-section" id="lesson-05">
+
+            <span id="lesson-five" class="js-anchor-alias"></span>
+
+            <div class="js-lesson-heading">
+
+                <span>LESSON 05 / MAKING DECISIONS</span>
+
+                <h2>Conditional Statements</h2>
+
+                <p>
+                    Teach your program to evaluate situations
+                    and choose what to do next.
+                </p>
+
+            </div>
+
+
+            <div class="js-lesson-content">
+
+                <h3>01. What are conditional statements?</h3>
+
+                <p>
+                    A conditional statement allows JavaScript
+                    to run different pieces of code depending
+                    on whether a condition is true or false.
+                </p>
+
+                <p>
+                    Think about a login screen.
+                    If the password is correct, the user gets
+                    access. Otherwise, the website displays
+                    an error message.
+                </p>
+
+                <p>
+                    The program is making a decision based
+                    on a condition.
+                </p>
+
+
+                <h3>02. The if statement</h3>
+
+                <p>
+                    The <strong>if</strong> statement runs a block
+                    of code only when its condition evaluates
+                    to true.
+                </p>
+
+                <pre class="js-code-panel"><code>let score = 85;
+
+if (score >= 50) {
+    console.log("You passed!");
+}</code></pre>
+
+                <p>
+                    JavaScript checks whether score is greater
+                    than or equal to 50. Since the condition
+                    is true, the message appears in the console.
+                </p>
+
+                <div class="js-output-panel">
+                    <span>CONSOLE OUTPUT</span>
+                    <code>You passed!</code>
+                </div>
+
+
+                <h3>03. The if...else statement</h3>
+
+                <p>
+                    What happens when the condition is false?
+                    That's where <strong>else</strong> comes in.
+                    It gives your program an alternative action.
+                </p>
+
+                <pre class="js-code-panel"><code>let score = 35;
+
+if (score >= 50) {
+    console.log("You passed!");
+} else {
+    console.log("Try again!");
+}</code></pre>
+
+                <p>
+                    The score is below 50, so the else block runs.
+                </p>
+
+                <div class="js-output-panel">
+                    <span>CONSOLE OUTPUT</span>
+                    <code>Try again!</code>
+                </div>
+
+
+                <h3>04. The else if statement</h3>
+
+                <p>
+                    Sometimes a program needs to check several
+                    possible conditions.
+                    Use <strong>else if</strong> to test another
+                    condition when the earlier one was false.
+                </p>
+
+                <pre class="js-code-panel"><code>let score = 78;
+
+if (score >= 90) {
+    console.log("Excellent!");
+} else if (score >= 70) {
+    console.log("Great work!");
+} else if (score >= 50) {
+    console.log("You passed.");
+} else {
+    console.log("Keep practising.");
+}</code></pre>
+
+                <p>
+                    JavaScript checks the conditions from top
+                    to bottom. Once one condition is true,
+                    its block runs and the remaining branches
+                    are skipped.
+                </p>
+
+                <div class="js-output-panel">
+                    <span>CONSOLE OUTPUT</span>
+                    <code>Great work!</code>
+                </div>
+
+
+                <h3>05. Multiple conditions</h3>
+
+                <p>
+                    You can combine conditions using logical
+                    operators from Lesson 04.
+                </p>
+
+                <p>
+                    The AND operator (&&) requires both
+                    conditions to be true.
+                </p>
+
+                <pre class="js-code-panel"><code>let hasTicket = true;
+let age = 16;
+
+if (hasTicket && age >= 13) {
+    console.log("Access granted.");
+} else {
+    console.log("Access denied.");
+}</code></pre>
+
+                <p>
+                    The OR operator (||) requires at least
+                    one condition to be true.
+                </p>
+
+                <pre class="js-code-panel"><code>let isWeekend = false;
+let isHoliday = true;
+
+if (isWeekend || isHoliday) {
+    console.log("No school today!");
+}</code></pre>
+
+
+                <h3>06. The switch statement</h3>
+
+                <p>
+                    A <strong>switch</strong> statement is useful
+                    when you want to compare one value against
+                    several possible cases.
+                </p>
+
+                <pre class="js-code-panel"><code>let position = "Goalkeeper";
+
+switch (position) {
+
+    case "Goalkeeper":
+        console.log("Protect the goal.");
+        break;
+
+    case "Defender":
+        console.log("Protect the defence.");
+        break;
+
+    case "Midfielder":
+        console.log("Control the midfield.");
+        break;
+
+    case "Forward":
+        console.log("Lead the attack.");
+        break;
+
+    default:
+        console.log("Unknown position.");
+
+}</code></pre>
+
+                <p>
+                    Here's what the important keywords mean:
+                </p>
+
+                <ul class="js-lesson-list">
+                    <li><strong>switch</strong> — Starts the selection statement.</li>
+                    <li><strong>case</strong> — Defines a value to compare against.</li>
+                    <li><strong>break</strong> — Exits the switch after a matching case.</li>
+                    <li><strong>default</strong> — Runs when no case matches.</li>
+                </ul>
+
+                <div class="js-note-panel">
+                    <strong>Important:</strong>
+                    Without break, JavaScript can continue into
+                    the next case. This behaviour is called
+                    fall-through.
+                </div>
+
+
+                <h3>07. The ternary operator</h3>
+
+                <p>
+                    The ternary operator is a compact way to
+                    choose between two values based on a condition.
+                </p>
+
+                <pre class="js-code-panel"><code>let isLoggedIn = true;
+
+let message = isLoggedIn
+    ? "Welcome back!"
+    : "Please log in.";
+
+console.log(message);</code></pre>
+
+                <p>
+                    Read it like this:
+                    if isLoggedIn is true, use the first value.
+                    Otherwise, use the second value.
+                </p>
+
+                <div class="js-output-panel">
+                    <span>CONSOLE OUTPUT</span>
+                    <code>Welcome back!</code>
+                </div>
+
+
+                <div class="js-task-panel">
+
+                    <span>YOUR PRACTICAL TASK</span>
+
+                    <h4>Build a match-result checker.</h4>
+
+                    <p>
+                        Create two variables representing
+                        the goals scored by two football teams.
+                    </p>
+
+                    <ul>
+                        <li>If the first team has more goals, print "Team 1 wins".</li>
+                        <li>If the second team has more goals, print "Team 2 wins".</li>
+                        <li>If both scores are equal, print "It's a draw".</li>
+                    </ul>
+
+                    <p>
+                        Change the scores several times and
+                        test all three possible outcomes.
+                    </p>
+
+                </div>
+
+
+                <div class="js-lesson-takeaway">
+                    <span>THE KEY IDEA</span>
+                    <p>
+                        Conditional statements allow your code
+                        to make decisions based on information
+                        and conditions.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             LESSON 06
+        ========================================== -->
+
+        <section class="js-lesson-section" id="lesson-06">
+
+            <span id="lesson-six" class="js-anchor-alias"></span>
+
+            <div class="js-lesson-heading">
+
+                <span>LESSON 06 / REPEATING INSTRUCTIONS</span>
+
+                <h2>Loops & Repetition</h2>
+
+                <p>
+                    Learn how to repeat instructions without
+                    writing the same code over and over again.
+                </p>
+
+            </div>
+
+
+            <div class="js-lesson-content">
+
+                <h3>01. Why do we need loops?</h3>
+
+                <p>
+                    Imagine printing the numbers from 1 to 100.
+                    Writing one hundred separate console.log()
+                    instructions would be inefficient.
+                </p>
+
+                <p>
+                    A loop solves this problem by repeating a
+                    block of code while a condition allows it
+                    to continue.
+                </p>
+
+
+                <h3>02. The for loop</h3>
+
+                <p>
+                    A <strong>for</strong> loop is commonly used
+                    when you know how many times you want to
+                    repeat something.
+                </p>
+
+                <pre class="js-code-panel"><code>for (let i = 1; i <= 5; i++) {
+    console.log(i);
+}</code></pre>
+
+                <p>
+                    Let's break down the three parts:
+                </p>
+
+                <div class="js-concept-panel">
+
+                    <div>
+                        <span>01 / START</span>
+                        <h4>let i = 1</h4>
+                        <p>
+                            Creates the counter and
+                            starts it at 1.
+                        </p>
+                    </div>
+
+                    <div>
+                        <span>02 / CONDITION</span>
+                        <h4>i <= 5</h4>
+                        <p>
+                            The loop continues while
+                            the condition is true.
+                        </p>
+                    </div>
+
+                    <div>
+                        <span>03 / UPDATE</span>
+                        <h4>i++</h4>
+                        <p>
+                            Increases the counter
+                            by one after each repetition.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="js-output-panel">
+                    <span>CONSOLE OUTPUT</span>
+                    <code>1</code>
+                    <code>2</code>
+                    <code>3</code>
+                    <code>4</code>
+                    <code>5</code>
+                </div>
+
+
+                <h3>03. Counting backwards</h3>
+
+                <p>
+                    A for loop can also count backwards.
+                    Change the starting value and update rule.
+                </p>
+
+                <pre class="js-code-panel"><code>for (let i = 5; i >= 1; i--) {
+    console.log(i);
+}
+
+console.log("Go!");</code></pre>
+
+                <p>
+                    The counter begins at 5 and decreases
+                    by one each time until it reaches 1.
+                </p>
+
+
+                <h3>04. The while loop</h3>
+
+                <p>
+                    A <strong>while</strong> loop repeats a block
+                    as long as its condition remains true.
+                </p>
+
+                <pre class="js-code-panel"><code>let count = 1;
+
+while (count <= 5) {
+
+    console.log(count);
+
+    count++;
+}</code></pre>
+
+                <p>
+                    In this example, count increases after
+                    every repetition. Eventually it becomes 6,
+                    the condition becomes false, and the loop stops.
+                </p>
+
+                <div class="js-note-panel">
+                    <strong>Watch out:</strong>
+                    Always make sure a while loop can eventually
+                    reach a false condition. Otherwise, it may
+                    become an infinite loop.
+                </div>
+
+
+                <h3>05. The do...while loop</h3>
+
+                <p>
+                    A <strong>do...while</strong> loop runs its
+                    code block once before checking the condition.
+                    This means it always runs at least once.
+                </p>
+
+                <pre class="js-code-panel"><code>let number = 1;
+
+do {
+
+    console.log(number);
+
+    number++;
+
+} while (number <= 3);</code></pre>
+
+                <div class="js-output-panel">
+                    <span>CONSOLE OUTPUT</span>
+                    <code>1</code>
+                    <code>2</code>
+                    <code>3</code>
+                </div>
+
+
+                <h3>06. The for...of loop</h3>
+
+                <p>
+                    The <strong>for...of</strong> loop makes it
+                    easy to visit each value in an iterable,
+                    such as an array.
+                </p>
+
+                <pre class="js-code-panel"><code>const clubs = [
+    "Barcelona",
+    "Arsenal",
+    "Bayern Munich"
+];
+
+for (const club of clubs) {
+    console.log(club);
+}</code></pre>
+
+                <p>
+                    Instead of manually accessing each array
+                    position, the loop gives you the next value
+                    on every repetition.
+                </p>
+
+
+                <h3>07. break and continue</h3>
+
+                <p>
+                    JavaScript provides two useful keywords
+                    for controlling loops.
+                </p>
+
+                <p>
+                    <strong>break</strong> immediately exits
+                    the loop.
+                </p>
+
+                <pre class="js-code-panel"><code>for (let i = 1; i <= 10; i++) {
+
+    if (i === 5) {
+        break;
+    }
+
+    console.log(i);
+}</code></pre>
+
+                <p>
+                    This loop stops when i reaches 5.
+                </p>
+
+                <p>
+                    <strong>continue</strong> skips the current
+                    repetition and moves to the next one.
+                </p>
+
+                <pre class="js-code-panel"><code>for (let i = 1; i <= 5; i++) {
+
+    if (i === 3) {
+        continue;
+    }
+
+    console.log(i);
+}</code></pre>
+
+                <div class="js-output-panel">
+                    <span>CONSOLE OUTPUT</span>
+                    <code>1</code>
+                    <code>2</code>
+                    <code>4</code>
+                    <code>5</code>
+                </div>
+
+
+                <h3>08. Choosing the right loop</h3>
+
+                <div class="js-comparison-panel">
+
+                    <div>
+                        <span>FOR</span>
+                        <h4>Known repetitions</h4>
+                        <p>
+                            Useful when you have a counter
+                            or a clear number of repetitions.
+                        </p>
+                    </div>
+
+                    <div>
+                        <span>WHILE</span>
+                        <h4>Condition-controlled</h4>
+                        <p>
+                            Useful when the number of repetitions
+                            depends on a condition.
+                        </p>
+                    </div>
+
+                    <div>
+                        <span>DO...WHILE</span>
+                        <h4>Run at least once</h4>
+                        <p>
+                            Useful when the code should execute
+                            before the first condition check.
+                        </p>
+                    </div>
+
+                    <div>
+                        <span>FOR...OF</span>
+                        <h4>Visit each value</h4>
+                        <p>
+                            Useful for going through values
+                            in arrays and other iterables.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="js-task-panel">
+
+                    <span>YOUR PRACTICAL TASK</span>
+
+                    <h4>Create a team lineup printer.</h4>
+
+                    <p>
+                        Make an array containing five football
+                        player names.
+                    </p>
+
+                    <ul>
+                        <li>Use a for...of loop to print every player.</li>
+                        <li>Use a regular for loop to print numbers from 1 to 5.</li>
+                        <li>Use a while loop to count backwards from 5 to 1.</li>
+                    </ul>
+
+                    <p>
+                        Change the names and counters and see
+                        how the results change.
+                    </p>
+
+                </div>
+
+
+                <div class="js-lesson-takeaway">
+                    <span>THE KEY IDEA</span>
+                    <p>
+                        Loops repeat instructions efficiently.
+                        Choose a loop based on how and when
+                        you want the repetition to stop.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             LESSON 07
+        ========================================== -->
+
+        <section class="js-lesson-section" id="lesson-07">
+
+            <span id="lesson-seven" class="js-anchor-alias"></span>
+
+            <div class="js-lesson-heading">
+
+                <span>LESSON 07 / REUSABLE CODE</span>
+
+                <h2>Functions</h2>
+
+                <p>
+                    Organise your JavaScript into reusable
+                    blocks that perform specific tasks.
+                </p>
+
+            </div>
+
+
+            <div class="js-lesson-content">
+
+                <h3>01. What is a function?</h3>
+
+                <p>
+                    A function is a reusable block of code
+                    designed to perform a particular task.
+                </p>
+
+                <p>
+                    Instead of writing the same instructions
+                    repeatedly, you can place them inside a
+                    function and call that function whenever
+                    you need it.
+                </p>
+
+                <p>
+                    Imagine a function that displays a welcome
+                    message. You can use it multiple times
+                    without rewriting the message each time.
+                </p>
+
+
+                <h3>02. Creating your first function</h3>
+
+                <p>
+                    A function declaration begins with the
+                    <strong>function</strong> keyword, followed
+                    by its name and a pair of parentheses.
+                </p>
+
+                <pre class="js-code-panel"><code>function greet() {
+
+    console.log("Welcome to THE DIGITAL LAB!");
+
+}</code></pre>
+
+                <p>
+                    Writing the function creates it, but does
+                    not execute its instructions yet.
+                    To run it, you must call it.
+                </p>
+
+                <pre class="js-code-panel"><code>greet();</code></pre>
+
+                <p>
+                    The name followed by parentheses tells
+                    JavaScript to execute the function.
+                </p>
+
+                <div class="js-output-panel">
+                    <span>CONSOLE OUTPUT</span>
+                    <code>Welcome to THE DIGITAL LAB!</code>
+                </div>
+
+
+                <h3>03. Parameters and arguments</h3>
+
+                <p>
+                    Functions become more flexible when you
+                    give them information to work with.
+                </p>
+
+                <p>
+                    A <strong>parameter</strong> is a named
+                    variable listed in a function's definition.
+                    An <strong>argument</strong> is the actual
+                    value passed when the function is called.
+                </p>
+
+                <pre class="js-code-panel"><code>function greet(name) {
+
+    console.log("Hello, " + name + "!");
+
+}
+
+greet("Sam");
+greet("Alex");</code></pre>
+
+                <p>
+                    Here, name is the parameter.
+                    "Sam" and "Alex" are arguments.
+                </p>
+
+                <div class="js-output-panel">
+                    <span>CONSOLE OUTPUT</span>
+                    <code>Hello, Sam!</code>
+                    <code>Hello, Alex!</code>
+                </div>
+
+
+                <h3>04. Using multiple parameters</h3>
+
+                <p>
+                    A function can accept more than one
+                    parameter.
+                </p>
+
+                <pre class="js-code-panel"><code>function introducePlayer(name, club) {
+
+    console.log(name + " plays for " + club + ".");
+
+}
+
+introducePlayer("Lamine Yamal", "Barcelona");</code></pre>
+
+                <p>
+                    The first argument is assigned to name,
+                    while the second is assigned to club.
+                </p>
+
+
+                <h3>05. Returning values</h3>
+
+                <p>
+                    A function can calculate something and
+                    send a result back using the
+                    <strong>return</strong> keyword.
+                </p>
+
+                <pre class="js-code-panel"><code>function addNumbers(a, b) {
+
+    return a + b;
+
+}
+
+let result = addNumbers(10, 5);
+
+console.log(result);</code></pre>
+
+                <p>
+                    The function calculates the sum and returns
+                    it. The returned value is stored in result.
+                </p>
+
+                <div class="js-output-panel">
+                    <span>CONSOLE OUTPUT</span>
+                    <code>15</code>
+                </div>
+
+                <div class="js-note-panel">
+                    <strong>Important difference:</strong>
+                    console.log() displays a value.
+                    return sends a value back from a function
+                    so that the rest of your program can use it.
+                </div>
+
+
+                <h3>06. Default parameters</h3>
+
+                <p>
+                    You can provide a default value for a
+                    parameter. JavaScript uses this value
+                    when an argument isn't supplied.
+                </p>
+
+                <pre class="js-code-panel"><code>function greet(name = "Guest") {
+
+    console.log("Welcome, " + name + "!");
+
+}
+
+greet("Sam");
+greet();</code></pre>
+
+                <div class="js-output-panel">
+                    <span>CONSOLE OUTPUT</span>
+                    <code>Welcome, Sam!</code>
+                    <code>Welcome, Guest!</code>
+                </div>
+
+
+                <h3>07. Arrow functions</h3>
+
+                <p>
+                    JavaScript also provides a shorter way
+                    to write many functions, called an
+                    <strong>arrow function</strong>.
+                </p>
+
+                <pre class="js-code-panel"><code>const greet = () => {
+    console.log("Hello!");
+};
+
+greet();</code></pre>
+
+                <p>
+                    An arrow function can also accept
+                    parameters and return values.
+                </p>
+
+                <pre class="js-code-panel"><code>const multiply = (a, b) => {
+    return a * b;
+};
+
+console.log(multiply(4, 5));</code></pre>
+
+                <p>
+                    For a simple expression, you can write
+                    an even shorter version:
+                </p>
+
+                <pre class="js-code-panel"><code>const multiply = (a, b) => a * b;
+
+console.log(multiply(4, 5));</code></pre>
+
+                <p>
+                    When an arrow function has a single
+                    expression and no curly braces,
+                    that expression is returned automatically.
+                </p>
+
+
+                <h3>08. Why functions matter</h3>
+
+                <p>
+                    Functions make programs easier to organise,
+                    understand, test and reuse.
+                </p>
+
+                <pre class="js-code-panel"><code>function calculateMatchPoints(wins, draws) {
+
+    const winPoints = wins * 3;
+    const drawPoints = draws * 1;
+
+    return winPoints + drawPoints;
+
+}
+
+const points = calculateMatchPoints(5, 2);
+
+console.log(points);</code></pre>
+
+                <p>
+                    This function calculates a team's league
+                    points using three points for each win
+                    and one point for each draw.
+                </p>
+
+                <div class="js-output-panel">
+                    <span>CONSOLE OUTPUT</span>
+                    <code>17</code>
+                </div>
+
+
+                <div class="js-task-panel">
+
+                    <span>YOUR PRACTICAL TASK</span>
+
+                    <h4>Build a mini calculator.</h4>
+
+                    <p>
+                        Create separate functions that:
+                    </p>
+
+                    <ul>
+                        <li>Add two numbers.</li>
+                        <li>Subtract one number from another.</li>
+                        <li>Multiply two numbers.</li>
+                        <li>Divide one number by another.</li>
+                    </ul>
+
+                    <p>
+                        Each function should accept two parameters
+                        and return its calculated result.
+                        Call each function and print the result.
+                    </p>
+
+                </div>
+
+
+                <div class="js-lesson-takeaway">
+                    <span>THE KEY IDEA</span>
+                    <p>
+                        Functions package instructions into
+                        reusable blocks. Parameters provide
+                        input, and return sends results back.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             LESSON 08
+        ========================================== -->
+
+        <section class="js-lesson-section" id="lesson-08">
+
+            <span id="lesson-eight" class="js-anchor-alias"></span>
+
+            <div class="js-lesson-heading">
+
+                <span>LESSON 08 / RESPONDING TO USERS</span>
+
+                <h2>Events & Event Listeners</h2>
+
+                <p>
+                    Learn how to make websites respond when
+                    people click, type, submit forms and interact
+                    with webpage elements.
+                </p>
+
+            </div>
+
+
+            <div class="js-lesson-content">
+
+                <h3>01. What is an event?</h3>
+
+                <p>
+                    An event is an action or occurrence that
+                    happens in the browser.
+                    It can be caused by a person interacting
+                    with a webpage or by something happening
+                    in the browser itself.
+                </p>
+
+                <p>Examples of common events include:</p>
+
+                <ul class="js-lesson-list">
+                    <li>Clicking a button.</li>
+                    <li>Typing into an input field.</li>
+                    <li>Submitting a form.</li>
+                    <li>Moving a mouse over an element.</li>
+                    <li>Pressing a keyboard key.</li>
+                </ul>
+
+
+                <h3>02. What is an event listener?</h3>
+
+                <p>
+                    An event listener waits for a particular
+                    event to happen on an element.
+                    When that event occurs, JavaScript runs
+                    a function that you've connected to it.
+                </p>
+
+                <p>
+                    The method used most often is
+                    <strong>addEventListener()</strong>.
+                </p>
+
+                <pre class="js-code-panel"><code>button.addEventListener("click", function() {
+
+    console.log("Button clicked!");
+
+});</code></pre>
+
+                <p>
+                    This tells the browser to run the function
+                    whenever the button receives a click event.
+                </p>
+
+
+                <h3>03. Connecting a button to JavaScript</h3>
+
+                <p>
+                    First, create a button in your HTML document.
+                    Give it an ID so JavaScript can find it.
+                </p>
+
+                <pre class="js-code-panel"><code>&lt;button id="hello-button"&gt;
+    Click Me
+&lt;/button&gt;</code></pre>
+
+                <p>
+                    Next, find the button in JavaScript using
+                    <strong>document.querySelector()</strong>.
+                    We'll explore the DOM in much more depth
+                    in Stage 03.
+                </p>
+
+                <pre class="js-code-panel"><code>const button = document.querySelector("#hello-button");
+
+button.addEventListener("click", function() {
+
+    alert("Hello from JavaScript!");
+
+});</code></pre>
+
+                <p>
+                    When someone clicks the button,
+                    the browser displays an alert.
+                </p>
+
+                <div class="js-note-panel">
+                    <strong>Remember:</strong>
+                    The HTML element must exist before your
+                    JavaScript tries to use it.
+                    One easy approach is to load an external
+                    script with the defer attribute.
+                </div>
+
+
+                <h3>04. Common event types</h3>
+
+                <div class="js-operator-table">
+
+                    <div>
+                        <strong>click</strong>
+                        <span>Mouse click</span>
+                        <code>button.addEventListener("click", ...)</code>
+                    </div>
+
+                    <div>
+                        <strong>input</strong>
+                        <span>Input value changes</span>
+                        <code>input.addEventListener("input", ...)</code>
+                    </div>
+
+                    <div>
+                        <strong>submit</strong>
+                        <span>Form submission</span>
+                        <code>form.addEventListener("submit", ...)</code>
+                    </div>
+
+                    <div>
+                        <strong>keydown</strong>
+                        <span>Keyboard key pressed</span>
+                        <code>document.addEventListener("keydown", ...)</code>
+                    </div>
+
+                    <div>
+                        <strong>mouseover</strong>
+                        <span>Pointer enters an element</span>
+                        <code>element.addEventListener("mouseover", ...)</code>
+                    </div>
+
+                </div>
+
+
+                <h3>05. Responding to typed input</h3>
+
+                <p>
+                    You can listen for changes in an input field.
+                    The input event fires as the user changes
+                    its value.
+                </p>
+
+                <p>Start with this HTML:</p>
+
+                <pre class="js-code-panel"><code>&lt;input id="name-input" type="text" placeholder="Enter your name"&gt;
+
+&lt;p id="live-output"&gt;Your name will appear here.&lt;/p&gt;</code></pre>
+
+                <p>Now add this JavaScript:</p>
+
+                <pre class="js-code-panel"><code>const nameInput = document.querySelector("#name-input");
+
+const output = document.querySelector("#live-output");
+
+nameInput.addEventListener("input", function(event) {
+
+    output.textContent = event.target.value;
+
+});</code></pre>
+
+                <p>
+                    Every time the input value changes,
+                    the event listener runs.
+                    The typed text is then placed inside
+                    the paragraph.
+                </p>
+
+
+                <h3>06. Understanding the event object</h3>
+
+                <p>
+                    When an event occurs, the browser can pass
+                    useful information about it to your function.
+                    This information is available through an
+                    event object, often named
+                    <strong>event</strong> or <strong>e</strong>.
+                </p>
+
+                <pre class="js-code-panel"><code>button.addEventListener("click", function(event) {
+
+    console.log(event);
+
+});</code></pre>
+
+                <p>
+                    The event object includes information
+                    about what happened and which element
+                    triggered the event.
+                </p>
+
+                <p>
+                    For example, event.target refers to
+                    the element that triggered the event.
+                </p>
+
+
+                <h3>07. Working with form submissions</h3>
+
+                <p>
+                    Forms often submit information.
+                    You can listen for the submit event
+                    and control what happens next.
+                </p>
+
+                <pre class="js-code-panel"><code>const form = document.querySelector("#signup-form");
+
+form.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    console.log("Form submitted!");
+
+});</code></pre>
+
+                <p>
+                    The method <strong>preventDefault()</strong>
+                    stops the browser's normal action for that
+                    event. In this example, it prevents the
+                    form's default submission behaviour.
+                </p>
+
+                <div class="js-note-panel">
+                    <strong>Important:</strong>
+                    preventDefault() is useful when you want
+                    JavaScript to handle a form submission
+                    yourself. It doesn't automatically validate
+                    the form or send information to a server.
+                </div>
+
+
+                <h3>08. Putting it all together</h3>
+
+                <p>
+                    Let's create a tiny button counter.
+                    Each click increases a number.
+                </p>
+
+                <p>HTML:</p>
+
+                <pre class="js-code-panel"><code>&lt;h2 id="counter"&gt;0&lt;/h2&gt;
+
+&lt;button id="increase-button"&gt;
+    Increase
+&lt;/button&gt;</code></pre>
+
+                <p>JavaScript:</p>
+
+                <pre class="js-code-panel"><code>let count = 0;
+
+const counter = document.querySelector("#counter");
+
+const increaseButton = document.querySelector("#increase-button");
+
+increaseButton.addEventListener("click", function() {
+
+    count++;
+
+    counter.textContent = count;
+
+});</code></pre>
+
+                <p>
+                    Here's what happens:
+                </p>
+
+                <ul class="js-lesson-list">
+                    <li>The count variable starts at zero.</li>
+                    <li>JavaScript finds the counter and button.</li>
+                    <li>An event listener waits for a click.</li>
+                    <li>Every click increases count by one.</li>
+                    <li>The displayed number is updated.</li>
+                </ul>
+
+
+                <div class="js-task-panel">
+
+                    <span>YOUR PRACTICAL TASK</span>
+
+                    <h4>Build your own interactive counter.</h4>
+
+                    <p>
+                        Create a webpage with a number and
+                        two buttons:
+                    </p>
+
+                    <ul>
+                        <li>An Increase button that adds one.</li>
+                        <li>A Decrease button that subtracts one.</li>
+                        <li>Use a JavaScript variable to store the count.</li>
+                        <li>Use click event listeners for both buttons.</li>
+                        <li>Update the displayed number after each click.</li>
+                    </ul>
+
+                    <p>
+                        Bonus: Add a Reset button that returns
+                        the number to zero.
+                    </p>
+
+                </div>
+
+
+                <div class="js-lesson-takeaway">
+                    <span>THE KEY IDEA</span>
+                    <p>
+                        Events allow JavaScript to react to
+                        user actions. Event listeners connect
+                        those actions to functions.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- STAGE COMPLETION -->
+        <section class="js-stage-completion">
+
+            <span>STAGE 02 / LOGIC & INTERACTION COMPLETE</span>
+
+            <h2>
+                Your code can think.<br>
+                Now make it control the page.
+            </h2>
+
+            <p>
+                You've learned how to make decisions, repeat
+                instructions, create reusable functions and
+                respond to user actions.
+                Now it's time to connect JavaScript directly
+                to the webpage and build complete interactive
+                components.
+            </p>
+
+            <a href="JS stage 3.html" class="js-next-stage-button">
+                ENTER STAGE 03 →
+            </a>
+
+            <a href="JS stage 1.html" class="js-back-link">
+                ← BACK TO STAGE 01
+            </a>
+
+            <a href="JS.html" class="js-back-link">
+                ← BACK TO CHAPTER OVERVIEW
+            </a>
+
+        </section>
+
+
+        <!-- FOOTER -->
+        <footer class="js-stage-footer">
+
+            <p>THE DIGITAL LAB — CHAPTER 003</p>
+
+            <span>LEARN. BUILD. EXPERIMENT.</span>
+
+        </footer>
+
+    </main>
+
+</body>
+
+</html>

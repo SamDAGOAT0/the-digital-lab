@@ -1,0 +1,830 @@
+
+/* =========================================================
+   THE DIGITAL LAB — JAVASCRIPT
+   STAGE 02 / LOGIC & INTERACTION
+========================================================= */
+
+
+/* 01 — NAVIGATION */
+
+.js-stage-nav {
+    width: 100%;
+    min-height: 76px;
+
+    padding: 20px 7%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+
+    border-bottom: 1px solid var(--js-line);
+}
+
+.js-stage-brand {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.js-stage-brand span {
+    color: var(--js-yellow);
+}
+
+.js-stage-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.js-stage-nav-links a {
+    color: var(--js-muted);
+
+    font-size: 11px;
+    font-weight: 600;
+
+    transition: color 0.25s ease;
+}
+
+.js-stage-nav-links a:hover {
+    color: var(--js-yellow);
+}
+
+
+/* 02 — STAGE HERO */
+
+.js-stage-hero {
+    padding: 110px 10% 75px;
+
+    border-bottom: 1px solid var(--js-line);
+}
+
+.js-stage-eyebrow {
+    color: var(--js-yellow);
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+}
+
+.js-stage-hero h1 {
+    margin: 28px 0;
+
+    font-size: clamp(60px, 10vw, 125px);
+    font-weight: 700;
+    line-height: 0.9;
+    letter-spacing: -6px;
+}
+
+.js-stage-hero h1 span {
+    color: var(--js-yellow);
+}
+
+.js-stage-description {
+    max-width: 650px;
+    margin-bottom: 40px;
+
+    color: var(--js-muted);
+
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.js-stage-meta {
+    max-width: 600px;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px 35px;
+
+    padding-top: 25px;
+
+    border-top: 1px solid var(--js-line);
+}
+
+.js-stage-meta span {
+    color: var(--js-text);
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+
+/* 03 — SECTION HEADING */
+
+.js-stage-navigation {
+    padding: 90px 8% 75px;
+}
+
+.js-section-heading {
+    margin-bottom: 35px;
+}
+
+.js-section-heading > span {
+    color: var(--js-yellow);
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.js-section-heading h2 {
+    margin: 17px 0 12px;
+
+    font-size: clamp(35px, 5vw, 58px);
+    letter-spacing: -2px;
+}
+
+.js-section-heading p {
+    color: var(--js-muted);
+
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+
+/* 04 — LESSON NAVIGATION */
+
+.js-lesson-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.js-lesson-card {
+    min-height: 145px;
+    padding: 25px;
+
+    display: grid;
+    grid-template-columns: 35px 1fr 20px;
+    align-items: start;
+    gap: 17px;
+
+    background: rgba(255, 255, 255, 0.025);
+    border: 1px solid var(--js-line);
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.js-lesson-card:hover {
+    transform: translateY(-4px);
+
+    background: rgba(247, 223, 30, 0.045);
+    border-color: rgba(247, 223, 30, 0.5);
+}
+
+.js-lesson-number {
+    color: var(--js-yellow);
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.js-lesson-card h3 {
+    margin: 0 0 9px;
+
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.js-lesson-card p {
+    margin: 0;
+
+    color: var(--js-muted);
+
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+.js-lesson-arrow {
+    color: var(--js-muted);
+    font-size: 17px;
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.js-lesson-card:hover .js-lesson-arrow {
+    color: var(--js-yellow);
+    transform: translate(3px, -3px);
+}
+
+
+/* 05 — LESSON SECTIONS */
+
+.js-lesson-section {
+    scroll-margin-top: 35px;
+
+    padding: 100px 0;
+
+    border-top: 1px solid var(--js-line);
+}
+
+.js-lesson-heading {
+    max-width: 1050px;
+    margin: 0 auto 55px;
+    padding: 0 8%;
+}
+
+.js-lesson-heading > span {
+    color: var(--js-yellow);
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.js-lesson-heading h2 {
+    margin: 20px 0 12px;
+
+    font-size: clamp(38px, 6vw, 70px);
+    line-height: 1;
+    letter-spacing: -3px;
+}
+
+.js-lesson-heading p {
+    max-width: 650px;
+
+    color: var(--js-muted);
+
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+
+/* 06 — LESSON CONTENT */
+
+.js-lesson-content {
+    max-width: 1050px;
+    margin: auto;
+    padding: 0 8%;
+}
+
+.js-lesson-content h3 {
+    margin: 55px 0 17px;
+
+    font-size: 23px;
+    font-weight: 600;
+    letter-spacing: -0.7px;
+}
+
+.js-lesson-content h3:first-child {
+    margin-top: 0;
+}
+
+.js-lesson-content p {
+    margin: 15px 0;
+
+    color: var(--js-muted);
+
+    font-size: 14px;
+    line-height: 1.95;
+}
+
+.js-lesson-content strong {
+    color: var(--js-text);
+    font-weight: 600;
+}
+
+
+/* 07 — CODE PANELS */
+
+.js-code-panel {
+    margin: 25px 0;
+    padding: 25px 28px;
+
+    overflow-x: auto;
+
+    background: #070809;
+    border: 1px solid var(--js-line);
+    border-left: 3px solid var(--js-yellow);
+    border-radius: 5px;
+
+    color: #e8e8e8;
+
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 13px;
+    line-height: 1.9;
+
+    tab-size: 4;
+    white-space: pre;
+}
+
+.js-code-panel code {
+    color: inherit;
+    font-family: inherit;
+}
+
+
+/* 08 — CONCEPT PANELS */
+
+.js-concept-panel {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+
+    margin: 30px 0;
+}
+
+.js-concept-panel > div {
+    padding: 22px;
+
+    background: rgba(255, 255, 255, 0.025);
+    border: 1px solid var(--js-line);
+}
+
+.js-concept-panel span {
+    color: var(--js-yellow);
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.js-concept-panel h4 {
+    margin: 15px 0 8px;
+
+    font-size: 17px;
+}
+
+.js-concept-panel p {
+    margin: 0;
+
+    font-size: 11px;
+    line-height: 1.8;
+}
+
+
+/* 09 — OUTPUT AND EXAMPLE PANELS */
+
+.js-output-panel,
+.js-file-panel,
+.js-example-panel {
+    margin: 25px 0;
+    padding: 23px 25px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+
+    background: rgba(247, 223, 30, 0.035);
+    border: 1px solid rgba(247, 223, 30, 0.2);
+    border-radius: 5px;
+}
+
+.js-output-panel > span,
+.js-file-panel > span,
+.js-example-panel > span {
+    margin-bottom: 5px;
+
+    color: var(--js-yellow);
+
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.7px;
+}
+
+.js-output-panel code,
+.js-file-panel code,
+.js-example-panel code {
+    color: var(--js-text);
+
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 13px;
+}
+
+.js-file-panel code::before {
+    content: "▸ ";
+    color: var(--js-yellow);
+}
+
+
+/* 10 — LESSON LISTS */
+
+.js-lesson-list {
+    margin: 20px 0;
+    padding-left: 23px;
+
+    color: var(--js-muted);
+
+    font-size: 13px;
+    line-height: 2.1;
+}
+
+.js-lesson-list li {
+    padding-left: 5px;
+}
+
+.js-lesson-list li::marker {
+    color: var(--js-yellow);
+}
+
+
+/* 11 — NOTE PANELS */
+
+.js-note-panel {
+    margin: 25px 0;
+    padding: 22px 25px;
+
+    background: rgba(247, 223, 30, 0.045);
+    border-left: 3px solid var(--js-yellow);
+
+    color: var(--js-muted);
+
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.js-note-panel strong {
+    color: var(--js-yellow);
+}
+
+
+/* 12 — COMPARISON PANELS */
+
+.js-comparison-panel {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+
+    margin: 30px 0;
+}
+
+.js-comparison-panel > div {
+    padding: 23px;
+
+    background: rgba(255, 255, 255, 0.025);
+    border: 1px solid var(--js-line);
+}
+
+.js-comparison-panel > div > span {
+    color: var(--js-yellow);
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.js-comparison-panel h4 {
+    margin: 12px 0;
+    font-size: 16px;
+}
+
+.js-comparison-panel p {
+    margin-bottom: 0;
+    font-size: 12px;
+}
+
+
+/* 13 — OPERATOR TABLE */
+
+.js-operator-table {
+    margin: 25px 0;
+
+    display: flex;
+    flex-direction: column;
+
+    border: 1px solid var(--js-line);
+    border-radius: 5px;
+
+    overflow: hidden;
+}
+
+.js-operator-table > div {
+    min-height: 55px;
+    padding: 12px 18px;
+
+    display: grid;
+    grid-template-columns: 75px 1fr 1fr;
+    align-items: center;
+    gap: 15px;
+
+    background: rgba(255, 255, 255, 0.02);
+    border-bottom: 1px solid var(--js-line);
+}
+
+.js-operator-table > div:last-child {
+    border-bottom: none;
+}
+
+.js-operator-table strong {
+    color: var(--js-yellow);
+
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 15px;
+}
+
+.js-operator-table span {
+    color: var(--js-text);
+    font-size: 12px;
+}
+
+.js-operator-table code {
+    color: var(--js-muted);
+
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 11px;
+}
+
+
+/* 14 — PRACTICAL TASKS */
+
+.js-task-panel {
+    margin: 55px 0 30px;
+    padding: 32px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(247, 223, 30, 0.075),
+            rgba(255, 255, 255, 0.015)
+        );
+
+    border: 1px solid rgba(247, 223, 30, 0.28);
+    border-radius: 5px;
+}
+
+.js-task-panel > span {
+    color: var(--js-yellow);
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.js-task-panel h4 {
+    margin: 18px 0 10px;
+
+    font-size: 24px;
+    letter-spacing: -0.5px;
+}
+
+.js-task-panel p {
+    font-size: 13px;
+}
+
+.js-task-panel ul {
+    padding-left: 22px;
+
+    color: var(--js-muted);
+
+    font-size: 13px;
+    line-height: 2;
+}
+
+.js-task-panel li::marker {
+    color: var(--js-yellow);
+}
+
+
+/* 15 — LESSON TAKEAWAYS */
+
+.js-lesson-takeaway {
+    margin-top: 45px;
+    padding: 28px;
+
+    background: rgba(255, 255, 255, 0.025);
+    border-left: 3px solid var(--js-yellow);
+}
+
+.js-lesson-takeaway span {
+    color: var(--js-yellow);
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.js-lesson-takeaway p {
+    margin: 12px 0 0;
+
+    color: var(--js-text);
+
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.7;
+}
+
+
+/* 16 — STAGE COMPLETION */
+
+.js-stage-completion {
+    padding: 110px 10%;
+
+    background:
+        radial-gradient(
+            circle at 80% 50%,
+            rgba(247, 223, 30, 0.07),
+            transparent 40%
+        ),
+        #08090a;
+
+    border-top: 1px solid var(--js-line);
+    border-bottom: 1px solid var(--js-line);
+}
+
+.js-stage-completion > span {
+    color: var(--js-yellow);
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.js-stage-completion h2 {
+    margin: 25px 0;
+
+    font-size: clamp(38px, 6vw, 75px);
+    line-height: 1.05;
+    letter-spacing: -3px;
+}
+
+.js-stage-completion p {
+    max-width: 650px;
+    margin-bottom: 30px;
+
+    color: var(--js-muted);
+
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.js-next-stage-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 50px;
+    padding: 0 25px;
+
+    background: var(--js-yellow);
+    color: #090a0c !important;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.js-next-stage-button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 35px var(--js-glow);
+}
+
+.js-back-link {
+    display: block;
+    width: fit-content;
+    margin-top: 25px;
+
+    color: var(--js-muted);
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+
+    transition: color 0.25s ease;
+}
+
+.js-back-link:hover {
+    color: var(--js-yellow);
+}
+
+
+/* 17 — FOOTER */
+
+.js-stage-footer {
+    padding: 30px 8%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    background: #070809;
+}
+
+.js-stage-footer p,
+.js-stage-footer span {
+    color: var(--js-muted);
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+}
+
+
+/* 18 — ANCHOR ALIASES */
+
+.js-anchor-alias {
+    display: block;
+    position: relative;
+    top: -20px;
+    visibility: hidden;
+}
+
+
+/* 19 — RESPONSIVE */
+
+@media (max-width: 760px) {
+
+    .js-stage-nav {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 20px 6%;
+    }
+
+    .js-stage-nav-links {
+        flex-wrap: wrap;
+        gap: 18px;
+    }
+
+    .js-stage-hero {
+        padding: 85px 7% 55px;
+    }
+
+    .js-stage-hero h1 {
+        font-size: clamp(55px, 11vw, 85px);
+        letter-spacing: -3px;
+    }
+
+    .js-stage-navigation {
+        padding: 75px 6% 55px;
+    }
+
+    .js-lesson-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .js-lesson-heading,
+    .js-lesson-content {
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+
+    .js-concept-panel {
+        grid-template-columns: 1fr;
+    }
+
+    .js-stage-completion {
+        padding: 85px 7%;
+    }
+
+}
+
+
+@media (max-width: 520px) {
+
+    .js-stage-meta {
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .js-lesson-section {
+        padding: 75px 0;
+    }
+
+    .js-lesson-heading h2 {
+        font-size: 40px;
+    }
+
+    .js-lesson-content h3 {
+        font-size: 20px;
+    }
+
+    .js-code-panel {
+        padding: 18px;
+        font-size: 11px;
+    }
+
+    .js-comparison-panel {
+        grid-template-columns: 1fr;
+    }
+
+    .js-operator-table > div {
+        grid-template-columns: 45px 1fr;
+        gap: 8px;
+    }
+
+    .js-operator-table code {
+        grid-column: 2;
+    }
+
+    .js-task-panel {
+        padding: 22px;
+    }
+
+    .js-stage-footer {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+}

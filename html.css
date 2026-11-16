@@ -1,0 +1,1678 @@
+
+/* =====================================================
+   THE DIGITAL LAB
+   CHAPTER 001 — HTML
+   COMPLETE CHAPTER STYLESHEET
+===================================================== */
+
+
+/* =====================================================
+   01 — DESIGN SYSTEM
+===================================================== */
+
+.html-chapter {
+    --html-bg: #101010;
+    --html-panel: #191919;
+    --html-panel-light: #202020;
+
+    --html-text: #f4f1e9;
+    --html-muted: #99948f;
+
+    --html-accent: #ff9a62;
+    --html-accent-light: #ffc09b;
+    --html-purple: #a78bfa;
+
+    --html-line: rgba(255, 255, 255, 0.11);
+
+    background: var(--html-bg);
+    color: var(--html-text);
+
+    overflow-x: hidden;
+}
+
+
+/* =====================================================
+   02 — GLOBAL CHAPTER STYLES
+===================================================== */
+
+.html-chapter * {
+    box-sizing: border-box;
+}
+
+.html-chapter a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.html-chapter button,
+.html-chapter textarea {
+    font: inherit;
+}
+
+.html-chapter p {
+    line-height: 1.8;
+}
+
+.html-atmosphere {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            ellipse at 15% 15%,
+            rgba(255, 154, 98, 0.07),
+            transparent 38%
+        ),
+        radial-gradient(
+            ellipse at 85% 65%,
+            rgba(167, 139, 250, 0.055),
+            transparent 40%
+        );
+
+}
+
+
+/* =====================================================
+   03 — NAVIGATION
+===================================================== */
+
+.html-nav {
+    width: 100%;
+    min-height: 76px;
+
+    padding: 0 7%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid var(--html-line);
+
+    background: rgba(16, 16, 16, 0.78);
+    backdrop-filter: blur(18px);
+
+    position: relative;
+    z-index: 10;
+}
+
+.html-back,
+.html-nav-link {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--html-muted);
+
+    transition: color 0.3s ease;
+}
+
+.html-back:hover,
+.html-nav-link:hover {
+    color: var(--html-accent);
+}
+
+.html-nav-center {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 4px;
+}
+
+
+/* =====================================================
+   04 — HERO
+===================================================== */
+
+.html-hero {
+    min-height: 620px;
+
+    padding: 100px 10%;
+
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+
+    align-items: center;
+    gap: 50px;
+
+    position: relative;
+}
+
+.html-hero-content {
+    max-width: 650px;
+}
+
+.html-eyebrow {
+    color: var(--html-accent);
+
+    font-size: 10px;
+    letter-spacing: 4px;
+
+    display: block;
+    margin-bottom: 28px;
+}
+
+.html-hero h1 {
+    font-size: clamp(45px, 6.5vw, 88px);
+
+    line-height: 0.98;
+    letter-spacing: -5px;
+
+    margin: 0;
+}
+
+.html-hero h1 span {
+    color: var(--html-accent);
+}
+
+.html-hero-content > p {
+    color: var(--html-muted);
+
+    max-width: 440px;
+
+    font-size: 15px;
+    margin: 30px 0;
+}
+
+.html-start-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+
+    padding: 16px 23px;
+
+    border: 1px solid rgba(255, 154, 98, 0.5);
+    border-radius: 4px;
+
+    color: var(--html-accent);
+
+    font-size: 10px;
+    letter-spacing: 2px;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.html-start-button:hover {
+    background: var(--html-accent);
+    color: #17110d;
+    transform: translateY(-3px);
+}
+
+
+/* HERO ART */
+
+.html-hero-art {
+    width: 100%;
+    aspect-ratio: 1;
+
+    max-width: 390px;
+    margin: auto;
+
+    position: relative;
+
+    display: grid;
+    place-items: center;
+}
+
+.html-orbit {
+    position: absolute;
+
+    border: 1px solid rgba(255, 154, 98, 0.24);
+    border-radius: 50%;
+}
+
+.html-orbit-one {
+    width: 75%;
+    height: 75%;
+
+    animation: html-orbit-spin 18s linear infinite;
+}
+
+.html-orbit-two {
+    width: 100%;
+    height: 100%;
+
+    border-color: rgba(167, 139, 250, 0.2);
+
+    animation: html-orbit-spin 25s linear infinite reverse;
+}
+
+.html-orbit-one::before,
+.html-orbit-two::before {
+    content: "";
+
+    width: 9px;
+    height: 9px;
+
+    position: absolute;
+    top: 12%;
+    left: 18%;
+
+    border-radius: 50%;
+    background: var(--html-accent);
+
+    box-shadow: 0 0 20px var(--html-accent);
+}
+
+.html-orbit-two::before {
+    background: var(--html-purple);
+    box-shadow: 0 0 20px var(--html-purple);
+}
+
+.html-code-symbol {
+    font-size: clamp(65px, 9vw, 115px);
+    font-weight: 700;
+
+    color: var(--html-accent);
+
+    text-shadow:
+        0 0 40px rgba(255, 154, 98, 0.2);
+}
+
+.html-art-label {
+    position: absolute;
+    bottom: 2%;
+
+    color: var(--html-muted);
+
+    font-size: 9px;
+    letter-spacing: 4px;
+}
+
+@keyframes html-orbit-spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =====================================================
+   05 — CHAPTER INFORMATION
+===================================================== */
+
+.html-chapter-info {
+    margin: 0 10%;
+
+    padding: 28px 0;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    border-top: 1px solid var(--html-line);
+    border-bottom: 1px solid var(--html-line);
+}
+
+.html-chapter-info div {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.html-chapter-info span {
+    font-size: 9px;
+    letter-spacing: 2px;
+
+    color: var(--html-muted);
+}
+
+.html-chapter-info strong {
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+
+/* =====================================================
+   06 — LESSON INDEX
+===================================================== */
+
+.html-lesson-index {
+    padding: 110px 10% 80px;
+}
+
+.html-section-label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    color: var(--html-accent);
+
+    font-size: 10px;
+    letter-spacing: 3px;
+
+    margin-bottom: 35px;
+}
+
+.html-index-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.html-index-card {
+    min-height: 180px;
+
+    padding: 26px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    border: 1px solid var(--html-line);
+    border-radius: 8px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.045),
+            rgba(255, 255, 255, 0.012)
+        );
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease;
+}
+
+.html-index-card:hover {
+    transform: translateY(-7px);
+    border-color: rgba(255, 154, 98, 0.55);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 154, 98, 0.09),
+            rgba(255, 255, 255, 0.015)
+        );
+}
+
+.html-index-card > span {
+    font-size: 30px;
+    color: var(--html-accent);
+
+    font-weight: 600;
+}
+
+.html-index-card strong {
+    font-size: 15px;
+}
+
+.html-index-card small {
+    color: var(--html-muted);
+    font-size: 11px;
+}
+
+
+/* =====================================================
+   07 — LESSON 01
+===================================================== */
+
+.html-lesson {
+    padding: 100px 10%;
+
+    border-top: 1px solid var(--html-line);
+}
+
+.html-lesson-heading,
+.html-lesson-two-heading {
+    font-size: clamp(32px, 4vw, 55px);
+
+    letter-spacing: -2px;
+    line-height: 1.15;
+
+    margin: 0 0 25px;
+}
+
+.html-explanation {
+    max-width: 760px;
+
+    color: var(--html-muted);
+
+    font-size: 15px;
+    margin: 0 0 18px;
+}
+
+
+/* THREE TECHNOLOGIES */
+
+.html-trio {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 16px;
+    margin: 65px 0;
+}
+
+.html-trio-card {
+    min-height: 200px;
+
+    padding: 25px;
+
+    background: var(--html-panel);
+
+    border: 1px solid var(--html-line);
+    border-radius: 8px;
+
+    position: relative;
+    overflow: hidden;
+
+    transition: transform 0.3s ease;
+}
+
+.html-trio-card:hover {
+    transform: translateY(-5px);
+}
+
+.html-trio-card > span {
+    color: var(--html-accent);
+
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.html-trio-card h3 {
+    font-size: 24px;
+    margin: 24px 0 8px;
+}
+
+.html-trio-card p {
+    font-size: 12px;
+    color: var(--html-muted);
+}
+
+.html-trio-card small {
+    display: block;
+
+    margin-top: 25px;
+
+    color: var(--html-accent);
+
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+
+/* CODE DEMONSTRATIONS */
+
+.html-demo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 16px;
+    margin: 55px 0;
+}
+
+.html-demo-code,
+.html-demo-output {
+    border: 1px solid var(--html-line);
+    border-radius: 8px;
+
+    background: var(--html-panel);
+
+    overflow: hidden;
+}
+
+.html-mini-label {
+    display: block;
+
+    padding: 17px 22px;
+
+    border-bottom: 1px solid var(--html-line);
+
+    color: var(--html-accent);
+
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.html-demo-code pre {
+    padding: 25px;
+
+    white-space: pre-wrap;
+    overflow-x: auto;
+
+    color: #ffc09b;
+
+    font-size: 13px;
+    line-height: 2;
+}
+
+.html-browser-window {
+    min-height: 170px;
+
+    margin: 20px;
+    padding: 24px;
+
+    background: #f4f1e9;
+    color: #171717;
+
+    border-radius: 5px;
+}
+
+.html-browser-window h1 {
+    font-size: 27px;
+    margin: 0 0 12px;
+}
+
+.html-browser-window p {
+    color: #444;
+    font-size: 14px;
+}
+
+
+/* OBSERVATION */
+
+.html-observe {
+    margin: 65px 0;
+}
+
+.html-observe h3 {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.html-observe-item {
+    padding: 20px 0;
+
+    display: grid;
+    grid-template-columns: 150px 1fr;
+
+    align-items: start;
+
+    border-bottom: 1px solid var(--html-line);
+    gap: 20px;
+}
+
+.html-observe-item code {
+    color: var(--html-accent);
+    font-size: 14px;
+}
+
+.html-observe-item p {
+    color: var(--html-muted);
+    font-size: 13px;
+    margin: 0;
+}
+
+
+/* =====================================================
+   08 — SHARED LESSON STYLES
+===================================================== */
+
+.html-lesson-two,
+.html-lesson-three {
+    padding: 100px 10%;
+
+    border-top: 1px solid var(--html-line);
+}
+
+.html-lesson-two .html-explanation,
+.html-lesson-three .html-explanation {
+    margin-bottom: 55px;
+}
+
+.html-topic-block {
+    margin: 75px 0;
+}
+
+.html-topic-number {
+    color: var(--html-accent);
+
+    font-size: 10px;
+    letter-spacing: 3px;
+
+    margin-bottom: 18px;
+}
+
+.html-topic-block h3 {
+    font-size: clamp(22px, 3vw, 32px);
+
+    letter-spacing: -1px;
+
+    margin: 0 0 16px;
+}
+
+.html-topic-block > p {
+    color: var(--html-muted);
+
+    font-size: 14px;
+
+    max-width: 720px;
+
+    margin-bottom: 28px;
+}
+
+.html-topic-block code {
+    color: var(--html-accent-light);
+}
+
+
+/* =====================================================
+   09 — LESSON 02: ELEMENT ANATOMY
+===================================================== */
+
+.element-anatomy {
+    padding: 40px 25px;
+
+    background: var(--html-panel);
+
+    border: 1px solid var(--html-line);
+    border-radius: 8px;
+
+    overflow-x: auto;
+}
+
+.anatomy-code {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    min-width: 450px;
+}
+
+.anatomy-part,
+.anatomy-content {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    gap: 15px;
+}
+
+.anatomy-part strong,
+.anatomy-content {
+    font-size: clamp(17px, 2.5vw, 28px);
+    font-weight: 600;
+}
+
+.anatomy-part strong {
+    color: var(--html-accent);
+}
+
+.anatomy-content {
+    color: var(--html-text);
+}
+
+.anatomy-part small,
+.anatomy-content small {
+    font-size: 8px;
+    letter-spacing: 2px;
+
+    color: var(--html-muted);
+}
+
+.anatomy-explanation {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.anatomy-explanation > div {
+    padding: 20px;
+
+    border: 1px solid var(--html-line);
+    border-radius: 6px;
+
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.anatomy-explanation strong {
+    font-size: 12px;
+}
+
+.anatomy-explanation p {
+    font-size: 11px;
+    color: var(--html-muted);
+    margin-bottom: 0;
+}
+
+
+/* =====================================================
+   10 — LESSON 02: NESTING
+===================================================== */
+
+.nesting-demo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 16px;
+}
+
+.nesting-code,
+.nesting-output {
+    min-height: 220px;
+
+    border: 1px solid var(--html-line);
+    border-radius: 8px;
+
+    background: var(--html-panel);
+
+    overflow: hidden;
+}
+
+.nesting-code pre {
+    padding: 25px;
+
+    white-space: pre-wrap;
+    line-height: 2;
+
+    font-size: 12px;
+}
+
+.nesting-output {
+    padding: 25px;
+
+    display: grid;
+    place-items: center;
+}
+
+.nesting-outer {
+    width: 100%;
+
+    padding: 25px;
+
+    border: 1px dashed var(--html-accent);
+    border-radius: 6px;
+}
+
+.nesting-outer > span {
+    color: var(--html-accent);
+
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.nesting-outer h2 {
+    margin: 20px 0 8px;
+    color: var(--html-text);
+}
+
+.nesting-outer p {
+    color: var(--html-muted);
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   11 — LESSON 02: VOID ELEMENTS
+===================================================== */
+
+.void-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 13px;
+}
+
+.void-card {
+    padding: 23px 18px;
+
+    min-height: 165px;
+
+    background: var(--html-panel);
+
+    border: 1px solid var(--html-line);
+    border-radius: 7px;
+
+    transition: border-color 0.3s ease;
+}
+
+.void-card:hover {
+    border-color: var(--html-accent);
+}
+
+.void-card code {
+    display: block;
+
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.void-card strong {
+    display: block;
+    font-size: 12px;
+}
+
+.void-card p {
+    font-size: 11px;
+    color: var(--html-muted);
+}
+
+
+/* =====================================================
+   12 — MISTAKE CARDS
+===================================================== */
+
+.mistake-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+}
+
+.mistake-card {
+    padding: 25px;
+
+    background: var(--html-panel);
+
+    border: 1px solid var(--html-line);
+    border-radius: 8px;
+}
+
+.mistake-card > span {
+    display: block;
+
+    font-size: 9px;
+    letter-spacing: 2px;
+
+    color: var(--html-accent);
+
+    margin-bottom: 20px;
+}
+
+.mistake-card code {
+    display: block;
+
+    font-size: 12px;
+    line-height: 2;
+
+    overflow-wrap: anywhere;
+}
+
+.mistake-card p {
+    font-size: 12px;
+    color: var(--html-muted);
+}
+
+
+/* =====================================================
+   13 — LESSON 03: HEADING HIERARCHY
+===================================================== */
+
+.heading-hierarchy {
+    padding: 30px;
+
+    background: var(--html-panel);
+
+    border: 1px solid var(--html-line);
+    border-radius: 8px;
+}
+
+.heading-example {
+    padding: 22px 0;
+
+    border-bottom: 1px solid var(--html-line);
+}
+
+.heading-example:last-child {
+    border-bottom: none;
+}
+
+.heading-example > span {
+    display: block;
+
+    color: var(--html-accent);
+
+    font-size: 9px;
+    letter-spacing: 2px;
+
+    margin-bottom: 14px;
+}
+
+.heading-example h1,
+.heading-example h2,
+.heading-example h3,
+.heading-example h4,
+.heading-example h5,
+.heading-example h6 {
+    color: var(--html-text);
+    margin: 0;
+    line-height: 1.3;
+}
+
+.heading-one {
+    font-size: 36px;
+}
+
+.heading-two {
+    font-size: 30px;
+}
+
+.heading-three {
+    font-size: 25px;
+}
+
+.heading-four {
+    font-size: 21px;
+}
+
+.heading-five {
+    font-size: 17px;
+}
+
+.heading-six {
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   14 — LESSON 03: PARAGRAPHS
+===================================================== */
+
+.paragraph-demonstration {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 16px;
+}
+
+.paragraph-code,
+.paragraph-result {
+    min-height: 210px;
+
+    padding: 25px;
+
+    border: 1px solid var(--html-line);
+    border-radius: 8px;
+
+    background: var(--html-panel);
+}
+
+.paragraph-code pre {
+    white-space: pre-wrap;
+
+    font-size: 12px;
+    line-height: 2;
+}
+
+.paragraph-result {
+    background: #f4f1e9;
+    color: #171717;
+}
+
+.paragraph-result h1 {
+    font-size: 25px;
+    margin: 0 0 14px;
+}
+
+.paragraph-result p {
+    color: #444;
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   15 — LESSON 03: HIERARCHY TREE
+===================================================== */
+
+.hierarchy-tree {
+    padding: 30px;
+
+    border: 1px solid var(--html-line);
+    border-radius: 8px;
+
+    background: var(--html-panel);
+}
+
+.tree-item {
+    padding: 15px 18px;
+
+    margin: 10px 0;
+
+    border-radius: 5px;
+
+    background: var(--html-panel-light);
+
+    font-size: 13px;
+}
+
+.tree-item span {
+    display: inline-block;
+
+    width: 40px;
+
+    color: var(--html-accent);
+
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.tree-h1 {
+    border-left: 3px solid var(--html-accent);
+}
+
+.tree-branch {
+    margin-left: 35px;
+    padding-left: 20px;
+
+    border-left: 1px solid rgba(255, 154, 98, 0.4);
+}
+
+.tree-h2 {
+    border-left: 3px solid var(--html-purple);
+}
+
+.tree-branch-inner {
+    margin-left: 35px;
+    padding-left: 20px;
+
+    border-left: 1px solid rgba(167, 139, 250, 0.4);
+}
+
+.tree-h3 {
+    border-left: 3px solid rgba(167, 139, 250, 0.5);
+}
+
+
+/* =====================================================
+   16 — PLAYGROUND SYSTEM
+===================================================== */
+
+.lesson-two-workspace,
+.lesson-three-workspace,
+.html-playground {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.lesson-two-editor,
+.lesson-two-result,
+.lesson-three-editor,
+.lesson-three-result,
+.html-editor,
+.html-preview {
+    min-width: 0;
+
+    border: 1px solid var(--html-line);
+    border-radius: 8px;
+
+    overflow: hidden;
+
+    background: var(--html-panel);
+}
+
+.lesson-two-editor > span,
+.lesson-two-result > span,
+.lesson-three-editor > span,
+.lesson-three-result > span,
+.html-editor > span,
+.html-preview > span {
+    display: block;
+
+    padding: 16px 20px;
+
+    border-bottom: 1px solid var(--html-line);
+
+    color: var(--html-accent);
+
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.lesson-two-editor textarea,
+.lesson-three-editor textarea,
+.html-editor textarea {
+    display: block;
+
+    width: 100%;
+    min-height: 260px;
+
+    padding: 22px;
+
+    resize: vertical;
+
+    border: none;
+    outline: none;
+
+    background: #151515;
+    color: #ffc09b;
+
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 12px;
+    line-height: 1.9;
+
+    tab-size: 4;
+}
+
+.lesson-two-editor textarea:focus,
+.lesson-three-editor textarea:focus,
+.html-editor textarea:focus {
+    box-shadow: inset 0 0 0 1px rgba(255, 154, 98, 0.4);
+}
+
+.lesson-two-result iframe,
+.lesson-three-result iframe,
+.html-preview iframe {
+    display: block;
+
+    width: 100%;
+    min-height: 260px;
+
+    border: none;
+
+    background: #f4f1e9;
+}
+
+
+/* =====================================================
+   17 — LESSON 01 PLAYGROUND
+===================================================== */
+
+.html-experiment {
+    padding: 100px 10%;
+
+    border-top: 1px solid var(--html-line);
+}
+
+.html-experiment .html-explanation {
+    margin-bottom: 35px;
+}
+
+
+/* =====================================================
+   18 — GENERAL NOTE
+===================================================== */
+
+.html-note {
+    margin-top: 25px;
+
+    padding: 20px 23px;
+
+    border-left: 2px solid var(--html-accent);
+
+    background: rgba(255, 154, 98, 0.055);
+
+    color: var(--html-muted);
+
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.html-note strong {
+    color: var(--html-accent);
+    letter-spacing: 1px;
+}
+
+
+/* =====================================================
+   19 — CHAPTER CHALLENGE
+===================================================== */
+
+.html-challenge {
+    margin: 40px 10% 100px;
+
+    padding: 55px;
+
+    border: 1px solid rgba(255, 154, 98, 0.3);
+    border-radius: 9px;
+
+    background:
+        radial-gradient(
+            circle at 90% 10%,
+            rgba(255, 154, 98, 0.09),
+            transparent 40%
+        ),
+        var(--html-panel);
+}
+
+.html-challenge > .html-section-label {
+    display: block;
+    margin-bottom: 25px;
+}
+
+.html-challenge h2 {
+    font-size: clamp(27px, 4vw, 42px);
+
+    letter-spacing: -2px;
+
+    margin: 0 0 20px;
+}
+
+.html-challenge p {
+    max-width: 650px;
+
+    font-size: 13px;
+    color: var(--html-muted);
+}
+
+
+/* =====================================================
+   20 — FOOTER
+===================================================== */
+
+.html-footer {
+    padding: 45px 10%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 25px;
+
+    border-top: 1px solid var(--html-line);
+}
+
+.html-footer span {
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 3px;
+}
+
+.html-footer p {
+    color: var(--html-muted);
+
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.html-footer a {
+    color: var(--html-accent);
+
+    font-size: 10px;
+    letter-spacing: 2px;
+
+    transition: opacity 0.3s ease;
+}
+
+.html-footer a:hover {
+    opacity: 0.65;
+}
+
+
+/* =====================================================
+   21 — RESPONSIVE: TABLETS
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .html-hero {
+        padding: 80px 7%;
+        grid-template-columns: 1fr 0.8fr;
+    }
+
+    .html-lesson,
+    .html-lesson-two,
+    .html-lesson-three,
+    .html-lesson-index,
+    .html-experiment {
+        padding-left: 7%;
+        padding-right: 7%;
+    }
+
+    .html-index-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .void-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .html-chapter-info {
+        margin-left: 7%;
+        margin-right: 7%;
+    }
+
+    .html-challenge {
+        margin-left: 7%;
+        margin-right: 7%;
+    }
+
+}
+
+
+/* =====================================================
+   22 — RESPONSIVE: MOBILE
+===================================================== */
+
+@media (max-width: 650px) {
+
+    .html-nav {
+        min-height: 65px;
+        padding: 0 5%;
+    }
+
+    .html-nav-center {
+        font-size: 9px;
+        letter-spacing: 2px;
+    }
+
+    .html-back,
+    .html-nav-link {
+        font-size: 8px;
+        letter-spacing: 1px;
+    }
+
+    .html-hero {
+        padding: 75px 7% 60px;
+
+        grid-template-columns: 1fr;
+        gap: 55px;
+    }
+
+    .html-hero h1 {
+        font-size: clamp(43px, 12vw, 65px);
+        letter-spacing: -3px;
+    }
+
+    .html-hero-art {
+        max-width: 270px;
+    }
+
+    .html-chapter-info {
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+    }
+
+    .html-lesson,
+    .html-lesson-two,
+    .html-lesson-three,
+    .html-lesson-index,
+    .html-experiment {
+        padding: 75px 7%;
+    }
+
+    .html-index-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .html-trio {
+        grid-template-columns: 1fr;
+    }
+
+    .html-demo-grid,
+    .nesting-demo,
+    .paragraph-demonstration {
+        grid-template-columns: 1fr;
+    }
+
+    .anatomy-explanation {
+        grid-template-columns: 1fr;
+    }
+
+    .void-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .mistake-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .lesson-two-workspace,
+    .lesson-three-workspace,
+    .html-playground {
+        grid-template-columns: 1fr;
+    }
+
+    .html-observe-item {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .html-challenge {
+        margin: 25px 5% 75px;
+        padding: 30px;
+    }
+
+    .html-footer {
+        padding: 35px 7%;
+
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .tree-branch {
+        margin-left: 12px;
+        padding-left: 12px;
+    }
+
+    .tree-branch-inner {
+        margin-left: 12px;
+        padding-left: 12px;
+    }
+
+}
+
+
+/* =====================================================
+   END — CHAPTER 001
+===================================================== */
+
+/* =========================================
+   LESSON 04 — TEXT FORMATTING
+========================================= */
+
+.html-lesson-four {
+    padding: 110px 7%;
+    position: relative;
+}
+
+.formatting-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 55px;
+}
+
+.format-card {
+    padding: 28px;
+    min-height: 220px;
+    background: rgba(255, 255, 255, 0.035);
+    border: 1px solid var(--html-line);
+    border-radius: 18px;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.format-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.065);
+}
+
+.format-number {
+    color: var(--html-accent-light);
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.format-card h3 {
+    margin: 18px 0;
+    font-size: 19px;
+}
+
+.format-example {
+    min-height: 45px;
+    display: flex;
+    align-items: center;
+    font-size: 17px;
+    color: var(--html-text);
+}
+
+.format-card mark {
+    background: #d7f28a;
+    color: #17200c;
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+
+.format-card code {
+    display: block;
+    margin: 12px 0;
+    color: var(--html-accent-light);
+    font-size: 11px;
+    overflow-wrap: anywhere;
+}
+
+.format-card p {
+    color: var(--html-muted);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.format-note {
+    margin-top: 65px;
+    padding: 35px;
+    border: 1px solid var(--html-line);
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.025);
+}
+
+.format-note-label {
+    color: var(--html-accent-light);
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.format-note h3 {
+    margin: 18px 0;
+    font-size: 24px;
+}
+
+.format-note p {
+    max-width: 750px;
+    color: var(--html-muted);
+    line-height: 1.8;
+    font-size: 14px;
+}
+
+.format-playground {
+    margin-top: 75px;
+}
+
+.format-playground-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.format-playground-heading h3 {
+    font-size: 27px;
+    margin: 10px 0;
+}
+
+.format-playground-heading p {
+    color: var(--html-muted);
+}
+
+.format-live-indicator {
+    color: var(--html-accent-light);
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.format-playground-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.format-editor-panel,
+.format-preview-panel {
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid var(--html-line);
+    border-radius: 17px;
+    background: rgba(255, 255, 255, 0.035);
+}
+
+.format-panel-top {
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--html-line);
+    color: var(--html-muted);
+    font-size: 10px;
+    letter-spacing: 1.5px;
+}
+
+#formatting-editor {
+    display: block;
+    width: 100%;
+    min-height: 330px;
+    padding: 22px;
+    resize: vertical;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #d7f28a;
+    font-family: monospace;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+#formatting-preview {
+    display: block;
+    width: 100%;
+    height: 330px;
+    border: none;
+    background: white;
+}
+
+.format-challenge {
+    margin-top: 75px;
+    padding: 38px;
+    border-radius: 20px;
+    border: 1px solid var(--html-line);
+    background: rgba(255, 255, 255, 0.035);
+}
+
+.format-challenge h3 {
+    font-size: 26px;
+    margin: 15px 0;
+}
+
+.format-challenge p,
+.format-challenge li {
+    color: var(--html-muted);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.format-challenge ul {
+    padding-left: 22px;
+    margin: 20px 0;
+}
+
+.format-challenge-end {
+    color: var(--html-accent-light) !important;
+    margin-top: 25px;
+}
+
+@media (max-width: 850px) {
+    .formatting-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .format-playground-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 550px) {
+    .formatting-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .html-lesson-four {
+        padding: 75px 6%;
+    }
+
+    .format-playground-heading {
+        align-items: flex-start;
+    }
+}
